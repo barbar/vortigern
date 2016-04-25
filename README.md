@@ -3,8 +3,6 @@
 React, Typescript and hot module loading with webpack-dev-server.
 
 ## About
-I guess this is not a "boilerplate" yet, it's more like a basic structure with up-to-date dependencies. Here's a little explanation:
-
 - We use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) with [express](https://github.com/expressjs/express), [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) and [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for running development server. 
 
 - Typescript code gets transpiled to es5 with [ts-loader](https://github.com/TypeStrong/ts-loader), and [reach-hot-loader](https://github.com/gaearon/react-hot-loader) gives hot reloading capability to react components.
