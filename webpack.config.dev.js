@@ -1,21 +1,18 @@
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var loaders = require('./config/webpack/loaders');
 
 var config = {
-	debug: true,
-	devtool: 'source-map',
+	devtool: '#source-map',
 
 	entry: [
 		'webpack-hot-middleware/client?reload=true',
-		'./src/client.tsx'
+		'./src/client.js'
 	],
 
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js',
-		publicPath: '/static/'
 	},
 
 	resolve: {
@@ -41,6 +38,7 @@ var config = {
 	},
 
 	plugins: [
+		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	]

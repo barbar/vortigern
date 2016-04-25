@@ -1,5 +1,6 @@
 /// <reference path="main/ambient/history/index.d.ts" />
 /// <reference path="main/ambient/react-dom/index.d.ts" />
+/// <reference path="main/ambient/react-helmet/index.d.ts" />
 /// <reference path="main/ambient/react-redux/index.d.ts" />
 /// <reference path="main/ambient/react-router-redux/index.d.ts" />
 /// <reference path="main/ambient/react-router/index.d.ts" />

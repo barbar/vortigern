@@ -1,33 +1,37 @@
 var path = require("path");
 var webpack = require("webpack");
+var autoprefixer = require('autoprefixer');
+var loaders = require('./config/webpack/loaders');
 
 var config = {
-  entry: ["./src/app/index.tsx"],
+  entry: './src/client.js',
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: '/static/'
+    filename: "bundle.js"
   },
 
   resolve: {
-    root: [path.resolve(__dirname, 'src')],
-    extensions: ["", ".ts", ".tsx", ".js"]
+    root: [path.resolve(__dirname, 'src/app')],
+    extensions: ["", ".ts", ".tsx", ".js", ".css", ".scss"]
   },
 
   module: {
-    loaders: [
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        include: path.join(__dirname, 'src')
-      }
+    loaders: [
+      loaders.tsx,
+      loaders.json,
+      loaders.scss,
+      loaders.css,
+      loaders.eot,
+      loaders.woff,
+      loaders.ttf,
+      loaders.svg,
+      loaders.img
     ],
     preLoaders: [
-      { test: /\.js$/, loader: "source-map-loader" }
+      loaders.jsSourceMap
     ]
   },
-
 
   plugins: [
     new webpack.DefinePlugin({
