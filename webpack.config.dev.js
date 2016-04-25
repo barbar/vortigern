@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var loaders = require('./webpack/loaders');
 
 var config = {
 	debug: true,
@@ -7,7 +9,7 @@ var config = {
 
 	entry: [
 		'webpack-hot-middleware/client?reload=true',
-		'./src/index.tsx'
+		'./src/app/index.tsx'
 	],
 
 	output: {
@@ -23,14 +25,18 @@ var config = {
 
 	module: {
 		loaders: [
-			{
-				test: /\.tsx?$/,
-				loader: 'react-hot!ts-loader',
-				include: path.join(__dirname, 'src')
-			}
+			loaders.tsx,
+			loaders.json,
+			loaders.scss,
+			loaders.css,
+			loaders.eot,
+			loaders.woff,
+			loaders.ttf,
+			loaders.svg,
+			loaders.img
 		],
 		preLoaders: [
-		  { test: /\.js$/, loader: "source-map-loader" }
+		  loaders.jsSourceMap
 		]
 	},
 

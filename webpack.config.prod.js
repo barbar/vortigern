@@ -2,7 +2,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 var config = {
-  entry: ["./src/index.tsx"],
+  entry: ["./src/app/index.tsx"],
 
   output: {
     path: path.resolve(__dirname, "dist"),
