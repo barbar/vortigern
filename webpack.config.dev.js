@@ -19,7 +19,7 @@ var config = {
 	},
 
 	resolve: {
-		root: [path.resolve(__dirname, 'src')],
+		root: [path.resolve(__dirname, 'src/app')],
     extensions: ["", ".ts", ".tsx", ".js", ".css", ".scss"]
   },
 

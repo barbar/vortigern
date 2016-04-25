@@ -1,10 +1,14 @@
 import * as React from 'react';
-import Home from './Home';
+
+import Header from '../../components/Header';
 
 class App extends React.Component<any, any> {
 	render() {
 		return (
-			<Home />
+			<section>
+				<Header />
+				{this.props.children}
+			</section>
 		);
 	}
 }
