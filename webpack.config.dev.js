@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-var loaders = require('./webpack/loaders');
+var loaders = require('./config/webpack/loaders');
 
 var config = {
 	debug: true,
