@@ -1,7 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+const createLogger = require('redux-logger');
 import rootReducer from './reducers';
 
-const middlewares = [];
+const logger = createLogger();
+
+const middlewares = [logger];
 
 const finalCreateStore = compose(
 	applyMiddleware(...middlewares)
