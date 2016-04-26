@@ -10,7 +10,8 @@ const finalCreateStore = compose(
 	applyMiddleware(...middlewares)
 )(createStore);
 
-export function configureStore(initialState) {
-	let store = finalCreateStore(rootReducer, initialState);
-	return store;
+function configureStore(initialState) {
+	return finalCreateStore(rootReducer, initialState);
 };
+
+export default configureStore;
