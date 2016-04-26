@@ -10,8 +10,6 @@ declare let __PRODUCTION__: boolean;
 
 declare let process: any;
 
-declare let router: any;
-
 // A hack for the Redux DevTools Chrome extension.
 interface Window {
   devToolsExtension?: () => void;

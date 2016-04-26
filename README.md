@@ -1,6 +1,4 @@
-# react & typescript starter
-
-React, Typescript and hot module loading with webpack-dev-server.
+# Universal React & Typescript Starter
 
 ## About
 - We use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) with [express](https://github.com/expressjs/express), [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) and [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for running development server. 
@@ -11,8 +9,8 @@ React, Typescript and hot module loading with webpack-dev-server.
 
 ## Installation
 ```bash
-$ git clone https://github.com/altayaydemir/react-ts-hmr.git
-$ cd react-ts-hmr
+$ git clone https://github.com/barbar/react-ts-starter
+$ cd react-ts-starter
 $ npm install
 # You may need to install typings: https://github.com/typings/typings
 $ typings install
@@ -20,11 +18,11 @@ $ typings install
 
 ## Usage
 ```bash
-# Running app with dev server
+# Running app with server-side rendering, dev mode and hot reloading on port 3000
 $ npm start
 
-# Build (if you are going to use it on prod, don't forget to set your static directory)
-$ npm run build
+# Building app and serving with ssr, on port 8080
+$ npm run prod
 
 # Clean
 $ npm run clean
