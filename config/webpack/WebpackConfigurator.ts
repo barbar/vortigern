@@ -24,12 +24,11 @@ export function configure(
 
   const cssLoaders = [
     "style",
-    "css?localIdentName=" + choose({
-      "*:production": "[hash:base64:12]",
-      "*": "[name]_[local]_[hash:base64:6]"
-    }),
+    "css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
     "postcss"
   ];
+
+  const scssLoaders = cssLoaders.concat("sass");
 
   let config = {
     debug: choose({
@@ -111,6 +110,15 @@ export function configure(
                     "client:development": cssLoaders.join("!"),
                     "client:production": ExtractTextPlugin.extract(cssLoaders[0], cssLoaders.slice(1).join("!")),
                     "server:*": ExtractTextPlugin.extract(cssLoaders[0], cssLoaders.slice(1).join("!"))
+                })
+            },
+
+            {
+                test: /\.scss$/i,
+                loader: choose({
+                    "client:development": scssLoaders.join("!"),
+                    "client:production": ExtractTextPlugin.extract(scssLoaders[0], scssLoaders.slice(1).join("!")),
+                    "server:*": ExtractTextPlugin.extract(scssLoaders[0], scssLoaders.slice(1).join("!"))
                 })
             },
 
