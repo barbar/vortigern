@@ -76,7 +76,7 @@ app.use((req, res) => {
       let $ = Cheerio.load(html);
       $("title").text(DocTitle.rewind());
       $("head").append(`<script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState())};</script>`)
-      $("#root").empty().append(contentHtml);
+      $("#app").empty().append(contentHtml);
       html = $.html();
 
       res.status(200).send(html);
