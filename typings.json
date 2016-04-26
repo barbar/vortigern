@@ -1,13 +1,17 @@
 {
   "ambientDependencies": {
-    "history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#56295f5058cac7ae458540423c50ac2dcf9fc711",
+    "history": "registry:dt/history#1.8.0+20160316155526",
     "react": "registry:dt/react#0.14.0+20160423065914",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-helmet": "registry:dt/react-helmet#0.0.0+20160423063849",
     "react-redux": "registry:dt/react-redux#4.4.0+20160406115600",
-    "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#b56b92096d905075413bf0b42f1618ece50770b6",
+    "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160316155526",
+    "react-router/history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "redux": "registry:dt/redux#3.3.1+20160326112656",
-    "require": "registry:dt/require#2.1.20+20160316155526"
+    "require": "registry:dt/require#2.1.20+20160316155526",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160321060707"
   }
 }

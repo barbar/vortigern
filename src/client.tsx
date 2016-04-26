@@ -15,3 +15,8 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById("app")
 );
+
+if (__DEVELOPMENT__) {
+	let cssBundleElem = document.getElementById("server-bundle-css");
+	cssBundleElem.parentNode.removeChild(cssBundleElem);
+}

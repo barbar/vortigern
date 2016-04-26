@@ -5,11 +5,9 @@ import App from './containers/App';
 import Home from './containers/Home';
 import About from './containers/About';
 
-const routes = (
+export default (
 	<Route path="/" component={ App }>
     <IndexRoute component={ Home } />
     <Route path="about" component={About} />
   </Route>
 );
-
-export default routes;
