@@ -4,7 +4,7 @@ class Home extends React.Component<any, any> {
 	render() {
 		return (
 			<div>
-				<h1>Hello!</h1>
+				<img src={require('./bb.png')} />
 			</div>
 		);
 	}
