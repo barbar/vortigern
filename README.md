@@ -7,9 +7,7 @@ This is an ongoing project. Detailed documentation will be here soon.
 ```bash
 $ git clone https://github.com/barbar/react-ts-starter
 $ cd react-ts-starter
-$ npm install
-# You may need to install typings: https://github.com/typings/typings
-$ typings install
+$ npm run setup
 ```
 
 ## Usage

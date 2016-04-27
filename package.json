@@ -7,7 +7,8 @@
     "build": "make build",
     "start": "NODE_ENV=production make start",
     "dev": "NODE_ENV=development make dev",
-    "hot": "concurrently --kill-others \"node config/webpack/hot.js\" \"npm run dev\""
+    "hot": "concurrently --kill-others \"node config/webpack/hot.js\" \"npm run dev\"",
+    "setup": "npm install && typings install"
   },
   "keywords": [],
   "author": "Barbar Startup Factory",
