@@ -10,7 +10,8 @@ import { configureStore } from './app/redux/store';
 import routes from "./app/routes";
 
 const assetsManifest = require('../build/manifest.json');
-const css = assetsManifest['app.css'];
+const css = assetsManifest['app.css'] 
+? `<link href="public/${assetsManifest['app.css']}" media="all" rel="stylesheet" />` : '';
 const js = assetsManifest['app.js'];
 
 const Express = require('express');
@@ -48,7 +49,7 @@ app.get('*', (req, res) => {
     ${head.title.toString()}
     ${head.meta.toString()}
     ${head.link.toString()}
-    ${`<link href="public/${css}" media="all" rel="stylesheet" />`}
+    ${css}
   </head>
   <body>
     <main id="app">${innerHtml}</main>
@@ -56,7 +57,6 @@ app.get('*', (req, res) => {
     <script src="public/${js}"></script>
   </body>
 </html>`;
-
         res.status(200).send(html);
       } else {
         res.status(404).send('Not Found?')

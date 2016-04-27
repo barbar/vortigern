@@ -9,7 +9,7 @@ clean:
 dev: clean
 	webpack --config config/webpack/dev.js
 	webpack --config config/webpack/server.js
-	node ./build/server.js
+	node build/server.js
 
 build: clean
 	webpack --config config/webpack/prod.js

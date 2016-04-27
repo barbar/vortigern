@@ -22,6 +22,9 @@ $ npm run build
 
 # Running app on production mode
 $ npm start
+
+# Running unit tests
+$ npm run test
 ```
 
 ## Notes
