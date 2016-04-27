@@ -17,6 +17,7 @@
     "redux": "registry:dt/redux#3.3.1+20160326112656",
     "sinon": "registry:dt/sinon#1.16.0+20160317120654",
     "source-map": "registry:dt/source-map#0.0.0+20160317120654",
-    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526"
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160321060707"
   }
 }

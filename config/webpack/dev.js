@@ -9,14 +9,8 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 var config = {
 	devtool: 'source-map',
 	debug: true,
-
 	resolve: {
 		extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
-		root: [path.resolve(__dirname, 'src')],
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ],
   },
 	entry: {
 		app: [
@@ -89,7 +83,7 @@ var config = {
 
 	postcss: function () {
 	  return [
-	  	stylelint,
+	  	stylelint({files: "../../src/app/*.css"}),
 	  	precss, 
 	  	autoprefixer({ browsers: ['last 2 versions'] }), 
 	  	postcssAssets({relative: true})

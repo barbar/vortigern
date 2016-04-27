@@ -12,12 +12,7 @@ var config = {
 	devtool: 'source-map',
 
 	resolve: {
-		root: [path.resolve(__dirname, 'src')],
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ]
   },
 
 	entry: { 
@@ -91,8 +86,8 @@ var config = {
 	},
 	postcss: function () {
 	  return [
-	  	stylelint,
-	  	precss, 
+	  	stylelint({files: "../../src/app/*.css"}),
+	  	precss,
 	  	autoprefixer({ browsers: ['last 2 versions'] }), 
 	  	postcssAssets({relative: true})
 	  ];

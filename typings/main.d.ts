@@ -16,3 +16,4 @@
 /// <reference path="main/ambient/sinon/index.d.ts" />
 /// <reference path="main/ambient/source-map/index.d.ts" />
 /// <reference path="main/ambient/uglify-js/index.d.ts" />
+/// <reference path="main/ambient/webpack/index.d.ts" />

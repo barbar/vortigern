@@ -24,6 +24,19 @@ const app = Express();
 
 app.use(compression());
 
+if(process.env.NODE_ENV == "development") {
+  const webpack = require('webpack');
+  const webpackConfig = require('../config/webpack/dev');
+  const webpackCompiler = webpack(webpackConfig);
+
+  app.use(require("webpack-dev-middleware")(webpackCompiler, {
+    publicPath: webpackConfig.output.publicPath,
+    stats: { colors: true }
+  }));
+
+  app.use(require("webpack-hot-middleware")(webpackCompiler));
+}
+
 // app.use(ServeFavicon(Path.resolve("favicon.ico")));
 
 app.use('/public', Express['static'](path.join(__dirname, '../build/public')));
