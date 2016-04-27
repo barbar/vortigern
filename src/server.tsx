@@ -1,93 +1,72 @@
-import * as React from "react";
-import * as ReactDOMServer from "react-dom/server";
-
+import * as React from 'react';
+import * as ReactDOMServer from 'react-dom/server';
 import * as ReactRouter from "react-router";
 const RouterContext = ReactRouter.RouterContext as any;
-import { Provider } from "react-redux";
-import { syncHistoryWithStore } from "react-router-redux";
-import { configureStore } from "./app/redux/store";
+
+import * as Helmet from 'react-helmet';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { configureStore } from './app/redux/store';
 import routes from "./app/routes";
 
-import AppConfig from "../config/AppConfig";
-import * as WebpackConfigurator from '../config/webpack/WebpackConfigurator';
+const assetsManifest = require('../build/manifest.json');
+const css = assetsManifest['app.css'];
+const js = assetsManifest['app.js'];
 
-const FileSystem = require("fs");
-const Path = require("path");
-const Express = require("express");
-const Compression = require("compression");
-const ServeFavicon = require("serve-favicon");
+const Express = require('express');
+const path = require('path');
+const compression = require('compression');
 const Chalk = require("chalk");
-const Cheerio = require("cheerio");
-
-const DocTitle = require("react-document-title");
 
 const store = configureStore({});
-
-const appPort = __DEVELOPMENT__ ? AppConfig.server.devPort : AppConfig.server.prodPort;
 const app = Express();
 
-app.use(Compression());
+app.use(compression());
 
-/**
- * Development - Client Side Specific Settings
- */
-if (__DEVELOPMENT__) {
-	const Webpack = require("webpack");
+// app.use(ServeFavicon(Path.resolve("favicon.ico")));
 
-	let config = WebpackConfigurator.configure("client", "development");
-	let compiler = Webpack(config);
+app.use('/public', Express['static'](path.join(__dirname, '../build/public')));
 
-	app.use(require("webpack-dev-middleware")(compiler, {
-		publicPath: config.output.publicPath,
-		stats: {
-			colors: true
-		}
-	}));
+app.get('*', (req, res) => {
+  ReactRouter.match({ routes: routes, location: req.url }, 
+    (error, redirectLocation, renderProps) => {
+      if (error) {
+        res.status(500).send(error.message)
+      } else if (redirectLocation) {
+        res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+      } else if (renderProps) {
+        const innerHtml = ReactDOMServer.renderToString(
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
+        );
 
-	app.use(require("webpack-hot-middleware")(compiler));
+        const head = Helmet.rewind();
+        const html = `<!doctype html>
+<html>
+  <head>
+    ${head.title.toString()}
+    ${head.meta.toString()}
+    ${head.link.toString()}
+    ${`<link href="public/${css}" media="all" rel="stylesheet" />`}
+  </head>
+  <body>
+    <main id="app">${innerHtml}</main>
+    <script>window.__INITIAL_STATE__  = ${JSON.stringify(store.getState())};</script>
+    <script src="public/${js}"></script>
+  </body>
+</html>`;
 
-	process.chdir("src");
-}
-
-/**
- * Production - Server Side Specific Settings
- */
-app.use(ServeFavicon(Path.resolve("favicon.ico")));
-
-app.use("/static", Express.static(Path.resolve("static")));
-
-app.use((req, res) => {
-
-  ReactRouter.match({ routes: routes, location: req.url },
-  (error, redirectLocation, renderProps) => {
-    
-    if (error) res.status(500).send(error.message);
-    
-    else if (redirectLocation) res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    
-    else if (renderProps) {
-      let contentHtml = ReactDOMServer.renderToString(
-        <Provider store={store}>
-          <RouterContext {...renderProps} />
-        </Provider>
-      );
-
-      let html = FileSystem.readFileSync("index.html", "utf8");
-      let $ = Cheerio.load(html);
-      $("title").text(DocTitle.rewind());
-      $("head").append(`<script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState())};</script>`)
-      $("#app").empty().append(contentHtml);
-      html = $.html();
-
-      res.status(200).send(html);
-    }
-    else res.status(404).send("Not found.");
-  });
+        res.status(200).send(html);
+      } else {
+        res.status(404).send('Not Found?')
+      }
+    })
 });
+
+const appPort = 8889;
 
 app.listen(appPort, "localhost", err => {
-  err
-		? console.error(Chalk.red(err))
-		: console.info(Chalk.dim(`\nlistening at http://localhost:${appPort}\n`));
+    err ? console.error(Chalk.red(err))
+        : console.info(Chalk.dim(`\nlistening at http://localhost:${appPort}\n`));
 });
-
