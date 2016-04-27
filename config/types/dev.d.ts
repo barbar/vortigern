@@ -4,11 +4,11 @@
 
 // A hack for the Redux DevTools Chrome extension.
 interface Window {
-  devToolsExtension?: () => void;
+  devToolsExtension?: () => any;
   __INITIAL_STATE__?: any;
 }
 
-interface window {
-  devToolsExtension?: () => void;
+interface Global {
+  devToolsExtension?: () => any;
   __INITIAL_STATE__?: any;
 }
