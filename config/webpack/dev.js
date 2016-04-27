@@ -28,6 +28,12 @@ var config = {
     pathinfo: true
 	},
 	module: {
+		preLoaders: [
+		  {
+		    test: /\.tsx?$/,
+		    loader: 'tslint'
+		  }
+		],
 		loaders: [
 			{
 				test: /\.tsx?$/,
