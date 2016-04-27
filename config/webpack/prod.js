@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+var postcssAssets = require('postcss-assets');
+var stylelint = require('stylelint');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var ManifestPlugin = require('webpack-manifest-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -87,7 +90,12 @@ var config = {
 		],
 	},
 	postcss: function () {
-	  return [autoprefixer({ browsers: ['last 2 versions'] })];
+	  return [
+	  	stylelint,
+	  	precss, 
+	  	autoprefixer({ browsers: ['last 2 versions'] }), 
+	  	postcssAssets({relative: true})
+	  ];
 	},
 	plugins: [
 		// new webpack.optimize.CommonsChunkPlugin("vendor","js/[name].[hash].js"),

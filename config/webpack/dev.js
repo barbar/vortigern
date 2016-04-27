@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+var postcssAssets = require('postcss-assets');
+var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 
 var config = {
@@ -85,7 +88,12 @@ var config = {
 	},
 
 	postcss: function () {
-	  return [autoprefixer({ browsers: ['last 2 versions'] })];
+	  return [
+	  	stylelint,
+	  	precss, 
+	  	autoprefixer({ browsers: ['last 2 versions'] }), 
+	  	postcssAssets({relative: true})
+	  ];
 	},
 
 	plugins: [
