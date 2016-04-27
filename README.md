@@ -7,7 +7,11 @@ This is an ongoing project. Detailed documentation will be here soon.
 ```bash
 $ git clone https://github.com/barbar/react-ts-starter
 $ cd react-ts-starter
+<<<<<<< HEAD
 $ npm run setup
+=======
+$ npm run setup
+>>>>>>> develop
 ```
 
 ## Usage
@@ -20,6 +24,9 @@ $ npm run build
 
 # Running app on production mode
 $ npm start
+
+# Running unit tests
+$ npm run test
 ```
 
 ## Notes

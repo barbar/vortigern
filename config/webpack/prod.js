@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+var postcssAssets = require('postcss-assets');
+var stylelint = require('stylelint');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var ManifestPlugin = require('webpack-manifest-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -9,12 +12,7 @@ var config = {
 	devtool: 'source-map',
 
 	resolve: {
-		root: [path.resolve(__dirname, 'src')],
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ]
   },
 
 	entry: { 
@@ -28,6 +26,12 @@ var config = {
 	},
 
 	module: {
+		preLoaders: [
+		  {
+		    test: /\.tsx?$/,
+		    loader: 'tslint'
+		  }
+		],
 		loaders: [
 			{
 				test: /\.tsx?$/,
@@ -81,7 +85,12 @@ var config = {
 		],
 	},
 	postcss: function () {
-	  return [autoprefixer({ browsers: ['last 2 versions'] })];
+	  return [
+	  	stylelint({files: "../../src/app/*.css"}),
+	  	precss,
+	  	autoprefixer({ browsers: ['last 2 versions'] }), 
+	  	postcssAssets({relative: true})
+	  ];
 	},
 	plugins: [
 		// new webpack.optimize.CommonsChunkPlugin("vendor","js/[name].[hash].js"),
