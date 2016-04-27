@@ -9,8 +9,8 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var config = {
-	devtool: 'source-map',
-
+	bail: true,
+		
 	resolve: {
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
   },

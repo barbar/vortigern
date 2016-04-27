@@ -59,7 +59,6 @@ app.get('*', (req, res) => {
       } else if (redirectLocation) {
         res.redirect(302, redirectLocation.pathname + redirectLocation.search)
       } else if (renderProps) {
-
         const markup = ReactDOMServer.renderToString(
           <Provider store={store}>
             <RouterContext {...renderProps} />

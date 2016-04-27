@@ -12,7 +12,6 @@ fs.readdirSync('node_modules')
 
 var config = {
   externals: nodeModules,
-  devtool: 'source-map',
   target: "node",
   resolve: {
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
@@ -48,7 +47,7 @@ var config = {
         include: /src\/app/,
         loaders: [
           'isomorphic-style-loader',
-          'css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]'
         ]
       }
     ]
