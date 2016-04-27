@@ -3,9 +3,8 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import configureStore from './app/redux/store';
-
-const routes = require('./app/routes');
+import { configureStore } from './app/redux/store';
+import routes from './app/routes';
 
 const store = configureStore(window.__INITIAL_STATE__);
 const history = syncHistoryWithStore(browserHistory, store);

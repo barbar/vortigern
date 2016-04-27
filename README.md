@@ -1,11 +1,7 @@
 # Universal React & Typescript Starter
 
 ## About
-- We use [webpack-dev-server](https://github.com/webpack/webpack-dev-server) with [express](https://github.com/expressjs/express), [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) and [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) for running development server. 
-
-- Typescript code gets transpiled to es5 with [ts-loader](https://github.com/TypeStrong/ts-loader), and [reach-hot-loader](https://github.com/gaearon/react-hot-loader) gives hot reloading capability to react components.
-
-- [Typings](https://github.com/typings/typings) makes it easier to find type definitions of external libraries.
+This is an ongoing project. Detailed documentation will be here soon.
 
 ## Installation
 ```bash
@@ -18,14 +14,14 @@ $ typings install
 
 ## Usage
 ```bash
-# Running app with server-side rendering, dev mode and hot reloading on port 3000
+# Running app on development mode
+$ npm run dev
+
+# Building for production
+$ npm run build
+
+# Running app on production mode
 $ npm start
-
-# Building app and serving with ssr, on port 8080
-$ npm run prod
-
-# Clean
-$ npm run clean
 ```
 
 ## Notes

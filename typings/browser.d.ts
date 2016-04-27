@@ -10,4 +10,3 @@
 /// <reference path="browser/ambient/redux/index.d.ts" />
 /// <reference path="browser/ambient/source-map/index.d.ts" />
 /// <reference path="browser/ambient/uglify-js/index.d.ts" />
-/// <reference path="browser/ambient/webpack/index.d.ts" />

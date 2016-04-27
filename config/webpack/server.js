@@ -1,15 +1,16 @@
-var webpack = require('webpack');
 var path = require('path');
 
 var config = {
+  devtool: 'source-map',
   target: "node",
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js", ".css"],
+    extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
   },
-  entry: "./src/server.tsx",
+  entry: './src/server.tsx',
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'server.js',
+    path: path.resolve('./build/public'),
+    filename: '../server.js',
+    publicPath: '/public/',
     libraryTarget: 'commonjs2',
   },
   module: {
@@ -23,33 +24,22 @@ var config = {
         loader: 'json-loader',
       },
       {
+        test: /\.jsx$/,
+        loader: 'babel?presets[]=es2015'
+      },
+      {
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
-				exclude: /(node_modules|\.test\.ts$)/
+				exclude: /node_modules/
 			},
-      {
-        test: /\.ts?$/,
-        loader: 'ts-loader',
-        exclude: /(node_modules|\.test\.ts$)/
-      },
       {
         test: /\.css$/,
         include: /src\/app/,
         loaders: [
           'isomorphic-style-loader',
-          'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
+          'css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         ]
-      },
-      {
-        test: /\.scss$/,
-        include: /src\/app/,
-        loaders: [
-          'isomorphic-style-loader',
-          'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
-        ]
-      },
+      }
     ]
   },
   plugins: [],
