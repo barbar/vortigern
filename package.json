@@ -25,10 +25,12 @@
     "compression": "^1.6.1",
     "concurrently": "^2.0.0",
     "css-loader": "^0.23.1",
+    "es6-promise": "^3.1.2",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "history": "^2.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "isomorphic-style-loader": "^1.0.0",
     "jquery": "^2.2.3",
     "json-loader": "^0.5.4",
@@ -78,6 +80,9 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.2",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-devtools": "^3.2.0",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11"
   }
 }

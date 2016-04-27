@@ -1,3 +1,8 @@
+import config from '../config/main';
+
+import * as e6p from "es6-promise";
+(e6p as any).polyfill();
+
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import * as ReactRouter from "react-router";
@@ -24,14 +29,19 @@ const app = Express();
 app.use(compression());
 app.use(favicon(path.join(__dirname, '..', 'favicon.ico')));
 
-if(process.env.NODE_ENV == "development") {
+if (process.env.NODE_ENV == "development") {
   const webpack = require('webpack');
   const webpackConfig = require('../config/webpack/dev');
   const webpackCompiler = webpack(webpackConfig);
 
   app.use(require("webpack-dev-middleware")(webpackCompiler, {
     publicPath: webpackConfig.output.publicPath,
-    stats: { colors: true }
+    stats: { colors: true },
+    quiet: true,
+    noInfo: true,
+    hot: true,
+    inline: true,
+    lazy: false
   }));
 
   app.use(require("webpack-hot-middleware")(webpackCompiler));
@@ -42,7 +52,7 @@ app.use(favicon(path.resolve("favicon.ico")));
 app.use('/public', Express['static'](path.join(__dirname, '../build/public')));
 
 app.get('*', (req, res) => {
-  ReactRouter.match({ routes: routes, location: req.url }, 
+  ReactRouter.match({ routes: routes, location: req.url },
     (error, redirectLocation, renderProps) => {
       if (error) {
         res.status(500).send(error.message)
@@ -67,9 +77,7 @@ app.get('*', (req, res) => {
     })
 });
 
-const appPort = 8889;
-
-app.listen(appPort, "localhost", err => {
-    err ? console.error(Chalk.red(err))
-        : console.info(Chalk.dim(`\nlistening at http://localhost:${appPort}\n`));
+app.listen(config.port, "localhost", err => {
+  err ? console.error(Chalk.bgRed(err))
+    : console.info(Chalk.bgGreen(`\n\n💂  Listening at http://localhost:${config.port}\n`));
 });

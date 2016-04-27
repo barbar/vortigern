@@ -3,11 +3,11 @@ import * as Helmet from 'react-helmet';
 
 interface HtmlProps {
 	manifest?: Object,
-	markup?: String,
+	markup?: string,
 	store?: any
 }
 
-class Html extends React.Component<HtmlProps, any> {
+class Html extends React.Component<HtmlProps, {}> {
 	resolve(files) {
     return files.map((src) => {
       if (!this.props.manifest[src]) return;
