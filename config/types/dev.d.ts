@@ -7,8 +7,3 @@ interface Window {
   devToolsExtension?: () => any;
   __INITIAL_STATE__?: any;
 }
-
-interface Global {
-  devToolsExtension?: () => any;
-  __INITIAL_STATE__?: any;
-}

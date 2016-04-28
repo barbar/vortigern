@@ -9,8 +9,8 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var config = {
-	devtool: 'source-map',
-
+	bail: true,
+		
 	resolve: {
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
   },
@@ -101,10 +101,6 @@ var config = {
 		}),
 		new ExtractTextPlugin("css/[name].[hash].css"),
 		new webpack.optimize.DedupePlugin(),
-		new CleanWebpackPlugin(['build'], {
-		  verbose: true,
-		  dry: false
-		}),
 		new ManifestPlugin({
 		  fileName: '../manifest.json',
 		}),

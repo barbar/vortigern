@@ -1,17 +1,13 @@
 import * as React from 'react';
+const s = require('./style.css');
 
-class Home extends React.Component<any, any> {
+export class Home extends React.Component<any, any> {
 	render() {
-
-		const s = require('./style.css');
-
 		return (
 			<div className={s.home}>
-				<h1>sdfsdf</h1>
-				<img src={require('./bb.png')} />
+				<img src={require('./barbar.png')} />
+				<p>Hello!</p>
 			</div>
 		);
 	}
 }
-
-export default Home;

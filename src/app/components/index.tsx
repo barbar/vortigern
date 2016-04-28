@@ -1,3 +1,2 @@
-import Header from './Header/Header';
-
-export { Header };
+/** Exporting Components for Easier Imports */
+export { Header } from './Header/Header';

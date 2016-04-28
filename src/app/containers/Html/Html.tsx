@@ -2,17 +2,17 @@ import * as React from 'react';
 import * as Helmet from 'react-helmet';
 
 interface HtmlProps {
-	manifest?: Object,
-	markup?: string,
-	store?: any
+	manifest?: Object;
+	markup?: string;
+	store?: Redux.Store;
 }
 
-class Html extends React.Component<HtmlProps, {}> {
+export class Html extends React.Component<HtmlProps, {}> {
 	resolve(files) {
     return files.map((src) => {
-      if (!this.props.manifest[src]) return;
+      if (!this.props.manifest[src]) { return; };
       return 'public/' + this.props.manifest[src];
-    }).filter((file) => file != undefined);
+    }).filter((file) => file !== undefined);
   }
 
 	render() {
@@ -20,10 +20,14 @@ class Html extends React.Component<HtmlProps, {}> {
 		const { markup, store } = this.props;
 
 		const styles = this.resolve(['vendor.css', 'app.css']);
-		const renderStyles = styles.map((src, i) => <link key={i} rel="stylesheet" type="text/css" href={src} />);
+		const renderStyles = styles.map((src, i) => 
+			<link key={i} rel="stylesheet" type="text/css" href={src} />
+		);
 
 		const scripts = this.resolve(['vendor.js', 'app.js']);
-		const renderScripts = scripts.map((src, i) => <script src={src} key={i}></script>);
+		const renderScripts = scripts.map((src, i) => 
+			<script src={src} key={i}></script>
+		);
 
 		return (
 			<html>
@@ -46,7 +50,4 @@ class Html extends React.Component<HtmlProps, {}> {
 			</html>
 		);
 	}
-
 }
-
-export default Html;

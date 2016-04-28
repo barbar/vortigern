@@ -7,8 +7,8 @@ clean:
 	rm -rf build/
 
 dev: clean
-	webpack --colors --config config/webpack/dev.js
-	webpack --colors --config config/webpack/server.js
+	webpack --config config/webpack/dev.js
+	webpack --config config/webpack/server.js
 	node build/server.js
 
 build: clean
@@ -16,7 +16,4 @@ build: clean
 	webpack --config config/webpack/server.js
 
 start: build
-	BROWSER= \
-	NODE_ENV=$(NODE_ENV) \
-	PORT=$(PORT) \
 	node build/server.js
