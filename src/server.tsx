@@ -13,7 +13,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { configureStore } from './app/redux/store';
 import routes from "./app/routes";
 
-import * as Helmet from 'react-helmet';
 import { Html } from './app/containers';
 const manifest = require('../build/manifest.json');
 

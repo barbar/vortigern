@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ICounter, increment, decrement} from '../../redux/modules';
 
-interface IProps extends React.Props<any> {
+interface IProps {
   counter: ICounter;
   dispatch: Redux.Dispatch;
 }

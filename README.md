@@ -19,16 +19,15 @@ Starter kit for modern, universal and typesafe web applications.
 ### Utilities
 - [classnames](https://github.com/JedWatson/classnames)
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
-- [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for usinfe fetch api on both client & server side.
+- [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for using fetch api on both client & server side.
 - [React Helmet](https://github.com/nfl/react-helmet)
-- [Jquery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
 
 ### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
 	- [Typescript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
 	- [Babel Loader](https://github.com/babel/babel-loader) as js loader.
-	- [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server.
-	- [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
+	- [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
+	- [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
 	- [Style Loader](https://github.com/webpack/style-loader)
 	- [CSS Loader](https://github.com/webpack/css-loader)
 	- [PostCSS Loader](https://github.com/postcss/postcss)
@@ -47,7 +46,7 @@ Starter kit for modern, universal and typesafe web applications.
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 	- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
 	- [Webpack Hot Middleware](https://github.com/webpack/webpack-hot-middleware)
-- [Express](https://github.com/expressjs/express) for runnig server both on client, server.
+- [Express](https://github.com/expressjs/express) for running server both on client and server side.
 - [Compression](https://github.com/expressjs/compression) for gzip compression
 - [Serve Favicon](https://github.com/expressjs/serve-favicon) for serving favicon.
 
@@ -64,6 +63,7 @@ Starter kit for modern, universal and typesafe web applications.
 	- [Karma](https://github.com/karma-runner/karma) as test runner.
 	- [Mocha](https://github.com/mochajs/mocha) as testing framework.
 	- [Chai](https://github.com/chaijs/chai) with [Chai-Jquery](https://github.com/chaijs/chai-jquery) as assertion library.
+	- [Jquery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
 	- [React Addons Test Utils]() for rendering components and simulating events.
 	- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai) and [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
 
