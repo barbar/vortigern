@@ -20,7 +20,7 @@ describe('Home Component', () => {
     expect(component.find('img')[0].src).to.equal('http://localhost:9876' + img);
   });
 
-  it('Has a p element that says Hellp!', () => {
+  it('Has a p element that says Hello!', () => {
     expect(component.find('p')).to.have.text('Hello!');
   });
 

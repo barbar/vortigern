@@ -1,43 +1,37 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { ICounter, increment, decrement} from '../../redux/modules';
+import { ICounterAction, ICounterState, increment, decrement} from '../../redux/modules';
 
 interface IProps {
-  counter: ICounter;
-  dispatch: Redux.Dispatch;
+  counter: ICounterState;
+  dispatch: {
+		increment: Redux.ActionCreator;
+		decrement: Redux.ActionCreator
+  };
 }
 
-const mapStateToProps = (state) => ({
-  counter: state.counter
-});
+function mapStateToProps(state) {
+  return {
+		counter: state.counter
+  };
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatch: bindActionCreators({ increment, decrement }, dispatch)
-});
+function mapDispatchToProps(dispatch: Redux.Dispatch) {
+	return {
+    dispatch: bindActionCreators({ increment, decrement }, dispatch)
+	};
+}
 
-class Example extends React.Component<any, {}> {
-	constructor(props) {
-		super(props);
-		this.handleIncrement = this.handleIncrement.bind(this);
-		this.handleDecrement = this.handleDecrement.bind(this);
-	}
-
-	handleIncrement() {
-		this.props.dispatch.increment();
-	}
-
-	handleDecrement() {
-		this.props.dispatch.decrement();
-	}
-
+export class Example extends React.Component<IProps, {}> {
 	render() {
+		const { dispatch, counter } = this.props;
 		return (
 			<div>
 				<h4>Example</h4>
-				<button onClick={this.handleIncrement}>INCREMENT</button>
-				<button onClick={this.handleDecrement}>DECREMENT</button>
-				<p>{this.props.counter.count}</p>
+				<button onClick={dispatch.increment}>INCREMENT</button>
+				<button onClick={dispatch.decrement}>DECREMENT</button>
+				<p>{counter.count}</p>
 			</div>
 		);
 	}

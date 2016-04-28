@@ -3,21 +3,21 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
 /** Type Definitions */
-export interface ICounter {
+export interface ICounterState {
 	count: number;
 }
 
-export interface IAction {
-	type?: string;
+export interface ICounterAction {
+	type: string;
 }
 
 /** Counter: Initial State */
-const initialState: ICounter = {
+const initialState: ICounterState = {
 	count: 0
 };
 
 /** Reducer: CounterReducer */
-export function counterReducer(state = initialState, action?: IAction) {
+export function counterReducer(state = initialState, action?: ICounterAction) {
 
 	switch (action.type) {
 		case INCREMENT:
@@ -36,14 +36,14 @@ export function counterReducer(state = initialState, action?: IAction) {
 }
 
 /** Action: Increments the Counter */
-export function increment() {
+export function increment(): ICounterAction {
 	return {
 		type: INCREMENT
 	};
 }
 
 /** Action: Decrements the Counter */
-export function decrement() {
+export function decrement(): ICounterAction {
 	return {
 		type: DECREMENT
 	};

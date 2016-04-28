@@ -23,8 +23,8 @@ module.exports = function(config) {
 
     reporters: [ 'mocha' ],
 
-
     hostname: appConfig.host,
+
     port: appConfig.karmaPort,
 
     colors: true,
