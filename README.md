@@ -7,13 +7,13 @@ ___
 
 <img src="http://i.imgur.com/8FrsCi8.png" width="100%" />
 
-**Vortigern** is a boilerplate for crafting universal web applications by using modern technologies like Typescript, React and Redux.
+**Vortigern** is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.
 
 ## Libraries
-Vortigern uses following libraries for the stated utilities after each library name.
+Vortigern uses the following libraries and tools:
 
 #### Core
-- [Typescript](https://www.typescriptlang.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [React](https://github.com/facebook/react) & [React DOM](https://github.com/facebook/react) for views.
 - [React Router](https://github.com/reactjs/react-router) to handle in-app routing.
 - [Redux](https://github.com/reactjs/redux) for managing application state.
@@ -28,7 +28,7 @@ Vortigern uses following libraries for the stated utilities after each library n
 
 #### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
-	- [Typescript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
+	- [TypeScript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
 	- [Babel Loader](https://github.com/babel/babel-loader) as js loader.
 	- [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
 	- [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
@@ -56,7 +56,7 @@ Vortigern uses following libraries for the stated utilities after each library n
 
 #### Developer Experience
 - [Typings](https://github.com/typings/typings) for installing type definitions of external libraries.
-- [tslint](https://github.com/palantir/tslint) for linting Typescript files.
+- [tslint](https://github.com/palantir/tslint) for linting TypeScript files.
 - [stylelint](https://github.com/stylelint/stylelint) for linting styles.
 - [Redux Logger](https://github.com/theaqua/redux-logger)
 - [Redux DevTools](https://github.com/gaearon/redux-devtools)
@@ -67,7 +67,7 @@ Vortigern uses following libraries for the stated utilities after each library n
 	- [Karma](https://github.com/karma-runner/karma) as test runner.
 	- [Mocha](https://github.com/mochajs/mocha) as testing framework.
 	- [Chai](https://github.com/chaijs/chai) with [Chai-Jquery](https://github.com/chaijs/chai-jquery) as assertion library.
-	- [Jquery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
+	- [jQuery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
 	- [React Addons Test Utils]() for rendering components and simulating events.
 	- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai) and [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
 
