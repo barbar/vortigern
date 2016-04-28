@@ -73,8 +73,8 @@ Vortigern uses following libraries for the stated utilities after each library n
 
 ## Installation
 ```bash
-$ git clone https://github.com/barbar/react-ts-starter
-$ cd react-ts-starter
+$ git clone https://github.com/barbar/vortigern
+$ cd vortigern
 $ npm run setup
 ```
 
