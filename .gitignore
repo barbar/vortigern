@@ -32,5 +32,8 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-# MAC
+# OS X
 .DS_STORE
+
+# TypeScript
+typings
