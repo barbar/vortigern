@@ -5,11 +5,11 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/barbar/vortigern/develop/LICENSE)
 ___
 
-<img src="http://i.imgur.com/8FrsCi8.png" width="100%" />
+<img src="https://barbaruploads.s3.amazonaws.com/bicoz/vortigern.png" width="100%" />
 
 **Vortigern** is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.
 
-## Libraries
+## Libraries
 Vortigern uses the following libraries and tools:
 
 #### Core
@@ -101,3 +101,7 @@ $ typings install <package> --ambient --save
 $ typings install <package> --save
 
 ```
+
+## Credits
+
+The photo in this readme belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
