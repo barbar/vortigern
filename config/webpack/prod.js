@@ -101,10 +101,6 @@ var config = {
 		}),
 		new ExtractTextPlugin("css/[name].[hash].css"),
 		new webpack.optimize.DedupePlugin(),
-		new CleanWebpackPlugin(['build'], {
-		  verbose: true,
-		  dry: false
-		}),
 		new ManifestPlugin({
 		  fileName: '../manifest.json',
 		}),

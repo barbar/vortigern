@@ -1,3 +1,12 @@
 {
-  "extends": "stylelint-config-standard"
+  "rules": {
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "declaration-colon-space-after": "always",
+    "indentation": ["tab", {
+      "except": ["value"]
+    }],
+    "max-empty-lines": 2,
+    "unit-whitelist": ["px", em", "rem", "%", "s"]
+  }
 }

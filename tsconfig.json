@@ -1,15 +1,12 @@
 {
-	"compileOnSave": false,
-	"buildOnSave": false,
   "compilerOptions": {
     "outDir": "build",
     "module": "CommonJS",
     "target": "es5",
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
     "experimentalDecorators": true,
-    "noImplicitAny": false,
-    "removeComments": false,
     "jsx": "react",
     "moduleResolution": "node"
   },

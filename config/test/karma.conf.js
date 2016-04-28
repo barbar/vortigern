@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var appConfig = require('../main');
 
 module.exports = function(config) {
   config.set({
@@ -22,7 +23,9 @@ module.exports = function(config) {
 
     reporters: [ 'mocha' ],
 
-    port: 9876,
+
+    hostname: appConfig.host,
+    port: appConfig.karmaPort,
 
     colors: true,
 

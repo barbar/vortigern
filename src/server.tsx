@@ -1,4 +1,4 @@
-import config from '../config/main';
+const appConfig = require('../config/main');
 
 import * as e6p from "es6-promise";
 (e6p as any).polyfill();
@@ -23,7 +23,7 @@ const compression = require('compression');
 const Chalk = require("chalk");
 const favicon = require('serve-favicon');
 
-const store = configureStore({});
+const store = configureStore();
 const app = Express();
 
 app.use(compression());
@@ -41,7 +41,8 @@ if (process.env.NODE_ENV == "development") {
     noInfo: true,
     hot: true,
     inline: true,
-    lazy: false
+    lazy: false,
+    historyApiFallback: true
   }));
 
   app.use(require("webpack-hot-middleware")(webpackCompiler));
@@ -76,7 +77,7 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(config.port, "localhost", err => {
+app.listen(appConfig.port, "localhost", err => {
   err ? console.error(Chalk.bgRed(err))
-    : console.info(Chalk.bgGreen(`\n\n💂  Listening at http://localhost:${config.port}\n`));
+    : console.info(Chalk.bgGreen(`\n\n💂  Listening at http://localhost:${appConfig.port}\n`));
 });

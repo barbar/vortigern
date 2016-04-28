@@ -7,7 +7,7 @@ var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 
 var config = {
-	devtool: 'source-map',
+	devtool: 'eval',
 	debug: true,
 	resolve: {
 		extensions: ["", ".ts", ".tsx", ".js", ".jsx"],

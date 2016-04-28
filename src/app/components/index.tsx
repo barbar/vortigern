@@ -1,4 +1,2 @@
-import Header from './Header/Header';
-import Counter from './Counter/Counter';
-
-export { Header, Counter };
+/** Exporting Components for Easier Imports */
+export { Header } from './Header/Header';
