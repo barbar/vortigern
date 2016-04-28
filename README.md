@@ -5,10 +5,10 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/barbar/react-ts-starter/develop/LICENSE)
 ___
 
-## About
+## About
 Starter kit for modern, universal and typesafe web applications.
 
-### Core
+### Core
 - [Typescript](https://www.typescriptlang.org/) for typesafe Javascript. 
 - [React](https://github.com/facebook/react) & [React DOM](https://github.com/facebook/react) for views.
 - [React Router](https://github.com/reactjs/react-router) to handle in-app routing.
@@ -22,7 +22,7 @@ Starter kit for modern, universal and typesafe web applications.
 - [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for using fetch api on both client & server side.
 - [React Helmet](https://github.com/nfl/react-helmet)
 
-### Build System
+### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
 	- [Typescript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
 	- [Babel Loader](https://github.com/babel/babel-loader) as js loader.
@@ -42,7 +42,7 @@ Starter kit for modern, universal and typesafe web applications.
 	- [Tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
 	- [Stylelint Loader](https://github.com/adrianhall/stylelint-loader) for using stylelint as preloader on build process.
 
-### Dev & Prod Server
+### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 	- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
 	- [Webpack Hot Middleware](https://github.com/webpack/webpack-hot-middleware)
@@ -58,7 +58,7 @@ Starter kit for modern, universal and typesafe web applications.
 - [Redux DevTools](https://github.com/gaearon/redux-devtools)
 - [Chalk](https://github.com/chalk/chalk) for colored terminal logs.
 
-### Testing
+### Testing
 - Unit Tests
 	- [Karma](https://github.com/karma-runner/karma) as test runner.
 	- [Mocha](https://github.com/mochajs/mocha) as testing framework.
@@ -67,33 +67,33 @@ Starter kit for modern, universal and typesafe web applications.
 	- [React Addons Test Utils]() for rendering components and simulating events.
 	- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai) and [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
 
-## Installation
+## Installation
 ```bash
-$ git clone https://github.com/barbar/react-ts-starter
+$ git clone https://github.com/barbar/react-ts-starter
 $ cd react-ts-starter
 $ npm run setup
 ```
 
-## Usage
+## Usage
 ```bash
-# Running app on development mode
-$ npm run dev
+# Running app on development mode
+$ npm run dev
 
 # Building for production
-$ npm run build
+$ npm run build
 
 # Running app on production mode
-$ npm start
+$ npm start
 
-# Running unit tests
-$ npm run test
+# Running unit tests
+$ npm run test
 ```
 
-## Notes
+## Notes
 ```bash
-# If you want install additional libraries, you can also install their typings from DefinitelyTyped
-$ typings install <package> --ambient --save
-# or if it's located on npm
-$ typings install <package> --save
+# If you want install additional libraries, you can also install their typings from DefinitelyTyped
+$ typings install <package> --ambient --save
+# or if it's located on npm
+$ typings install <package> --save
 
 ```
