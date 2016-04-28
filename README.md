@@ -1,28 +1,30 @@
-# Universal React & Typescript Starter
-[![Dependency Status](https://david-dm.org/barbar/react-ts-starter.svg)](https://david-dm.org/barbar/react-ts-starter.svg)
-[![devDependency Status](https://david-dm.org/barbar/react-ts-starter/dev-status.svg)](https://david-dm.org/barbar/react-ts-starter#info=devDependencies)
-[![GitHub issues](https://img.shields.io/github/issues/barbar/react-ts-starter.svg)](https://github.com/barbar/react-ts-starter/issues)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/barbar/react-ts-starter/develop/LICENSE)
+# Vortigern
+[![Dependency Status](https://david-dm.org/barbar/vortigern.svg)]()
+[![devDependency Status](https://david-dm.org/barbar/vortigern/dev-status.svg)]()
+[![GitHub issues](https://img.shields.io/github/issues/barbar/vortigern.svg)](https://github.com/barbar/vortigern/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/barbar/vortigern/develop/LICENSE)
 ___
 
-## About
-Starter kit for modern, universal and typesafe web applications.
+**Vortigern** is a boilerplate for crafting universal web applications by using modern technologies like Typescript, React and Redux.
 
-### Core
-- [Typescript](https://www.typescriptlang.org/) for typesafe Javascript. 
+## Libraries
+Vortigern uses following libraries for the stated utilities after each library name.
+
+#### Core
+- [Typescript](https://www.typescriptlang.org/)
 - [React](https://github.com/facebook/react) & [React DOM](https://github.com/facebook/react) for views.
 - [React Router](https://github.com/reactjs/react-router) to handle in-app routing.
 - [Redux](https://github.com/reactjs/redux) for managing application state.
 - [React-Redux](https://github.com/reactjs/react-redux) to use React-Redux bindings.
 - [React-Router-Redux](https://github.com/reactjs/react-router-redux) to keep application state sync with route changes.
 
-### Utilities
+#### Utilities
 - [classnames](https://github.com/JedWatson/classnames)
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
 - [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for using fetch api on both client & server side.
 - [React Helmet](https://github.com/nfl/react-helmet)
 
-### Build System
+#### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
 	- [Typescript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
 	- [Babel Loader](https://github.com/babel/babel-loader) as js loader.
@@ -42,7 +44,7 @@ Starter kit for modern, universal and typesafe web applications.
 	- [Tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
 	- [Stylelint Loader](https://github.com/adrianhall/stylelint-loader) for using stylelint as preloader on build process.
 
-### Dev & Prod Server
+#### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 	- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
 	- [Webpack Hot Middleware](https://github.com/webpack/webpack-hot-middleware)
@@ -50,7 +52,7 @@ Starter kit for modern, universal and typesafe web applications.
 - [Compression](https://github.com/expressjs/compression) for gzip compression
 - [Serve Favicon](https://github.com/expressjs/serve-favicon) for serving favicon.
 
-### Developer Experience
+#### Developer Experience
 - [Typings](https://github.com/typings/typings) for installing type definitions of external libraries.
 - [tslint](https://github.com/palantir/tslint) for linting Typescript files.
 - [stylelint](https://github.com/stylelint/stylelint) for linting styles.
@@ -58,7 +60,7 @@ Starter kit for modern, universal and typesafe web applications.
 - [Redux DevTools](https://github.com/gaearon/redux-devtools)
 - [Chalk](https://github.com/chalk/chalk) for colored terminal logs.
 
-### Testing
+#### Testing
 - Unit Tests
 	- [Karma](https://github.com/karma-runner/karma) as test runner.
 	- [Mocha](https://github.com/mochajs/mocha) as testing framework.
