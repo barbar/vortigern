@@ -5,6 +5,8 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/barbar/vortigern/develop/LICENSE)
 ___
 
+<img src="http://i.imgur.com/8FrsCi8.png" width="100%" />
+
 **Vortigern** is a boilerplate for crafting universal web applications by using modern technologies like Typescript, React and Redux.
 
 ## Libraries
