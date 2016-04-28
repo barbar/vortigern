@@ -6,7 +6,6 @@ var postcssAssets = require('postcss-assets');
 var stylelint = require('stylelint');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var ManifestPlugin = require('webpack-manifest-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var config = {
 	bail: true,
