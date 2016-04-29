@@ -1,5 +1,7 @@
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+var postcssAssets = require('postcss-assets');
 var appConfig = require('../main');
 
 module.exports = function(config) {
@@ -7,13 +9,15 @@ module.exports = function(config) {
 
     browsers: ['PhantomJS'],
 
-    frameworks: ['mocha', 'chai', 'sinon'],
+    frameworks: ['mocha', 'chai' ],
 
     files: [
       '../webpack/test.js'
     ],
 
     preprocessors: {
+      '../src/**/*.ts': ['coverage'],
+      '../src/**/*.tsx': ['coverage'],
       '../webpack/test.js': [ 'webpack' ]
     },
 
@@ -21,7 +25,12 @@ module.exports = function(config) {
       "karma-*"
     ],
 
-    reporters: [ 'mocha' ],
+    reporters: [ 'mocha', 'coverage' ],
+
+    coverageReporter: {
+      type: 'html',
+      dir: '../../coverage'
+    },
 
     hostname: appConfig.host,
 
@@ -33,7 +42,7 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    singleRun: false,
+    singleRun: true,
 
     concurrency: Infinity,
 
@@ -43,15 +52,11 @@ module.exports = function(config) {
         loaders: [
           {
             test: /\.tsx?$/,
-            loader: 'react-hot!ts',
+            loader: 'ts',
           },
           {
             test: /\.(jpe?g|png|gif)$/i,
             loader: 'url?limit=1000&name=images/[hash].[ext]'
-          },
-          {
-            test: /\.jsx$/,
-            loader: 'babel?presets[]=es2015'
           },
           {
             test: /\.json$/,
@@ -71,10 +76,24 @@ module.exports = function(config) {
             exclude: /src\/app/,
             loader: 'style!css',
           },
+        ],
+        postLoaders: [
+          {
+            test: /\.tsx?$/,
+            loader: 'istanbul-instrumenter-loader',
+            include: /src\/app/,
+            exclude: [
+              /node_modules/
+            ]
+          }
         ]
       },
       postcss: function() {
-        return [autoprefixer({ browsers: ['last 2 versions'] })];
+        return [
+          precss, 
+          autoprefixer({ browsers: ['last 2 versions'] }), 
+          postcssAssets({relative: true})
+        ];
       },
       resolve: {
         modulesDirectories: [

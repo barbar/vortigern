@@ -45,6 +45,7 @@ Vortigern uses the following libraries and tools:
 	- [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) for exporting bundled css. 
 	- [Tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
 	- [Stylelint Loader](https://github.com/adrianhall/stylelint-loader) for using stylelint as preloader on build process.
+	- [Istanbul Instrumenter Loader](https://github.com/deepsweet/istanbul-instrumenter-loader) for using istanbul on postload process while generating code coverage reports.
 
 #### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
@@ -63,13 +64,12 @@ Vortigern uses the following libraries and tools:
 - [Chalk](https://github.com/chalk/chalk) for colored terminal logs.
 
 #### Testing
-- Unit Tests
-	- [Karma](https://github.com/karma-runner/karma) as test runner.
-	- [Mocha](https://github.com/mochajs/mocha) as testing framework.
-	- [Chai](https://github.com/chaijs/chai) with [Chai-Jquery](https://github.com/chaijs/chai-jquery) as assertion library.
-	- [jQuery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
-	- [React Addons Test Utils]() for rendering components and simulating events.
-	- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai) and [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
+- [Karma](https://github.com/karma-runner/karma) as test runner.
+- [Mocha](https://github.com/mochajs/mocha) as testing framework.
+- [Chai](https://github.com/chaijs/chai) with [Chai-Jquery](https://github.com/chaijs/chai-jquery) as assertion library.
+- [jQuery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
+- [React Addons Test Utils]() for rendering components and simulating events.
+- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai), [Karma-Coverage](https://github.com/karma-runner/karma-coverage), [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
 
 ## Installation
 ```bash
