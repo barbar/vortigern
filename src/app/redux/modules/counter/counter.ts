@@ -27,7 +27,7 @@ export function counterReducer(state = initialState, action?: ICounterAction) {
 
 		case DECREMENT:
 			return {
-				count: state.count - 1
+				count: ((state.count - 1 > 0) ? state.count - 1 : 0)
 			};
 		
 		default:
