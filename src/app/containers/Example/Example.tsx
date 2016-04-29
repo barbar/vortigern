@@ -24,13 +24,17 @@ function mapDispatchToProps(dispatch: Redux.Dispatch) {
 }
 
 export class Example extends React.Component<IProps, {}> {
+
+
 	render() {
 		const { dispatch, counter } = this.props;
+		const decrementButton = (counter.count < 1 ? null : <button onClick={dispatch.decrement}>DECREMENT</button>);
+		
 		return (
 			<div>
 				<h4>Example</h4>
 				<button onClick={dispatch.increment}>INCREMENT</button>
-				<button onClick={dispatch.decrement}>DECREMENT</button>
+				{decrementButton}
 				<p>{counter.count}</p>
 			</div>
 		);
