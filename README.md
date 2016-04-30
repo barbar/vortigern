@@ -85,15 +85,15 @@ Vortigern uses the following libraries and tools:
 │   ├── app                     # App folder.
 │   │ ├── components            # React Components.
 │   │ ├── containers            # React/Redux Containers.
-│   │ ├── helpers             # Helper Functions & Components.
-│   │ ├── redux           # Redux related code aka data layer of the app.
-│   │ │   ├── modules         # Redux modules.   
+│   │ ├── helpers               # Helper Functions & Components.
+│   │ ├── redux                 # Redux related code aka data layer of the app.
+│   │ │   ├── modules           # Redux modules.   
 │   │ │   ├── reducers.ts       # Main reducers file to combine them.  
-│   │ │   └── store.ts        # Redux store, contains global app state.    
+│   │ │   └── store.ts          # Redux store, contains global app state.    
 │   │ └── routes.tsx            # Routes.
-│   ├── client.tsx                # Entry point for client side rendering.
-│   └── server.tsx                # Entry point for server side rendering.
-├── typings           # Type definitions installed with typings.              
+│   ├── client.tsx              # Entry point for client side rendering.
+│   └── server.tsx              # Entry point for server side rendering.
+├── typings                     # Type definitions installed with typings.              
 ├── .dockerignore               # Tells docker which files to ignore.
 ├── .gitignore                  # Tells git which files to ignore.
 ├── .stylelintrc                # Configures stylelint.
@@ -104,7 +104,7 @@ Vortigern uses the following libraries and tools:
 ├── README.md                   # Readme.
 ├── tsconfig.json               # TypeScript transpiler configuration.
 ├── tslint.json                 # Configures tslint.
-└── typings.json              # Typings package configuration.
+└── typings.json                # Typings package configuration.
 ```
 
 ## Installation
