@@ -9,7 +9,7 @@ module.exports = function(config) {
 
     browsers: ['PhantomJS'],
 
-    frameworks: ['mocha', 'chai' ],
+    frameworks: ['mocha', 'chai', 'es6-shim'],
 
     files: [
       '../webpack/test.js'
@@ -41,8 +41,6 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     autoWatch: true,
-
-    singleRun: true,
 
     concurrency: Infinity,
 
@@ -90,8 +88,8 @@ module.exports = function(config) {
       },
       postcss: function() {
         return [
-          precss, 
-          autoprefixer({ browsers: ['last 2 versions'] }), 
+          precss,
+          autoprefixer({ browsers: ['last 2 versions'] }),
           postcssAssets({relative: true})
         ];
       },
@@ -103,6 +101,7 @@ module.exports = function(config) {
         extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
       },
       plugins: [
+        new webpack.IgnorePlugin(/^fs$/),
         new webpack.IgnorePlugin(/\.json$/),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
