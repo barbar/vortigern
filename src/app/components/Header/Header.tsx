@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-const s = require('./style.css');
-
 export class Header extends React.Component<any, any> {
 	render() {
+    const s = require('./style.css');
+
 		return (
 			<nav className={s.nav}>
 				<ul>

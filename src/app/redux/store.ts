@@ -19,9 +19,10 @@ export function configureStore(initialState?: any): Redux.Store {
 
 	const finalCreateStore = compose(
 		applyMiddleware(...middlewares),
-		appConfig.env === 'development' && typeof window === 'object' 
-		&& typeof window.devToolsExtension !== 'undefined' 
-		? window.devToolsExtension() : DevTools.instrument()
+		appConfig.env === 'development' &&
+    typeof window === 'object' &&
+    typeof window.devToolsExtension !== 'undefined'
+    ? window.devToolsExtension() : f => f
 	)(createStore);
 
 	const store: Redux.Store = finalCreateStore(rootReducer, initialState);
