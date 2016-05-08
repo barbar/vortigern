@@ -29,6 +29,9 @@ export class Html extends React.Component<HtmlProps, {}> {
 			<script src={src} key={i}></script>
 		);
 
+		// tslint:disable-next-line:max-line-length
+ 		const initialState = (<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet="UTF-8" />);
+		
 		return (
 			<html>
 				<head>
@@ -44,7 +47,7 @@ export class Html extends React.Component<HtmlProps, {}> {
 
 				<body>
 					<main id="app" dangerouslySetInnerHTML={{ __html: markup }}></main>
-					<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet="UTF-8" />
+					{initialState}
 					{renderScripts}
 				</body>
 			</html>
