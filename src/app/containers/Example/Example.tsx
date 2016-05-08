@@ -6,8 +6,8 @@ import { ICounterAction, ICounterState, increment, decrement} from '../../redux
 interface IProps {
   counter: ICounterState;
   dispatch: {
-		increment: Redux.ActionCreator;
-		decrement: Redux.ActionCreator
+	increment: Redux.ActionCreator;
+	decrement: Redux.ActionCreator
   };
 }
 

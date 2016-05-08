@@ -13,7 +13,7 @@ export class App extends React.Component<any, any> {
 				<Helmet {...appConfig.app} {...appConfig.app.head}/>
 				<Header />
 				{this.props.children}
-				{ appConfig.env === 'development'	&& typeof window === 'object'
+				{ appConfig.env === 'development' && typeof window === 'object'
 					&& !window.devToolsExtension ? <DevTools /> : null }
 			</section>
 		);
