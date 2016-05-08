@@ -4,7 +4,6 @@ import { routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import DevTools from '../helpers/DevTools';
 const createLogger = require('redux-logger');
 const router = routerMiddleware(browserHistory);
 

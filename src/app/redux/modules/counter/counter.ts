@@ -1,18 +1,11 @@
+import { ICounter, ICounterAction } from './counter.model';
+
 /** Action Types */
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-
-/** Type Definitions */
-export interface ICounterState {
-	count: number;
-}
-
-export interface ICounterAction {
-	type: string;
-}
+export const INCREMENT: string = 'INCREMENT';
+export const DECREMENT: string = 'DECREMENT';
 
 /** Counter: Initial State */
-const initialState: ICounterState = {
+const initialState: ICounter = {
 	count: 0
 };
 
@@ -29,20 +22,20 @@ export function counterReducer(state = initialState, action?: ICounterAction) {
 			return {
 				count: ((state.count - 1 > 0) ? state.count - 1 : 0)
 			};
-		
+
 		default:
 			return state;
 	}
 }
 
-/** Action: Increments the Counter */
+/** Action Creator: Increments the Counter */
 export function increment(): ICounterAction {
 	return {
 		type: INCREMENT
 	};
 }
 
-/** Action: Decrements the Counter */
+/** Action Creator: Decrements the Counter */
 export function decrement(): ICounterAction {
 	return {
 		type: DECREMENT
