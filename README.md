@@ -116,15 +116,18 @@ $ npm run setup
 ```
 
 ## Usage
+
+All commands defaults to development environment.
+
 ```bash
-# Running app on development mode
-$ npm run dev
+# Running the app on development mode
+$ npm start
 
 # Building for production
-$ npm run build
+$ npm run build:prod
 
 # Running app on production mode
-$ npm start
+$ npm run start:prod
 
 # Running unit tests
 $ npm run test

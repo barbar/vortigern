@@ -3,16 +3,17 @@ webpack = webpack
 NODE_ENV ?= development
 PORT ?= 8889
 
+ifeq (NODE_ENV, development)
+	WEBPACK_FILE = dev
+else
+	WEBPACK_FILE = prod
+endif
+
 clean:
 	rm -rf build/
 
-dev: clean
-	webpack --config config/webpack/dev.js
-	webpack --config config/webpack/server.js
-	node build/server.js
-
 build: clean
-	webpack --config config/webpack/prod.js
+	webpack --config config/webpack/$(WEBPACK_FILE).js
 	webpack --config config/webpack/server.js
 
 start: build
