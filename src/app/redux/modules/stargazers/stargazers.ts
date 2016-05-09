@@ -6,8 +6,12 @@ export const GET_STARGAZERS_REQUEST: string = 'GET_STARGAZERS_REQUEST';
 export const GET_STARGAZERS_SUCCESS: string = 'GET_STARGAZERS_SUCCESS';
 export const GET_STARGAZERS_FAILURE: string = 'GET_STARGAZERS_FAILURE';
 
+const initialState: IStarGazers = {
+  isFetching: false
+};
+
 /** Reducer */
-export function stargazersReducer(state: IStarGazers = {}, action: IStarGazersAction) { // tslint:disable-line:max-line-length
+export function stargazersReducer(state = initialState, action: IStarGazersAction) { // tslint:disable-line:max-line-length
 
   switch (action.type) {
     case GET_STARGAZERS_REQUEST:
@@ -41,9 +45,11 @@ export function getStargazers(): Redux.Dispatch {
     return fetch('https://api.github.com/repos/barbar/vortigern')
       .then(res => {
         if (res.ok) {
-          res.json().then(res => dispatch(getStargazersSuccess(res.stargazers_count)))
+          res.json()
+            .then(res => dispatch(getStargazersSuccess(res.stargazers_count)));
         } else {
-          res.json().then(res => dispatch(getStargazersFailure(res)))
+          res.json()
+            .then(res => dispatch(getStargazersFailure(res)));
         }
       })
       .catch(err => dispatch(getStargazersFailure(err)));
