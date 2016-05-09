@@ -20,18 +20,18 @@ export class Html extends React.Component<HtmlProps, {}> {
 		const { markup, store } = this.props;
 
 		const styles = this.resolve(['vendor.css', 'app.css']);
-		const renderStyles = styles.map((src, i) => 
+		const renderStyles = styles.map((src, i) =>
 			<link key={i} rel="stylesheet" type="text/css" href={src} />
 		);
 
 		const scripts = this.resolve(['vendor.js', 'app.js']);
-		const renderScripts = scripts.map((src, i) => 
+		const renderScripts = scripts.map((src, i) =>
 			<script src={src} key={i}></script>
 		);
 
 		// tslint:disable-next-line:max-line-length
  		const initialState = (<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet="UTF-8" />);
-		
+
 		return (
 			<html>
 				<head>

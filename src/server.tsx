@@ -76,7 +76,7 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(appConfig.port, "localhost", err => {
+app.listen(appConfig.port, appConfig.host, err => {
   err ? console.error(Chalk.bgRed(err))
-    : console.info(Chalk.black.bgGreen(`\n\n💂  Listening at http://localhost:${appConfig.port}\n`));
+    : console.info(Chalk.black.bgGreen(`\n\n💂  Listening at http://${appConfig.host}:${appConfig.port}\n`));
 });
