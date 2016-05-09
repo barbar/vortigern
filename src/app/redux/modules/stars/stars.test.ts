@@ -1,5 +1,5 @@
-import * as stargazers from './stargazers';
-import { IStarGazers, IStarGazersAction } from './stargazers.model';
+import * as stars from './stars';
+import { IStars, IStarsAction } from './stars.model';
 
 import { expect } from '../../../helpers/TestHelper.tsx';
 import thunk from 'redux-thunk';
@@ -12,7 +12,7 @@ const mockStore = configureMockStore(middlewares);
 
 /** Mock Data */
 const githubResponse = {
-  stargazers_count: 999
+  stargazers_count: 999 // a little wish :)
 };
 
 const errResponse = {
@@ -20,12 +20,12 @@ const errResponse = {
 };
 
 /** Stargazers Module */
-describe('Stargazers Module', () => {
+describe('Stars Module', () => {
 
   /** Action Creators */
   describe('Action Creators', () => {
 
-    describe('Get Stargazers (Async)', () => {
+    describe('Get Stars (Async)', () => {
 
       afterEach(() => {
         fetchMock.restore();
@@ -40,13 +40,13 @@ describe('Stargazers Module', () => {
         });
 
         const expectedActions = [
-          {type: stargazers.GET_STARGAZERS_REQUEST},
-          {type: stargazers.GET_STARGAZERS_SUCCESS, count: githubResponse.stargazers_count}
+          { type: stars.STARS_REQUEST },
+          { type: stars.STARS_SUCCESS, count: githubResponse.stargazers_count }
         ];
 
         const store = mockStore({});
 
-        store.dispatch(stargazers.getStargazers())
+        store.dispatch(stars.getStars())
           .then(() => expect(store.getActions()).to.eql(expectedActions))
           .then(() => done())
           .catch(err => done(err));
@@ -61,13 +61,13 @@ describe('Stargazers Module', () => {
         });
 
         const expectedActions = [
-          { type: stargazers.GET_STARGAZERS_REQUEST },
-          { type: stargazers.GET_STARGAZERS_FAILURE, message: errResponse }
+          { type: stars.STARS_REQUEST },
+          { type: stars.STARS_FAILURE, message: errResponse }
         ];
 
         const store = mockStore({});
 
-        store.dispatch(stargazers.getStargazers())
+        store.dispatch(stars.getStars())
           .then(() => expect(store.getActions()).to.eql(expectedActions))
           .then(() => done())
           .catch(err => done(err));
