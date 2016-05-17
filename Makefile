@@ -3,7 +3,7 @@ webpack = webpack
 NODE_ENV ?= development
 PORT ?= 8889
 
-ifeq (NODE_ENV, development)
+ifeq ($(NODE_ENV), development)
 	WEBPACK_FILE = dev
 else
 	WEBPACK_FILE = prod
