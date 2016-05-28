@@ -67,9 +67,8 @@ Vortigern uses the following libraries and tools:
 #### Testing
 - [Karma](https://github.com/karma-runner/karma) as test runner.
 - [Mocha](https://github.com/mochajs/mocha) as testing framework.
-- [Chai](https://github.com/chaijs/chai) with [Chai-Jquery](https://github.com/chaijs/chai-jquery) as assertion library.
-- [jQuery](https://github.com/jquery/jquery) as test helper for DOM selecting and manipulation.
-- [React Addons Test Utils]() for rendering components and simulating events.
+- [Chai](https://github.com/chaijs/chai) as assertion library.
+- [Enzyme](https://github.com/jquery/jquery) for rendering React Components.
 - [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai), [Karma-Coverage](https://github.com/karma-runner/karma-coverage), [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
 
 ## Folder Structure
