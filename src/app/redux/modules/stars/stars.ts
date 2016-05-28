@@ -47,10 +47,10 @@ export function getStars(): Redux.Dispatch {
     return fetch('https://api.github.com/repos/barbar/vortigern')
       .then(res => {
         if (res.ok) {
-          res.json()
+          return res.json()
             .then(res => dispatch(starsSuccess(res.stargazers_count)));
         } else {
-          res.json()
+          return res.json()
             .then(res => dispatch(starsFailure(res)));
         }
       })

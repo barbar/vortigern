@@ -136,10 +136,9 @@ $ npm run test
 ## Notes
 ```bash
 # If you want install additional libraries, you can also install their typings from DefinitelyTyped
-$ typings install <package> --ambient --save
+$ typings install dt~<package> --global --save
 # or if it's located on npm
 $ typings install <package> --save
-
 ```
 
 ## Credits

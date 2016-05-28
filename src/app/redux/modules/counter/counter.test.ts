@@ -1,4 +1,5 @@
-import { expect } from '../../../helpers/TestHelper';
+import { expect } from 'chai';
+import { fetchMock, mockStore } from '../../../helpers/TestHelper.tsx';
 import * as counter from './counter';
 import { ICounter, ICounterAction } from './counter.model';
 

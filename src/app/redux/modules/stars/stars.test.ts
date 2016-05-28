@@ -1,14 +1,7 @@
+import { expect } from 'chai';
+import { fetchMock, mockStore } from '../../../helpers/TestHelper.tsx';
 import * as stars from './stars';
 import { IStars, IStarsAction } from './stars.model';
-
-import { expect } from '../../../helpers/TestHelper.tsx';
-import thunk from 'redux-thunk';
-const fetchMock = require('fetch-mock');
-const configureMockStore = require('redux-mock-store');
-
-/** Mock Store */
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 /** Mock Data */
 const githubResponse = {
