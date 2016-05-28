@@ -11,9 +11,7 @@ module.exports = function(config) {
 
     frameworks: ['mocha', 'chai', 'es6-shim'],
 
-    files: [
-      '../webpack/test.js'
-    ],
+    files: [ '../webpack/test.js' ],
 
     preprocessors: {
       '../src/**/*.ts': ['coverage'],
@@ -21,9 +19,7 @@ module.exports = function(config) {
       '../webpack/test.js': [ 'webpack' ]
     },
 
-    plugins: [
-      "karma-*"
-    ],
+    plugins: [ "karma-*" ],
 
     reporters: [ 'mocha', 'coverage' ],
 
@@ -86,6 +82,7 @@ module.exports = function(config) {
           }
         ]
       },
+
       postcss: function() {
         return [
           precss,
@@ -93,6 +90,7 @@ module.exports = function(config) {
           postcssAssets({relative: true})
         ];
       },
+
       resolve: {
         modulesDirectories: [
           '../../src',
@@ -100,9 +98,15 @@ module.exports = function(config) {
         ],
         extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
       },
+
+      externals: {
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': 'window',
+      },
+
       plugins: [
         new webpack.IgnorePlugin(/^fs$/),
-        new webpack.IgnorePlugin(/\.json$/),
+        new webpack.IgnorePlugin(/^react\/addons$/),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env': {

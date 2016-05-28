@@ -11,7 +11,6 @@ fs.readdirSync('node_modules')
   });
 
 var config = {
-  externals: nodeModules,
   target: "node",
   resolve: {
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
@@ -61,6 +60,11 @@ var config = {
    __filename: false,
    __dirname: false,
   }
+}
+
+var env = process.env.NODE_ENV;
+if (env === 'development' || env === 'production') {
+  config.externals = nodeModules;
 }
 
 module.exports = config;

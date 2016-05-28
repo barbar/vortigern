@@ -7,9 +7,7 @@ import { configureStore } from './app/redux/store';
 import routes from './app/routes';
 
 const store: Redux.Store = configureStore(window.__INITIAL_STATE__);
-/* tslint:disable:max-line-length */
-const history: HistoryModule.History = syncHistoryWithStore(browserHistory, store);
-/* tslint:disable:max-line-length */
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
 	<Provider store={store}>
