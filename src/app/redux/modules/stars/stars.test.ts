@@ -70,5 +70,4 @@ describe('Stars Module', () => {
 
   });
 
-
 });
