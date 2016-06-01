@@ -10,7 +10,7 @@ interface HtmlProps {
 export class Html extends React.Component<HtmlProps, {}> {
 	resolve(files) {
     return files.map((src) => {
-      if (!this.props.manifest[src]) { return; };
+      if (!this.props.manifest[src]) { return; }
       return 'public/' + this.props.manifest[src];
     }).filter((file) => file !== undefined);
   }
@@ -35,16 +35,15 @@ export class Html extends React.Component<HtmlProps, {}> {
 		return (
 			<html>
 				<head>
-				{head.base.toComponent()}
-				{head.title.toComponent()}
-				{head.meta.toComponent()}
-				{head.link.toComponent()}
-				{head.script.toComponent()}
-
-				{renderStyles}
-				<link rel="shortcut icon" href="/favicon.ico" />
+          {head.base.toComponent()}
+          {head.title.toComponent()}
+          {head.meta.toComponent()}
+          {head.link.toComponent()}
+          {head.script.toComponent()}
+  
+          {renderStyles}
+          <link rel="shortcut icon" href="/favicon.ico" />
 				</head>
-
 				<body>
 					<main id="app" dangerouslySetInnerHTML={{ __html: markup }}></main>
 					{initialState}
