@@ -33,4 +33,4 @@ export function configureStore(initialState?: any): Redux.Store {
 	}
 
 	return store;
-};
+}

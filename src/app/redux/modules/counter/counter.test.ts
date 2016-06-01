@@ -41,6 +41,7 @@ describe('Counter Module', () => {
 		it('handles actions with unknown type', function() {
 			expect(counter.counterReducer(state, { type: '' })).to.be.eql({ count: state.count });
 		});
+
 	});
 
 });

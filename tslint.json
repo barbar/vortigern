@@ -10,7 +10,8 @@
     "label-undefined": true,
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [true,
+    "no-console": [
+      true,
       "log",
       "debug",
       "info",
@@ -27,7 +28,7 @@
     "no-shadowed-variable": false,
     "no-string-literal": true,
     "no-switch-case-fall-through": true,
-    "trailing-comma": true,
+    "trailing-comma": false,
     "no-trailing-whitespace": false,
     "no-unused-expression": true,
     "no-unused-variable": false,

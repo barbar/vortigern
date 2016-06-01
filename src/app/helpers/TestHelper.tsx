@@ -18,7 +18,7 @@ const createStore = configureStore();
 /** Render Component */
 function renderComponent(ComponentClass, props?, state?) {
   return mount(
-    <Provider store={createStore(rootReducer, state) }>
+    <Provider store={createStore(rootReducer, state)}>
       <ComponentClass {...props} />
     </Provider>
   );

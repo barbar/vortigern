@@ -3,25 +3,29 @@ var fs = require('fs');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
-  .filter(function(x) {
+  .filter(function (x) {
     return ['.bin'].indexOf(x) === -1;
   })
-  .forEach(function(mod) {
+  .forEach(function (mod) {
     nodeModules[mod] = 'commonjs ' + mod;
   });
 
 var config = {
-  target: "node",
+  target: 'node',
+
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
+    extensions: ["", '.ts', '.tsx', '.js', '.jsx']
   },
+
   entry: './src/server.tsx',
+
   output: {
     path: path.resolve('./build/public'),
     filename: '../server.js',
     publicPath: '/public/',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'commonjs2'
   },
+
   module: {
     loaders: [
       {
@@ -30,17 +34,17 @@ var config = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        loader: 'json-loader'
       },
       {
         test: /\.jsx$/,
         loader: 'babel?presets[]=es2015'
       },
       {
-				test: /\.tsx?$/,
-				loader: 'ts-loader',
-				exclude: /node_modules/
-			},
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/,
         include: /src\/app/,
@@ -51,16 +55,18 @@ var config = {
       }
     ]
   },
+
   plugins: [],
+
   node: {
-   console: false,
-   global: false,
-   process: false,
-   Buffer: false,
-   __filename: false,
-   __dirname: false,
+    console: false,
+    global: false,
+    process: false,
+    Buffer: false,
+    __filename: false,
+    __dirname: false
   }
-}
+};
 
 var env = process.env.NODE_ENV;
 if (env === 'development' || env === 'production') {

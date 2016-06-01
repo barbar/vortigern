@@ -4,24 +4,24 @@ var precss = require('precss');
 var postcssAssets = require('postcss-assets');
 var appConfig = require('../main');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     browsers: ['PhantomJS'],
 
     frameworks: ['mocha', 'chai', 'es6-shim'],
 
-    files: [ '../webpack/test.js' ],
+    files: ['../webpack/test.js'],
 
     preprocessors: {
       '../src/**/*.ts': ['coverage'],
       '../src/**/*.tsx': ['coverage'],
-      '../webpack/test.js': [ 'webpack' ]
+      '../webpack/test.js': ['webpack']
     },
 
-    plugins: [ "karma-*" ],
+    plugins: ['karma-*'],
 
-    reporters: [ 'mocha', 'coverage' ],
+    reporters: ['mocha', 'coverage'],
 
     coverageReporter: {
       type: 'html',
@@ -42,11 +42,15 @@ module.exports = function(config) {
 
     webpack: {
       devtool: 'inline-source-map',
+
       module: {
+        noParse: [
+          /node_modules\/sinon\//
+        ],
         loaders: [
           {
             test: /\.tsx?$/,
-            loader: 'ts',
+            loader: 'ts'
           },
           {
             test: /\.(jpe?g|png|gif)$/i,
@@ -54,7 +58,7 @@ module.exports = function(config) {
           },
           {
             test: /\.json$/,
-            loader: 'json-loader',
+            loader: 'json-loader'
           },
           {
             test: /\.css$/,
@@ -68,8 +72,8 @@ module.exports = function(config) {
           {
             test: /\.css$/,
             exclude: /src\/app/,
-            loader: 'style!css',
-          },
+            loader: 'style!css'
+          }
         ],
         postLoaders: [
           {
@@ -83,15 +87,18 @@ module.exports = function(config) {
         ]
       },
 
-      postcss: function() {
+      postcss: function () {
         return [
           precss,
           autoprefixer({ browsers: ['last 2 versions'] }),
-          postcssAssets({relative: true})
+          postcssAssets({ relative: true })
         ];
       },
 
       resolve: {
+        alias: {
+          sinon: 'sinon/pkg/sinon'
+        },
         modulesDirectories: [
           '../../src',
           'node_modules'
@@ -101,7 +108,7 @@ module.exports = function(config) {
 
       externals: {
         'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': 'window',
+        'react/lib/ReactContext': 'window'
       },
 
       plugins: [
@@ -111,14 +118,14 @@ module.exports = function(config) {
         new webpack.DefinePlugin({
           'process.env': {
             BROWSER: JSON.stringify(true),
-            NODE_ENV: JSON.stringify('development'),
+            NODE_ENV: JSON.stringify('development')
           }
-        }),
+        })
       ]
     },
 
     webpackServer: {
       noInfo: true
     }
-  })
-}
+  });
+};
