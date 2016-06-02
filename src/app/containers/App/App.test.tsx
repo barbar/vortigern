@@ -4,11 +4,7 @@ import { App } from './App';
 
 describe('<App />', () => {
 
-  let component;
-
-  beforeEach(() => {
-    component = renderComponent(App);
-  });
+  const component = renderComponent(App);
 
   it('Renders with correct style', () => {
     const s = require('./style.css');

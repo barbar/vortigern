@@ -37,7 +37,7 @@ export function starsReducer(state = initialState, action: IStarsAction) {
       return state;
   }
 
-};
+}
 
 /** Async Action Creator */
 export function getStars(): Redux.Dispatch {
@@ -57,7 +57,6 @@ export function getStars(): Redux.Dispatch {
       .catch(err => dispatch(starsFailure(err)));
   };
 }
-
 
 /** Action Creator */
 export function starsRequest(): IStarsAction {
