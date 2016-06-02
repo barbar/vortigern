@@ -11,6 +11,7 @@ fs.readdirSync('node_modules')
   });
 
 var config = {
+  externals: nodeModules,
   target: 'node',
 
   resolve: {
@@ -67,10 +68,5 @@ var config = {
     __dirname: false
   }
 };
-
-var env = process.env.NODE_ENV;
-if (env === 'development' || env === 'production') {
-  config.externals = nodeModules;
-}
 
 module.exports = config;
