@@ -5,13 +5,17 @@ import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 const createLogger = require('redux-logger');
-const router = routerMiddleware(browserHistory);
 
-export function configureStore(initialState?: any): Redux.Store {
+export function configureStore(history, initialState?: any): Redux.Store {
 
-  let middlewares = [router, thunk];
 
-  if (appConfig.env === 'development') {
+	let middlewares: any[] = [
+    routerMiddleware(history),
+    thunk
+  ];
+
+  /** Add Only Dev. Middlewares */
+  if (appConfig.env !== 'production' && process.env.BROWSER) {
     const logger = createLogger();
     middlewares.push(logger);
   }

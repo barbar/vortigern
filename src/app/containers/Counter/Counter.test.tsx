@@ -1,23 +1,19 @@
 import { expect } from 'chai';
-import * as sinon from 'sinon';
 import { renderComponent } from '../../helpers/TestHelper';
 import { Counter } from './Counter';
 
+/** Mock App. State */
+const state: Object = {
+  counter: { count: 1 }
+};
+
 describe('<Counter />', () => {
 
-	let component;
-  let increment;
-  let decrement;
+  let component;
 
-	beforeEach(() => {
-    increment = sinon.spy();
-    decrement = sinon.spy();
-		component = renderComponent(Counter, {
-      increment,
-      decrement,
-      counter: { count: 1 }
-    });
-	});
+  beforeEach(() => {
+    component = renderComponent(Counter, state);
+  });
 
   it('Renders with correct style', () => {
     const s = require('./style.css');
@@ -37,15 +33,15 @@ describe('<Counter />', () => {
   });
 
   it('Calls the increment', () => {
-    expect(component.find({name:'incBtn'})).to.exist;
-    component.find({name:'incBtn'}).simulate('click');
-    expect(increment.calledOnce).to.equal(true);
+    expect(component.find({ name: 'incBtn' })).to.exist;
+    component.find({ name: 'incBtn' }).simulate('click');
+    expect(component.find('p').text()).to.eql('2');
   });
 
   it('Calls the decrement', () => {
-    expect(component.find({name:'decBtn'})).to.exist;
-    component.find({name:'decBtn'}).simulate('click');
-    expect(decrement.calledOnce).to.equal(true);
+    expect(component.find({ name: 'decBtn' })).to.exist;
+    component.find({ name: 'decBtn' }).simulate('click');
+    expect(component.find('p').text()).to.eql('0');
   });
 
 });

@@ -1,29 +1,26 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { getStars } from '../../redux/modules/stars/stars';
 import { IStars } from '../../redux/modules/stars/stars.model';
+const { connect } = require('react-redux');
+const { asyncConnect } = require('redux-connect');
 
 interface IProps {
   stars: IStars;
   getStars: Redux.ActionCreator;
 }
 
-function mapStateToProps(state: any) {
-  return {
-    stars: state.stars
-  };
-}
+@asyncConnect([{
+  promise: ({ store: { dispatch } }) => {
+    const promises = [];
 
-function mapDispatchToProps(dispatch: Redux.Dispatch) {
-  return {
-    getStars: () => dispatch(getStars())
-  };
-}
-
-class Async extends React.Component<IProps, {}> {
-  componentDidMount() {
-    this.props.getStars();
+    promises.push(dispatch(getStars()));
+    return Promise.all(promises);
   }
+}])
+@connect(
+  state => ({ stars: state.stars })
+)
+class Stars extends React.Component<IProps, {}> {
 
   render() {
     const { stars } = this.props;
@@ -36,4 +33,4 @@ class Async extends React.Component<IProps, {}> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Async);
+export { Stars };
