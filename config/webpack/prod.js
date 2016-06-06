@@ -94,7 +94,6 @@ var config = {
   },
 
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin('vendor','js/[name].[hash].js'),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
