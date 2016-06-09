@@ -46,19 +46,10 @@ var config = {
       },
       {
         test: /\.css$/,
-        include: /src\/app/,
         loader: ExtractTextPlugin.extract(
-          'style',
-          'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
+          'style-loader',
+          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
           'postcss'
-        )
-      },
-      {
-        test: /\.css$/,
-        exclude: /src\/app/,
-        loader: ExtractTextPlugin.extract(
-          'style',
-          'css'
         )
       },
       {
