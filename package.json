@@ -4,7 +4,7 @@
   "description": "A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.",
   "main": "build/server.js",
   "scripts": {
-    "install": "typings install",
+    "postinstall": "typings install",
     "build": "make build:dev",
     "build:prod": "cross-env NODE_ENV=production make build",
     "build:dev": "cross-env NODE_ENV=development make build",
