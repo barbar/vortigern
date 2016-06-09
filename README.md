@@ -111,7 +111,7 @@ Vortigern uses the following libraries and tools:
 ```bash
 $ git clone https://github.com/barbar/vortigern
 $ cd vortigern
-$ npm run setup
+$ npm install
 ```
 
 ## Usage
@@ -129,7 +129,7 @@ $ npm run build:prod
 $ npm run start:prod
 
 # Running unit tests
-$ npm run test
+$ npm test
 ```
 
 ## Notes
