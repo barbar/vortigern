@@ -15,7 +15,7 @@ var config = {
   target: 'node',
 
   resolve: {
-    extensions: ["", '.ts', '.tsx', '.js', '.jsx']
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx']
   },
 
   entry: './src/server.tsx',
@@ -48,10 +48,9 @@ var config = {
       },
       {
         test: /\.css$/,
-        include: /src\/app/,
         loaders: [
           'isomorphic-style-loader',
-          'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]'
+          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]'
         ]
       }
     ]
