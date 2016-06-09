@@ -99,9 +99,8 @@ Vortigern uses the following libraries and tools:
 ├── .stylelintrc                # Configures stylelint.
 ├── Dockerfile                  # Dockerfile.
 ├── favicon.ico                 # Favicon.
-├── Makefile                    # Makefile.
 ├── package.json                # Package configuration.
-├── README.md                   # Readme.
+├── README.md                   # This file
 ├── tsconfig.json               # TypeScript transpiler configuration.
 ├── tslint.json                 # Configures tslint.
 └── typings.json                # Typings package configuration.
@@ -116,21 +115,30 @@ $ npm install
 
 ## Usage
 
-All commands defaults to development environment.
+All commands defaults to development environment. You can set `NODE_ENV` to `production` or use the shortcuts below.
 
 ```bash
-# Running the app on development mode
-$ npm start
+# Running
 
-# Building for production
-$ npm run build:prod
+$ npm start # This starts the app in development mode
 
-# Running app on production mode
-$ npm run start:prod
+# Starting it with the production build
+$ NODE_ENV=production npm start # or
+$ npm start:prod
 
-# Running unit tests
+# Building 
+
+$ npm build # This builds the app in development mode
+
+# Commands below builds the production build
+$ NODE_ENV=production npm build # or
+$ npm build:prod
+
+# Testing
 $ npm test
 ```
+
+Small thing to note for Windows users, you'll need set the environment with adding `set` to the beginning of the command like `set NODE_ENV=production npm start` for starting and `set NODE_ENV=production npm build` for building. Shortcuts doesn't need any changes.
 
 ## Notes
 ```bash
