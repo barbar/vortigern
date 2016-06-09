@@ -138,7 +138,7 @@ $ npm build:prod
 $ npm test
 ```
 
-Small thing to note for Windows users, you'll need set the environment with adding `set` to the beginning of the command like `set NODE_ENV=production npm start` for starting and `set NODE_ENV=production npm build` for building. Shortcuts doesn't need any changes.
+For Windows users, we recommend using the shortcuts instead of setting environment variables because they work a little different on Windows.
 
 ## Notes
 ```bash
@@ -148,6 +148,7 @@ $ typings install dt~<package> --global --save
 $ typings install <package> --save
 ```
 
-## Credits
+## Legal
 
-The photo in this readme belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
+Vortigern is released under the MIT license. 
+The image in this README belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
