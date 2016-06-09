@@ -12,40 +12,40 @@ interface IProps {
 
 function mapStateToProps(state: any) {
   return {
-		counter: state.counter
+    counter: state.counter
   };
 }
 
 function mapDispatchToProps(dispatch: Redux.Dispatch) {
-	return {
+  return {
     increment: () => dispatch(increment()),
     decrement: () => dispatch(decrement())
-	};
+  };
 }
 
 export class Counter extends React.Component<IProps, void> {
 
-	render() {
-		const { increment, decrement, counter } = this.props;
+  render() {
+    const { increment, decrement, counter } = this.props;
 
-		return (
-			<div className={s.counter}>
-				<h4>Counter Example</h4>
-				<button
+    return (
+      <div className={s.counter}>
+        <h4>Counter Example</h4>
+        <button
           name="incBtn"
           onClick={increment}>
             INCREMENT
         </button>
-				<button
+        <button
           name="decBtn"
           onClick={decrement}
           disabled={counter.count <= 0}>
             DECREMENT
         </button>
-				<p>{counter.count}</p>
-			</div>
-		);
-	}
+        <p>{counter.count}</p>
+      </div>
+    );
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

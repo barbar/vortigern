@@ -4,15 +4,15 @@ import * as Helmet from 'react-helmet';
 import { Header } from '../../components';
 
 export class App extends React.Component<any, any> {
-	render() {
+  render() {
     const s = require('./style.css');
 
-		return (
-			<section className={s.appContainer}>
-				<Helmet {...appConfig.app} {...appConfig.app.head}/>
-				<Header />
-				{this.props.children}
-			</section>
-		);
-	}
+    return (
+      <section className={s.appContainer}>
+        <Helmet {...appConfig.app} {...appConfig.app.head}/>
+        <Header />
+        {this.props.children}
+      </section>
+    );
+  }
 }

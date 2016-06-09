@@ -9,28 +9,28 @@ const router = routerMiddleware(browserHistory);
 
 export function configureStore(initialState?: any): Redux.Store {
 
-	let middlewares = [router, thunk];
+  let middlewares = [router, thunk];
 
-	if (appConfig.env === 'development') {
-		const logger = createLogger();
-		middlewares.push(logger);
-	}
+  if (appConfig.env === 'development') {
+    const logger = createLogger();
+    middlewares.push(logger);
+  }
 
-	const finalCreateStore = compose(
-		applyMiddleware(...middlewares),
-		appConfig.env === 'development' &&
+  const finalCreateStore = compose(
+    applyMiddleware(...middlewares),
+    appConfig.env === 'development' &&
     typeof window === 'object' &&
     typeof window.devToolsExtension !== 'undefined'
     ? window.devToolsExtension() : f => f
-	)(createStore);
+  )(createStore);
 
-	const store: Redux.Store = finalCreateStore(rootReducer, initialState);
+  const store: Redux.Store = finalCreateStore(rootReducer, initialState);
 
-	if (appConfig.env === 'development' && (module as any).hot) {
-		(module as any).hot.accept('./reducers', () => {
-			store.replaceReducer((require('./reducers')));
-		});
-	}
+  if (appConfig.env === 'development' && (module as any).hot) {
+    (module as any).hot.accept('./reducers', () => {
+      store.replaceReducer((require('./reducers')));
+    });
+  }
 
-	return store;
+  return store;
 }
