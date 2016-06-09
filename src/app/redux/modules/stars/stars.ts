@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-fetch';
 import { IStars, IStarsAction } from './stars.model';
 
 /** Action Types */
@@ -37,7 +36,7 @@ export function starsReducer(state = initialState, action: IStarsAction) {
       return state;
   }
 
-};
+}
 
 /** Async Action Creator */
 export function getStars(): Redux.Dispatch {

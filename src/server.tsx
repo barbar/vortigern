@@ -1,17 +1,18 @@
 const appConfig = require('../config/main');
 
-import * as e6p from "es6-promise";
+import * as e6p from 'es6-promise';
 (e6p as any).polyfill();
+import 'isomorphic-fetch';
 
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import * as ReactRouter from "react-router";
+import * as ReactRouter from 'react-router';
 const RouterContext = ReactRouter.RouterContext as any;
 
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { configureStore } from './app/redux/store';
-import routes from "./app/routes";
+import routes from './app/routes';
 
 import { Html } from './app/containers';
 const manifest = require('../build/manifest.json');
@@ -19,7 +20,7 @@ const manifest = require('../build/manifest.json');
 const Express = require('express');
 const path = require('path');
 const compression = require('compression');
-const Chalk = require("chalk");
+const Chalk = require('chalk');
 const favicon = require('serve-favicon');
 
 const store = configureStore();
@@ -33,7 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
   const webpackConfig = require('../config/webpack/dev');
   const webpackCompiler = webpack(webpackConfig);
 
-  app.use(require("webpack-dev-middleware")(webpackCompiler, {
+  app.use(require('webpack-dev-middleware')(webpackCompiler, {
     publicPath: webpackConfig.output.publicPath,
     stats: { colors: true },
     quiet: true,
@@ -44,10 +45,10 @@ if (process.env.NODE_ENV !== 'production') {
     historyApiFallback: true
   }));
 
-  app.use(require("webpack-hot-middleware")(webpackCompiler));
+  app.use(require('webpack-hot-middleware')(webpackCompiler));
 }
 
-app.use(favicon(path.resolve("favicon.ico")));
+app.use(favicon(path.resolve('favicon.ico')));
 
 app.use('/public', Express['static'](path.join(__dirname, '../build/public')));
 
