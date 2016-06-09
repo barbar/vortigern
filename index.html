@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vortigern by barbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Vortigern</h1>
+      <h2 class="project-tagline">A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.</h2>
+      <a href="https://github.com/barbar/vortigern" class="btn">View on GitHub</a>
+      <a href="https://github.com/barbar/vortigern/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/barbar/vortigern/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="vortigern" class="anchor" href="#vortigern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vortigern</h1>
+
+<p><a href=""><img src="https://david-dm.org/barbar/vortigern.svg" alt="Dependency Status"></a>
+<a href=""><img src="https://david-dm.org/barbar/vortigern/dev-status.svg" alt="devDependency Status"></a>
+<a href="https://codeclimate.com/github/barbar/vortigern"><img src="https://codeclimate.com/github/barbar/vortigern/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://github.com/barbar/vortigern/issues"><img src="https://img.shields.io/github/issues/barbar/vortigern.svg" alt="GitHub issues"></a>
+<a href="https://raw.githubusercontent.com/barbar/vortigern/develop/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+
+<hr>
+
+<p><img src="https://barbaruploads.s3.amazonaws.com/bicoz/vortigern.png" width="100%"></p>
+
+<p><strong>Vortigern</strong> is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.</p>
+
+<h2>
+<a id="libraries" class="anchor" href="#libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Libraries</h2>
+
+<p>Vortigern uses the following libraries and tools:</p>
+
+<h4>
+<a id="core" class="anchor" href="#core" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Core</h4>
+
+<ul>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+<li>
+<a href="https://github.com/facebook/react">React</a> &amp; <a href="https://github.com/facebook/react">React DOM</a> for views.</li>
+<li>
+<a href="https://github.com/reactjs/react-router">React Router</a> to handle in-app routing.</li>
+<li>
+<a href="https://github.com/reactjs/redux">Redux</a> for managing application state.</li>
+<li>
+<a href="https://github.com/reactjs/react-redux">React-Redux</a> to use React-Redux bindings.</li>
+<li>
+<a href="https://github.com/reactjs/react-router-redux">React-Router-Redux</a> to keep application state sync with route changes.</li>
+</ul>
+
+<h4>
+<a id="utilities" class="anchor" href="#utilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilities</h4>
+
+<ul>
+<li><a href="https://github.com/JedWatson/classnames">classnames</a></li>
+<li>
+<a href="https://github.com/gaearon/redux-thunk">Redux Thunk</a> for dispatching async actions.</li>
+<li>
+<a href="https://github.com/matthew-andrews/isomorphic-fetch">Isomorphic Fetch</a> with <a href="https://github.com/stefanpenner/es6-promise">ES6-Promise</a> for using fetch api on both client &amp; server side.</li>
+<li><a href="https://github.com/nfl/react-helmet">React Helmet</a></li>
+</ul>
+
+<h4>
+<a id="build-system" class="anchor" href="#build-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build System</h4>
+
+<ul>
+<li>
+<a href="https://github.com/webpack/webpack">Webpack</a> for bundling.
+
+<ul>
+<li>
+<a href="https://github.com/andreypopp/typescript-loader">TypeScript Loader</a> as ts loader.</li>
+<li>
+<a href="https://github.com/babel/babel-loader">Babel Loader</a> as js loader.</li>
+<li>
+<a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for providing hot reload capability to our development server</li>
+<li>
+<a href="https://github.com/kriasoft/isomorphic-style-loader">Isomorphic Style Loader</a> for loading styles on server-side.</li>
+<li><a href="https://github.com/webpack/style-loader">Style Loader</a></li>
+<li><a href="https://github.com/webpack/css-loader">CSS Loader</a></li>
+<li>
+<a href="https://github.com/postcss/postcss">PostCSS Loader</a>
+
+<ul>
+<li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
+<li><a href="https://github.com/jonathantneal/precss">PreCSS</a></li>
+<li><a href="https://github.com/assetsjs/postcss-assets">PostCSS Assets</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/webpack/json-loader">JSON Loader</a></li>
+<li>
+<a href="https://github.com/webpack/file-loader">File Loader</a> &amp; <a href="https://github.com/webpack/url-loader">URL Loader</a>
+</li>
+<li><a href="https://github.com/webpack/source-map-loader">SourceMap Loader</a></li>
+<li><a href="https://github.com/danethurber/webpack-manifest-plugin">Manifest Plugin</a></li>
+<li>
+<a href="https://github.com/webpack/extract-text-webpack-plugin">Extract Text Plugin</a> for exporting bundled css. </li>
+<li>
+<a href="https://github.com/wbuchwalter/tslint-loader">Tslint Loader</a> for using tslint as preloader on build process.</li>
+<li>
+<a href="https://github.com/adrianhall/stylelint-loader">Stylelint Loader</a> for using stylelint as preloader on build process.</li>
+<li>
+<a href="https://github.com/deepsweet/istanbul-instrumenter-loader">Istanbul Instrumenter Loader</a> for using istanbul on postload process while generating code coverage reports.</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="dev--prod-server" class="anchor" href="#dev--prod-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dev &amp; Prod Server</h4>
+
+<ul>
+<li>
+<a href="https://github.com/webpack/webpack-dev-server">Webpack Dev Server</a>
+
+<ul>
+<li><a href="https://github.com/webpack/webpack-dev-middleware">Webpack Dev Middleware</a></li>
+<li><a href="https://github.com/webpack/webpack-hot-middleware">Webpack Hot Middleware</a></li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/expressjs/express">Express</a> for running server both on client and server side.</li>
+<li>
+<a href="https://github.com/expressjs/compression">Compression</a> for gzip compression</li>
+<li>
+<a href="https://github.com/expressjs/serve-favicon">Serve Favicon</a> for serving favicon.</li>
+</ul>
+
+<h4>
+<a id="developer-experience" class="anchor" href="#developer-experience" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developer Experience</h4>
+
+<ul>
+<li>
+<a href="https://github.com/typings/typings">Typings</a> for installing type definitions of external libraries.</li>
+<li>
+<a href="https://github.com/palantir/tslint">tslint</a> for linting TypeScript files.</li>
+<li>
+<a href="https://github.com/stylelint/stylelint">stylelint</a> for linting styles.</li>
+<li><a href="https://github.com/theaqua/redux-logger">Redux Logger</a></li>
+<li><a href="https://github.com/gaearon/redux-devtools">Redux DevTools</a></li>
+<li>
+<a href="https://github.com/chalk/chalk">Chalk</a> for colored terminal logs.</li>
+</ul>
+
+<h4>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h4>
+
+<ul>
+<li>
+<a href="https://github.com/karma-runner/karma">Karma</a> as test runner.</li>
+<li>
+<a href="https://github.com/mochajs/mocha">Mocha</a> as testing framework.</li>
+<li>
+<a href="https://github.com/chaijs/chai">Chai</a> as assertion library.</li>
+<li>
+<a href="https://github.com/jquery/jquery">Enzyme</a> for rendering React Components.</li>
+<li>
+<a href="https://github.com/webpack/karma-webpack">Karma-Webpack</a>, <a href="https://github.com/karma-runner/karma-mocha">Karma-Mocha</a>, <a href="https://github.com/xdissent/karma-chai">Karma-Chai</a>, <a href="https://github.com/karma-runner/karma-coverage">Karma-Coverage</a>, <a href="https://github.com/karma-runner/karma-phantomjs-launcher">Karma-PhantomJS Launcher</a> as Karma plugins.</li>
+</ul>
+
+<h2>
+<a id="folder-structure" class="anchor" href="#folder-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Folder Structure</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">.</span>
+├── build                       <span class="pl-c"># Built, ready to serve app.</span>
+├── config                      <span class="pl-c"># Root folder for configurations.</span>
+│   ├── <span class="pl-c1">test</span>                    <span class="pl-c"># Test configurations.</span>
+│   ├── types                   <span class="pl-c"># Global type definitions, written by us.</span>
+│   ├── webpack                 <span class="pl-c"># Webpack configurations.</span>
+│   └── main.ts                 <span class="pl-c"># Generic App configurations.</span>
+├── node_modules                <span class="pl-c"># Node Packages.</span>
+├── src                         <span class="pl-c"># Source code.</span>
+│   ├── app                     <span class="pl-c"># App folder.</span>
+│   │ ├── components            <span class="pl-c"># React Components.</span>
+│   │ ├── containers            <span class="pl-c"># React/Redux Containers.</span>
+│   │ ├── helpers               <span class="pl-c"># Helper Functions &amp; Components.</span>
+│   │ ├── redux                 <span class="pl-c"># Redux related code aka data layer of the app.</span>
+│   │ │   ├── modules           <span class="pl-c"># Redux modules.   </span>
+│   │ │   ├── reducers.ts       <span class="pl-c"># Main reducers file to combine them.  </span>
+│   │ │   └── store.ts          <span class="pl-c"># Redux store, contains global app state.    </span>
+│   │ └── routes.tsx            <span class="pl-c"># Routes.</span>
+│   ├── client.tsx              <span class="pl-c"># Entry point for client side rendering.</span>
+│   └── server.tsx              <span class="pl-c"># Entry point for server side rendering.</span>
+├── typings                     <span class="pl-c"># Type definitions installed with typings.              </span>
+├── .dockerignore               <span class="pl-c"># Tells docker which files to ignore.</span>
+├── .gitignore                  <span class="pl-c"># Tells git which files to ignore.</span>
+├── .stylelintrc                <span class="pl-c"># Configures stylelint.</span>
+├── Dockerfile                  <span class="pl-c"># Dockerfile.</span>
+├── favicon.ico                 <span class="pl-c"># Favicon.</span>
+├── package.json                <span class="pl-c"># Package configuration.</span>
+├── README.md                   <span class="pl-c"># This file</span>
+├── tsconfig.json               <span class="pl-c"># TypeScript transpiler configuration.</span>
+├── tslint.json                 <span class="pl-c"># Configures tslint.</span>
+└── typings.json                <span class="pl-c"># Typings package configuration.</span></pre></div>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/barbar/vortigern
+$ <span class="pl-c1">cd</span> vortigern
+$ npm install</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>All commands defaults to development environment. You can set <code>NODE_ENV</code> to <code>production</code> or use the shortcuts below.</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># Running</span>
+
+$ npm start <span class="pl-c"># This starts the app in development mode</span>
+
+<span class="pl-c"># Starting it with the production build</span>
+$ NODE_ENV=production npm start <span class="pl-c"># or</span>
+$ npm start:prod
+
+<span class="pl-c"># Building </span>
+
+$ npm build <span class="pl-c"># This builds the app in development mode</span>
+
+<span class="pl-c"># Commands below builds the production build</span>
+$ NODE_ENV=production npm build <span class="pl-c"># or</span>
+$ npm build:prod
+
+<span class="pl-c"># Testing</span>
+$ npm <span class="pl-c1">test</span></pre></div>
+
+<p>Small thing to note for Windows users, you'll need set the environment with adding <code>set</code> to the beginning of the command like <code>set NODE_ENV=production npm start</code> for starting and <code>set NODE_ENV=production npm build</code> for building. Shortcuts doesn't need any changes.</p>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># If you want install additional libraries, you can also install their typings from DefinitelyTyped</span>
+$ typings install dt~<span class="pl-k">&lt;</span>package<span class="pl-k">&gt;</span> --global --save
+<span class="pl-c"># or if it's located on npm</span>
+$ typings install <span class="pl-k">&lt;</span>package<span class="pl-k">&gt;</span> --save</pre></div>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>The photo in this readme belongs to <a href="http://www.hhvferry.com/vortscrap.html">hhvferry.com</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/barbar/vortigern">Vortigern</a> is maintained by <a href="https://github.com/barbar">barbar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
