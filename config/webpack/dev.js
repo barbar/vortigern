@@ -12,13 +12,15 @@ var config = {
   debug: true,
 
   resolve: {
+    root: path.resolve(__dirname),
     extensions: ['', '.ts', '.tsx', '.js', '.jsx']
   },
 
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
-      './src/client.tsx'
+      './src/client.tsx',
+      './src/vendor/main.ts'
     ]
   },
 
@@ -51,10 +53,19 @@ var config = {
       },
       {
         test: /\.css$/,
+        include: path.resolve('./src/app'),
         loaders: [
           'style-loader',
           'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss'
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        exclude: path.resolve('./src/app'),
+        loaders: [
+          'style-loader',
+          'css-loader'
         ]
       },
       {
