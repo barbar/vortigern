@@ -29,7 +29,7 @@ const app = Express();
 app.use(compression());
 app.use(favicon(path.join(__dirname, '..', 'favicon.ico')));
 
-if (process.env.NODE_ENV == 'development') {
+if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');
   const webpackConfig = require('../config/webpack/dev');
   const webpackCompiler = webpack(webpackConfig);
