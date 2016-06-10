@@ -11,7 +11,7 @@ export class Html extends React.Component<HtmlProps, {}> {
   resolve(files) {
     return files.map((src) => {
       if (!this.props.manifest[src]) { return; }
-      return 'public/' + this.props.manifest[src];
+      return '/public/' + this.props.manifest[src];
     }).filter((file) => file !== undefined);
   }
 

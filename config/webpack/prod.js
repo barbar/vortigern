@@ -11,11 +11,22 @@ var config = {
   bail: true,
 
   resolve: {
+    root: path.resolve(__dirname),
     extensions: ['', '.ts', '.tsx', '.js', '.jsx']
   },
 
   entry: {
-    app: './src/client.tsx'
+    app: './src/client.tsx',
+    vendor: [
+      './src/vendor/main.ts',
+      'react',
+      'react-dom',
+      'react-router',
+      'react-helmet',
+      'react-redux',
+      'react-router-redux',
+      'redux'
+    ]
   },
 
   output: {
@@ -46,19 +57,19 @@ var config = {
       },
       {
         test: /\.css$/,
-        include: /src\/app/,
+        include: path.resolve('./src/app'),
         loader: ExtractTextPlugin.extract(
-          'style',
-          'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss'
+          'style-loader',
+          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
+          'postcss-loader'
         )
       },
       {
         test: /\.css$/,
-        exclude: /src\/app/,
+        exclude: path.resolve('./src/app'),
         loader: ExtractTextPlugin.extract(
-          'style',
-          'css'
+          'style-loader',
+          'css-loader'
         )
       },
       {
@@ -94,13 +105,19 @@ var config = {
   },
 
   plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'js/[name].[chunkhash].js',
+      minChunks: Infinity
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
     }),
     new ExtractTextPlugin('css/[name].[hash].css'),
-    new webpack.optimize.DedupePlugin(),
     new ManifestPlugin({
       fileName: '../manifest.json'
     }),
