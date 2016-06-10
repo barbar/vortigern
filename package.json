@@ -26,6 +26,11 @@
       "name": "Batuhan Icoz",
       "email": "hey@batuhanicoz.com",
       "url": "http://batuhanicoz.com/"
+    },
+    {
+      "name": "Omer Ufuk Efendioglu",
+      "email": "ufukomer@gmail.com",
+      "url": "http://ufukomer.com/"
     }
   ],
   "homepage": "https://github.com/barbar/vortigern.git",
@@ -66,12 +71,9 @@
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
     "es6-promise": "^3.1.2",
-    "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "fetch-mock": "^4.5.4",
     "file-loader": "^0.8.5",
-    "history": "^2.1.0",
-    "isomorphic-fetch": "^2.2.1",
     "isomorphic-style-loader": "^1.0.0",
     "istanbul-instrumenter-loader": "^0.2.0",
     "json-loader": "^0.5.4",
@@ -83,7 +85,6 @@
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sinon": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
@@ -93,14 +94,11 @@
     "postcss-scss": "^0.1.7",
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.0.1",
-    "react-helmet": "^3.0.2",
     "react-hot-loader": "^1.3.0",
     "redux-logger": "^2.6.1",
     "redux-mock-store": "^1.1.0",
-    "redux-thunk": "^2.0.1",
     "rimraf": "^2.5.2",
     "serve-favicon": "^2.3.0",
-    "sinon": "^1.17.4",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "stylelint": "^6.2.2",
@@ -117,11 +115,17 @@
     "webpack-manifest-plugin": "^1.0.1"
   },
   "dependencies": {
+    "express": "^4.13.4",
+    "history": "^2.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-helmet": "^3.0.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.5",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-connect": "^2.4.0",
+    "redux-thunk": "^2.0.1"
   }
 }

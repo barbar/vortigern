@@ -29,8 +29,8 @@ export class Html extends React.Component<HtmlProps, {}> {
       <script src={src} key={i}></script>
     );
 
-    // tslint:disable-next-line:max-line-length
-    const initialState = (<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet="UTF-8" />);
+		// tslint:disable-next-line:max-line-length
+    const initialState = (<script dangerouslySetInnerHTML={{__html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};`}} charSet="UTF-8" />);
 
     return (
       <html>
