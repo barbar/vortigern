@@ -1,6 +1,6 @@
 {
   "name": "vortigern",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.",
   "main": "build/server.js",
   "scripts": {
