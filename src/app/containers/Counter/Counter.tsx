@@ -42,4 +42,4 @@ class Counter extends React.Component<IProps, void> {
   }
 }
 
-export { Counter };
+export { Counter }

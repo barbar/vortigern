@@ -22,10 +22,11 @@ Vortigern uses the following libraries and tools:
 - [React-Router-Redux](https://github.com/reactjs/react-router-redux) to keep application state sync with route changes.
 
 #### Utilities
-- [classnames](https://github.com/JedWatson/classnames)
-- [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
 - [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for using fetch api on both client & server side.
+- [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
+- [Redux Connect](https://github.com/makeomatic/redux-connect) for resolving async props in react-router.
 - [React Helmet](https://github.com/nfl/react-helmet)
+- [classnames](https://github.com/JedWatson/classnames)
 
 #### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
@@ -36,12 +37,12 @@ Vortigern uses the following libraries and tools:
   - [Style Loader](https://github.com/webpack/style-loader)
   - [CSS Loader](https://github.com/webpack/css-loader)
   - [PostCSS Loader](https://github.com/postcss/postcss)
-    - [Autoprefixer](https://github.com/postcss/autoprefixer)
-    - [PreCSS](https://github.com/jonathantneal/precss)
+    - [PostCSS cssnext](https://github.com/MoOx/postcss-cssnext)
     - [PostCSS Assets](https://github.com/assetsjs/postcss-assets)
   - [JSON Loader](https://github.com/webpack/json-loader)
-  - [File Loader](https://github.com/webpack/file-loader) & [URL Loader](https://github.com/webpack/url-loader)
-  - [SourceMap Loader](https://github.com/webpack/source-map-loader)
+  - [File Loader](https://github.com/webpack/file-loader)
+  - [URL Loader](https://github.com/webpack/url-loader)
+  - [Sourcemap Loader](https://github.com/webpack/source-map-loader)
   - [Manifest Plugin](https://github.com/danethurber/webpack-manifest-plugin)
   - [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) for exporting bundled css. 
   - [tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
@@ -65,11 +66,17 @@ Vortigern uses the following libraries and tools:
 - [Chalk](https://github.com/chalk/chalk) for colored terminal logs.
 
 #### Testing
-- [Karma](https://github.com/karma-runner/karma) as test runner.
+- [Karma](https://github.com/karma-runner/karma) as test runner with following plugins
+  - [Karma-Webpack](https://github.com/webpack/karma-webpack)
+  - [Karma-Mocha](https://github.com/karma-runner/karma-mocha)
+  - [Karma-Chai](https://github.com/xdissent/karma-chai)
+  - [Karma-Coverage](https://github.com/karma-runner/karma-coverage)
+  - [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher)
 - [Mocha](https://github.com/mochajs/mocha) as testing framework.
 - [Chai](https://github.com/chaijs/chai) as assertion library.
 - [Enzyme](https://github.com/jquery/jquery) for rendering React Components.
-- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai), [Karma-Coverage](https://github.com/karma-runner/karma-coverage), [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
+- [Fetch Mock](https://github.com/wheresrhys/fetch-mock) for testing async actions.
+- [Redux Mock Store](https://github.com/arnaudbenard/redux-mock-store) for creating mock stores.
 
 ## Folder Structure
 ```bash

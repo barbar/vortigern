@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import { Header } from '../../components';
 
-export class App extends React.Component<any, any> {
+class App extends React.Component<any, any> {
   render() {
     const s = require('./style.css');
 
@@ -16,3 +16,5 @@ export class App extends React.Component<any, any> {
     );
   }
 }
+
+export { App }

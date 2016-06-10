@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-export class Header extends React.Component<any, any> {
+class Header extends React.Component<any, any> {
   render() {
     const s = require('./style.css');
 
@@ -17,3 +17,5 @@ export class Header extends React.Component<any, any> {
     );
   }
 }
+
+export { Header }
