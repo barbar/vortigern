@@ -11,10 +11,7 @@ interface IProps {
 
 @asyncConnect([{
   promise: ({ store: { dispatch } }) => {
-    const promises = [];
-
-    promises.push(dispatch(getStars()));
-    return Promise.all(promises);
+    return dispatch(getStars());
   }
 }])
 @connect(
