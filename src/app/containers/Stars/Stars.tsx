@@ -30,4 +30,4 @@ class Stars extends React.Component<IProps, {}> {
   }
 }
 
-export { Stars };
+export { Stars }

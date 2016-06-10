@@ -7,7 +7,7 @@ interface HtmlProps {
   store?: Redux.Store;
 }
 
-export class Html extends React.Component<HtmlProps, {}> {
+class Html extends React.Component<HtmlProps, {}> {
   resolve(files) {
     return files.map((src) => {
       if (!this.props.manifest[src]) { return; }
@@ -29,7 +29,7 @@ export class Html extends React.Component<HtmlProps, {}> {
       <script src={src} key={i}></script>
     );
 
-		// tslint:disable-next-line:max-line-length
+    // tslint:disable-next-line:max-line-length
     const initialState = (<script dangerouslySetInnerHTML={{__html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};`}} charSet="UTF-8" />);
 
     return (
@@ -53,3 +53,5 @@ export class Html extends React.Component<HtmlProps, {}> {
     );
   }
 }
+
+export { Html }
