@@ -159,3 +159,15 @@ $ typings install <package> --save
 
 Vortigern is released under the MIT license. 
 The image in this README belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
+
+___
+
+## [Barbar Startup Factory](https://www.barbar.com.tr/?ref=vortigern)
+
+<a target="_blank" href="https://www.barbar.com.tr/?ref=vortigern-barbar-logo"><img src="https://barbaruploads.s3.amazonaws.com/bicoz/logo2x.png" height="55px" /></a>
+
+We help startups start and stay started by helping them plan, strategize, fund and execute their vision. 
+
+You can contact us at [hey@barbar.com.tr](mailto:hey@barbar.com.tr)
+
+Be sure to check out available [jobs at Barbar](https://github.com/barbar/hr).
