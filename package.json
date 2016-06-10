@@ -100,7 +100,6 @@
     "redux-thunk": "^2.0.1",
     "rimraf": "^2.5.2",
     "serve-favicon": "^2.3.0",
-    "sinon": "^1.17.4",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "stylelint": "^6.2.2",
