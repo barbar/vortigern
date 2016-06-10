@@ -57,7 +57,6 @@ export function getStars(): Redux.Dispatch {
   };
 }
 
-
 /** Action Creator */
 export function starsRequest(): IStarsAction {
   return {

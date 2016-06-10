@@ -4,11 +4,7 @@ import { Home } from './Home';
 
 describe('<Home />', () => {
 
-  let component;
-
-  beforeEach(() => {
-    component = renderComponent(Home);
-  });
+  const component = renderComponent(Home);
 
   it('Renders with correct style', () => {
     const s = require('./style.css');

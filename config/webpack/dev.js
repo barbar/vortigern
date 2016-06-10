@@ -1,8 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
 var postcssAssets = require('postcss-assets');
+var postcssNext = require('postcss-cssnext');
 var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 
@@ -12,13 +11,15 @@ var config = {
   debug: true,
 
   resolve: {
+    root: path.resolve(__dirname),
     extensions: ['', '.ts', '.tsx', '.js', '.jsx']
   },
 
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
-      './src/client.tsx'
+      './src/client.tsx',
+      './src/vendor/main.ts'
     ]
   },
 
@@ -51,17 +52,20 @@ var config = {
       },
       {
         test: /\.css$/,
-        include: /src\/app/,
+        include: path.resolve('./src/app'),
         loaders: [
-          'style',
-          'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss'
+          'style-loader',
+          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
+          'postcss-loader'
         ]
       },
       {
         test: /\.css$/,
-        exclude: /src\/app/,
-        loader: 'style!css'
+        exclude: path.resolve('./src/app'),
+        loaders: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.eot(\?.*)?$/,
@@ -85,12 +89,10 @@ var config = {
       }
     ]
   },
-
   postcss: function () {
     return [
       stylelint({ files: '../../src/app/*.css' }),
-      precss,
-      autoprefixer({ browsers: ['last 2 versions'] }),
+      postcssNext(),
       postcssAssets({ relative: true })
     ];
   },

@@ -22,36 +22,37 @@ Vortigern uses the following libraries and tools:
 - [React-Router-Redux](https://github.com/reactjs/react-router-redux) to keep application state sync with route changes.
 
 #### Utilities
-- [classnames](https://github.com/JedWatson/classnames)
-- [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
 - [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) with [ES6-Promise](https://github.com/stefanpenner/es6-promise) for using fetch api on both client & server side.
+- [Redux Thunk](https://github.com/gaearon/redux-thunk) for dispatching async actions.
+- [Redux Connect](https://github.com/makeomatic/redux-connect) for resolving async props in react-router.
 - [React Helmet](https://github.com/nfl/react-helmet)
+- [classnames](https://github.com/JedWatson/classnames)
 
 #### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
-	- [TypeScript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
-	- [Babel Loader](https://github.com/babel/babel-loader) as js loader.
-	- [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
-	- [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
-	- [Style Loader](https://github.com/webpack/style-loader)
-	- [CSS Loader](https://github.com/webpack/css-loader)
-	- [PostCSS Loader](https://github.com/postcss/postcss)
-		- [Autoprefixer](https://github.com/postcss/autoprefixer)
-		- [PreCSS](https://github.com/jonathantneal/precss)
-		- [PostCSS Assets](https://github.com/assetsjs/postcss-assets)
-	- [JSON Loader](https://github.com/webpack/json-loader)
-	- [File Loader](https://github.com/webpack/file-loader) & [URL Loader](https://github.com/webpack/url-loader)
-	- [SourceMap Loader](https://github.com/webpack/source-map-loader)
-	- [Manifest Plugin](https://github.com/danethurber/webpack-manifest-plugin)
-	- [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) for exporting bundled css. 
-	- [Tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
-	- [Stylelint Loader](https://github.com/adrianhall/stylelint-loader) for using stylelint as preloader on build process.
-	- [Istanbul Instrumenter Loader](https://github.com/deepsweet/istanbul-instrumenter-loader) for using istanbul on postload process while generating code coverage reports.
+  - [TypeScript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
+  - [Babel Loader](https://github.com/babel/babel-loader) as js loader.
+  - [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
+  - [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
+  - [Style Loader](https://github.com/webpack/style-loader)
+  - [CSS Loader](https://github.com/webpack/css-loader)
+  - [PostCSS Loader](https://github.com/postcss/postcss)
+    - [PostCSS cssnext](https://github.com/MoOx/postcss-cssnext)
+    - [PostCSS Assets](https://github.com/assetsjs/postcss-assets)
+  - [JSON Loader](https://github.com/webpack/json-loader)
+  - [File Loader](https://github.com/webpack/file-loader)
+  - [URL Loader](https://github.com/webpack/url-loader)
+  - [Sourcemap Loader](https://github.com/webpack/source-map-loader)
+  - [Manifest Plugin](https://github.com/danethurber/webpack-manifest-plugin)
+  - [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin) for exporting bundled css. 
+  - [tslint Loader](https://github.com/wbuchwalter/tslint-loader) for using tslint as preloader on build process.
+  - [stylelint Loader](https://github.com/adrianhall/stylelint-loader) for using stylelint as preloader on build process.
+  - [Istanbul Instrumenter Loader](https://github.com/deepsweet/istanbul-instrumenter-loader) for using istanbul on postload process while generating code coverage reports.
 
 #### Dev & Prod Server
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-	- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
-	- [Webpack Hot Middleware](https://github.com/webpack/webpack-hot-middleware)
+  - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
+  - [Webpack Hot Middleware](https://github.com/webpack/webpack-hot-middleware)
 - [Express](https://github.com/expressjs/express) for running server both on client and server side.
 - [Compression](https://github.com/expressjs/compression) for gzip compression
 - [Serve Favicon](https://github.com/expressjs/serve-favicon) for serving favicon.
@@ -65,11 +66,17 @@ Vortigern uses the following libraries and tools:
 - [Chalk](https://github.com/chalk/chalk) for colored terminal logs.
 
 #### Testing
-- [Karma](https://github.com/karma-runner/karma) as test runner.
+- [Karma](https://github.com/karma-runner/karma) as test runner with following plugins
+  - [Karma-Webpack](https://github.com/webpack/karma-webpack)
+  - [Karma-Mocha](https://github.com/karma-runner/karma-mocha)
+  - [Karma-Chai](https://github.com/xdissent/karma-chai)
+  - [Karma-Coverage](https://github.com/karma-runner/karma-coverage)
+  - [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher)
 - [Mocha](https://github.com/mochajs/mocha) as testing framework.
 - [Chai](https://github.com/chaijs/chai) as assertion library.
 - [Enzyme](https://github.com/jquery/jquery) for rendering React Components.
-- [Karma-Webpack](https://github.com/webpack/karma-webpack), [Karma-Mocha](https://github.com/karma-runner/karma-mocha), [Karma-Chai](https://github.com/xdissent/karma-chai), [Karma-Coverage](https://github.com/karma-runner/karma-coverage), [Karma-PhantomJS Launcher](https://github.com/karma-runner/karma-phantomjs-launcher) as Karma plugins.
+- [Fetch Mock](https://github.com/wheresrhys/fetch-mock) for testing async actions.
+- [Redux Mock Store](https://github.com/arnaudbenard/redux-mock-store) for creating mock stores.
 
 ## Folder Structure
 ```bash
@@ -99,9 +106,8 @@ Vortigern uses the following libraries and tools:
 ├── .stylelintrc                # Configures stylelint.
 ├── Dockerfile                  # Dockerfile.
 ├── favicon.ico                 # Favicon.
-├── Makefile                    # Makefile.
 ├── package.json                # Package configuration.
-├── README.md                   # Readme.
+├── README.md                   # This file
 ├── tsconfig.json               # TypeScript transpiler configuration.
 ├── tslint.json                 # Configures tslint.
 └── typings.json                # Typings package configuration.
@@ -111,26 +117,35 @@ Vortigern uses the following libraries and tools:
 ```bash
 $ git clone https://github.com/barbar/vortigern
 $ cd vortigern
-$ npm run setup
+$ npm install
 ```
 
 ## Usage
 
-All commands defaults to development environment.
+All commands defaults to development environment. You can set `NODE_ENV` to `production` or use the shortcuts below.
 
 ```bash
-# Running the app on development mode
-$ npm start
+# Running
 
-# Building for production
-$ npm run build:prod
+$ npm start # This starts the app in development mode
 
-# Running app on production mode
+# Starting it with the production build
+$ NODE_ENV=production npm start # or
 $ npm run start:prod
 
-# Running unit tests
-$ npm run test
+# Building 
+
+$ npm build # This builds the app in development mode
+
+# Commands below builds the production build
+$ NODE_ENV=production npm build # or
+$ npm run build:prod
+
+# Testing
+$ npm test
 ```
+
+For Windows users, we recommend using the shortcuts instead of setting environment variables because they work a little different on Windows.
 
 ## Notes
 ```bash
@@ -140,6 +155,7 @@ $ typings install dt~<package> --global --save
 $ typings install <package> --save
 ```
 
-## Credits
+## Legal
 
-The photo in this readme belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
+Vortigern is released under the MIT license. 
+The image in this README belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).

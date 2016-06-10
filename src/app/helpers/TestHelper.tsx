@@ -1,7 +1,8 @@
 /** React Specific */
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import rootReducer from '../redux/reducers';
 
 const fetchMock = require('fetch-mock');
@@ -12,13 +13,14 @@ import thunk from 'redux-thunk';
 const configureStore = require('redux-mock-store');
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
-const createStore = configureStore();
 /***/
 
 /** Render Component */
-function renderComponent(ComponentClass, props?, state?) {
+function renderComponent(ComponentClass, state?, props?) {
+  const store: Redux.Store = createStore(rootReducer, state);
+  
   return mount(
-    <Provider store={createStore(rootReducer, state)}>
+    <Provider store={store}>
       <ComponentClass {...props} />
     </Provider>
   );

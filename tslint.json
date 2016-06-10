@@ -1,6 +1,7 @@
 {
   "rules": {
     "class-name": true,
+    "indent": [true, "spaces"],
     "comment-format": [true, "check-space"],
     "curly": true,
     "eofline": true,
@@ -14,7 +15,6 @@
       true,
       "log",
       "debug",
-      "info",
       "time",
       "timeEnd",
       "trace"

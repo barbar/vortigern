@@ -1,7 +1,7 @@
+var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
 var postcssAssets = require('postcss-assets');
+var postcssNext = require('postcss-cssnext');
 var appConfig = require('../main');
 
 module.exports = function (config) {
@@ -43,10 +43,16 @@ module.exports = function (config) {
     webpack: {
       devtool: 'inline-source-map',
 
-      module: {
-        noParse: [
-          /node_modules\/sinon\//
+      resolve: {
+        root: path.resolve(__dirname),
+        modulesDirectories: [
+          '../../src',
+          'node_modules'
         ],
+        extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
+      },
+
+      module: {
         loaders: [
           {
             test: /\.tsx?$/,
@@ -62,7 +68,7 @@ module.exports = function (config) {
           },
           {
             test: /\.css$/,
-            include: /src\/app/,
+            include: path.resolve('./src/app'),
             loaders: [
               'style',
               'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
@@ -71,7 +77,7 @@ module.exports = function (config) {
           },
           {
             test: /\.css$/,
-            exclude: /src\/app/,
+            exclude: path.resolve('./src/app'),
             loader: 'style!css'
           }
         ],
@@ -79,31 +85,16 @@ module.exports = function (config) {
           {
             test: /\.tsx?$/,
             loader: 'istanbul-instrumenter-loader',
-            include: /src\/app/,
-            exclude: [
-              /node_modules/
-            ]
+            include: path.resolve('./src/app')
           }
         ]
       },
 
       postcss: function () {
         return [
-          precss,
-          autoprefixer({ browsers: ['last 2 versions'] }),
+          postcssNext(),
           postcssAssets({ relative: true })
         ];
-      },
-
-      resolve: {
-        alias: {
-          sinon: 'sinon/pkg/sinon'
-        },
-        modulesDirectories: [
-          '../../src',
-          'node_modules'
-        ],
-        extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
       },
 
       externals: {
