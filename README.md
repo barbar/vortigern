@@ -10,9 +10,11 @@ ___
 
 **Vortigern** is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.
 
-- [TypeScript](https://www.typescriptlang.org/)
+[![Code Climate](https://codeclimate.com/github/barbar/vortigern/badges/gpa.svg)](https://codeclimate.com/github/barbar/vortigern)
 
-<img src="https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png" />
+- [TypeScript](<img src="https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png" />)
+
+
 <img src="https://barbaruploads.s3.amazonaws.com/bicoz/firebase.png" />
 
 
