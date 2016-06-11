@@ -10,6 +10,15 @@ ___
 
 **Vortigern** is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.
 
+- [TypeScript](https://www.typescriptlang.org/)
+
+<img src="https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png" />
+<img src="https://barbaruploads.s3.amazonaws.com/bicoz/firebase.png" />
+
+
+<img src="https://barbaruploads.s3.amazonaws.com/bicoz/redux.png" />
+<img src="https://barbaruploads.s3.amazonaws.com/bicoz/react.png" />
+
 ## Libraries
 Vortigern uses the following libraries and tools:
 
