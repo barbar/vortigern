@@ -83,7 +83,7 @@ Vortigern uses the following libraries and tools:
 - [Fetch Mock](https://github.com/wheresrhys/fetch-mock) for testing async actions.
 - [Redux Mock Store](https://github.com/arnaudbenard/redux-mock-store) for creating mock stores.
 
-## Folder Structure
+## Directory Structure
 ```bash
 .
 ├── build                       # Built, ready to serve app.
