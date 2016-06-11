@@ -119,6 +119,9 @@ Vortigern uses the following libraries and tools:
 ```
 
 ## Installation
+
+You can clone from this repository or [install the latest version](https://github.com/barbar/vortigern/releases) as a zip file or a tarball. 
+
 ```bash
 $ git clone https://github.com/barbar/vortigern
 $ cd vortigern
@@ -160,9 +163,10 @@ $ typings install dt~<package> --global --save
 $ typings install <package> --save
 ```
 
-## Legal
+## Credits
 
-Vortigern is released under the MIT license. 
+Vortigern is released under the [MIT license](LICENSE). 
+
 The image in this README belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
 
 ___
