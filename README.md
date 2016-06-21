@@ -1,4 +1,5 @@
 # Vortigern
+[![Build Status](https://travis-ci.org/barbar/vortigern.svg?branch=master)](https://travis-ci.org/barbar/vortigern)
 [![Dependency Status](https://david-dm.org/barbar/vortigern.svg)]()
 [![devDependency Status](https://david-dm.org/barbar/vortigern/dev-status.svg)]()
 [![Code Climate](https://codeclimate.com/github/barbar/vortigern/badges/gpa.svg)](https://codeclimate.com/github/barbar/vortigern)
