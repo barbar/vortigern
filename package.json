@@ -80,6 +80,7 @@
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
     "karma-es6-shim": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
