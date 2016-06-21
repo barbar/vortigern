@@ -6,10 +6,9 @@ var appConfig = require('../main');
 
 module.exports = function (config) {
   const conf = {
+    frameworks: ['mocha', 'chai', 'es6-shim'],
 
     browsers: ['PhantomJS'],
-
-    frameworks: ['mocha', 'chai', 'es6-shim'],
 
     files: ['../webpack/test.js'],
 
@@ -24,8 +23,8 @@ module.exports = function (config) {
     reporters: ['mocha', 'coverage'],
 
     coverageReporter: {
-      type: 'html',
-      dir: '../../coverage'
+      dir: '../../coverage',
+      reporters: []
     },
 
     hostname: appConfig.host,
