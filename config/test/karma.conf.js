@@ -5,11 +5,10 @@ var postcssNext = require('postcss-cssnext');
 var appConfig = require('../main');
 
 module.exports = function (config) {
-  config.set({
+  const conf = {
+    frameworks: ['mocha', 'chai', 'es6-shim'],
 
     browsers: ['PhantomJS'],
-
-    frameworks: ['mocha', 'chai', 'es6-shim'],
 
     files: ['../webpack/test.js'],
 
@@ -24,8 +23,8 @@ module.exports = function (config) {
     reporters: ['mocha', 'coverage'],
 
     coverageReporter: {
-      type: 'html',
-      dir: '../../coverage'
+      dir: '../../coverage',
+      reporters: []
     },
 
     hostname: appConfig.host,
@@ -37,6 +36,8 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
 
     autoWatch: true,
+
+    singleRun: false,
 
     concurrency: Infinity,
 
@@ -118,5 +119,17 @@ module.exports = function (config) {
     webpackServer: {
       noInfo: true
     }
-  });
+  };
+
+  if (process.env.NODE_ENV === 'ci') {
+    conf.autoWatch = false;
+    conf.singleRun = true;
+    conf.browsers.push('Firefox');
+    conf.coverageReporter.reporters.push({ type: 'lcov', subdir: '.' });
+  } else {
+    conf.coverageReporter.reporters.push({ type: 'html', subdir: 'html' });
+    conf.browsers.push('Chrome');
+  }
+
+  config.set(conf);
 };

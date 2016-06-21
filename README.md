@@ -10,6 +10,11 @@ ___
 
 **Vortigern** is our opinionated boilerplate for crafting universal web applications by using modern technologies like TypeScript, React and Redux.
 
+[![TypeScript](https://barbaruploads.s3.amazonaws.com/bicoz/typescript.png)](https://www.typescriptlang.org/) 
+[![React](https://barbaruploads.s3.amazonaws.com/bicoz/react.png)](https://github.com/facebook/react) 
+[![Redux](https://barbaruploads.s3.amazonaws.com/bicoz/redux.png)](https://github.com/reactjs/redux)
+
+
 ## Libraries
 Vortigern uses the following libraries and tools:
 
@@ -78,7 +83,7 @@ Vortigern uses the following libraries and tools:
 - [Fetch Mock](https://github.com/wheresrhys/fetch-mock) for testing async actions.
 - [Redux Mock Store](https://github.com/arnaudbenard/redux-mock-store) for creating mock stores.
 
-## Folder Structure
+## Directory Structure
 ```bash
 .
 ├── build                       # Built, ready to serve app.
@@ -114,6 +119,9 @@ Vortigern uses the following libraries and tools:
 ```
 
 ## Installation
+
+You can clone from this repository or [install the latest version](https://github.com/barbar/vortigern/releases) as a zip file or a tarball. 
+
 ```bash
 $ git clone https://github.com/barbar/vortigern
 $ cd vortigern
@@ -155,7 +163,20 @@ $ typings install dt~<package> --global --save
 $ typings install <package> --save
 ```
 
-## Legal
+## Credits
 
-Vortigern is released under the MIT license. 
+Vortigern is released under the [MIT license](LICENSE). 
+
 The image in this README belongs to [hhvferry.com](http://www.hhvferry.com/vortscrap.html).
+
+___
+
+## [Barbar Startup Factory](https://www.barbar.com.tr/?ref=vortigern)
+
+<a target="_blank" href="https://www.barbar.com.tr/?ref=vortigern-barbar-logo"><img src="https://barbaruploads.s3.amazonaws.com/bicoz/logo2x.png" height="55px" /></a>
+
+We help startups start and stay started by helping them plan, strategize, fund and execute their vision. 
+
+You can contact us at [hey@barbar.com.tr](mailto:hey@barbar.com.tr)
+
+Be sure to check out available [jobs at Barbar](https://github.com/barbar/hr).
