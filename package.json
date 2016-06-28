@@ -5,7 +5,7 @@
   "main": "build/server.js",
   "scripts": {
     "postinstall": "typings install",
-    "clean": "rm -rf build/",
+    "clean": "rimraf build",
     "prebuild": "npm run clean",
     "build": "webpack --config config/webpack/index.js",
     "build:prod": "cross-env NODE_ENV=production npm run build",
