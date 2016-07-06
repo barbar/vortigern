@@ -5,11 +5,11 @@ import { IStars, IStarsAction } from './stars.model';
 
 /** Mock Data */
 const githubResponse = {
-  stargazers_count: 999 // a little wish :)
+  stargazers_count: 999, // a little wish :)
 };
 
 const errResponse = {
-  message: 'ERROR :-O'
+  message: 'ERROR :-O',
 };
 
 /** Stargazers Module */

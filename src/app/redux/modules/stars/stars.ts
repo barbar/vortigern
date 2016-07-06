@@ -7,7 +7,7 @@ export const STARS_FAILURE: string = 'STARS_FAILURE';
 
 /** Initial State */
 const initialState: IStars = {
-  isFetching: false
+  isFetching: false,
 };
 
 /** Reducer */
@@ -16,20 +16,20 @@ export function starsReducer(state = initialState, action: IStarsAction) {
   switch (action.type) {
     case STARS_REQUEST:
       return Object.assign({}, state, {
-        isFetching: true
+        isFetching: true,
       });
 
     case STARS_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
-        count: action.count
+        count: action.count,
       });
 
     case STARS_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,
         error: true,
-        message: action.message
+        message: action.message,
       });
 
     default:

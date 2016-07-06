@@ -6,8 +6,6 @@ import 'isomorphic-fetch';
 
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import * as ReactRouter from 'react-router';
-const RouterContext = ReactRouter.RouterContext as any;
 
 import { Provider } from 'react-redux';
 import { createMemoryHistory, match } from 'react-router';
@@ -38,12 +36,12 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(require('webpack-dev-middleware')(webpackCompiler, {
     publicPath: webpackConfig.output.publicPath,
     stats: { colors: true },
-    quiet: true,
     noInfo: true,
     hot: true,
     inline: true,
     lazy: false,
-    historyApiFallback: true
+    historyApiFallback: true,
+    quiet: true,
   }));
 
   app.use(require('webpack-hot-middleware')(webpackCompiler));

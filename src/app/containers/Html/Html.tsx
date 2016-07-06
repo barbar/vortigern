@@ -1,21 +1,21 @@
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
 
-interface HtmlProps {
+interface IHtmlProps {
   manifest?: Object;
   markup?: string;
   store?: Redux.Store;
 }
 
-class Html extends React.Component<HtmlProps, {}> {
-  resolve(files) {
+class Html extends React.Component<IHtmlProps, {}> {
+  private resolve(files) {
     return files.map((src) => {
       if (!this.props.manifest[src]) { return; }
       return '/public/' + this.props.manifest[src];
     }).filter((file) => file !== undefined);
   }
 
-  render() {
+  public render() {
     const head = Helmet.rewind();
     const { markup, store } = this.props;
 

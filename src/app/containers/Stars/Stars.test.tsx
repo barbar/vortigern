@@ -6,8 +6,8 @@ import { Stars } from './Stars';
 const state: Object = {
   stars: {
     count: 61,
-    isFetching: false
-  }
+    isFetching: false,
+  },
 };
 
 describe('<Counter />', () => {

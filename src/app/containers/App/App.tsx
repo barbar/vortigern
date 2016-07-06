@@ -4,7 +4,7 @@ import * as Helmet from 'react-helmet';
 import { Header } from '../../components';
 
 class App extends React.Component<any, any> {
-  render() {
+  public render() {
     const s = require('./style.css');
 
     return (

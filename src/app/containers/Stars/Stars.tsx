@@ -12,14 +12,14 @@ interface IProps {
 @asyncConnect([{
   promise: ({ store: { dispatch } }) => {
     return dispatch(getStars());
-  }
+  },
 }])
 @connect(
   state => ({ stars: state.stars })
 )
 class Stars extends React.Component<IProps, {}> {
 
-  render() {
+  public render() {
     const { stars } = this.props;
 
     return(
