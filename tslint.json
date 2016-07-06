@@ -4,6 +4,8 @@
     "indent": [ true, "spaces" ],
     "quotemark": [ true, "single", "jsx-double" ],
     "no-var-requires": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+	"no-unused-variable": [true, "react"],
+	"member-ordering": false
   }
 }
