@@ -8,7 +8,7 @@ const rootReducer: Redux.Reducer = combineReducers({
   routing: routerReducer,
   counter: counterReducer,
   stars: starsReducer,
-  reduxAsyncConnect: reducer
+  reduxAsyncConnect: reducer,
 });
 
 export default rootReducer;

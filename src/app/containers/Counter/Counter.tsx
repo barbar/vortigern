@@ -13,13 +13,13 @@ interface IProps {
 @connect(
   state => ({ counter: state.counter }),
   dispatch => ({
+    decrement: () => dispatch(decrement()),
     increment: () => dispatch(increment()),
-    decrement: () => dispatch(decrement())
   })
 )
 class Counter extends React.Component<IProps, void> {
 
-  render() {
+  public render() {
     const { increment, decrement, counter } = this.props;
 
     return (

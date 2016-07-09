@@ -4,7 +4,7 @@ import { Counter } from './Counter';
 
 /** Mock App. State */
 const state: Object = {
-  counter: { count: 1 }
+  counter: { count: 1 },
 };
 
 describe('<Counter />', () => {

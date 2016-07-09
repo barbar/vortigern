@@ -54,6 +54,12 @@ module.exports = function (config) {
       },
 
       module: {
+        preLoaders: [
+          {
+            test: /\.tsx?$/,
+            loader: 'tslint'
+          }
+        ],
         loaders: [
           {
             test: /\.tsx?$/,
@@ -96,6 +102,10 @@ module.exports = function (config) {
           postcssNext(),
           postcssAssets({ relative: true })
         ];
+      },
+
+      tslint: {
+        failOnHint: true
       },
 
       externals: {

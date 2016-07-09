@@ -97,6 +97,10 @@ var config = {
     ];
   },
 
+  tslint: {
+    failOnHint: true
+  },
+
   plugins: [
     new ManifestPlugin({
       fileName: '../manifest.json'

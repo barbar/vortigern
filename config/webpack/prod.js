@@ -104,6 +104,10 @@ var config = {
     ];
   },
 
+  tslint: {
+    failOnHint: true
+  },
+
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),

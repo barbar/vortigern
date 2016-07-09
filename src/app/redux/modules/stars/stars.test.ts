@@ -1,15 +1,14 @@
 import { expect } from 'chai';
 import { fetchMock, mockStore } from '../../../helpers/TestHelper.tsx';
 import * as stars from './stars';
-import { IStars, IStarsAction } from './stars.model';
 
 /** Mock Data */
 const githubResponse = {
-  stargazers_count: 999 // a little wish :)
+  stargazers_count: 999, // a little wish :)
 };
 
 const errResponse = {
-  message: 'ERROR :-O'
+  message: 'ERROR :-O',
 };
 
 /** Stargazers Module */
@@ -29,12 +28,12 @@ describe('Stars Module', () => {
 
         fetchMock.mock('https://api.github.com/repos/barbar/vortigern', {
           status: 200,
-          body: githubResponse
+          body: githubResponse,
         });
 
         const expectedActions = [
           { type: stars.STARS_REQUEST },
-          { type: stars.STARS_SUCCESS, count: githubResponse.stargazers_count }
+          { type: stars.STARS_SUCCESS, count: githubResponse.stargazers_count },
         ];
 
         const store = mockStore({});
@@ -50,12 +49,12 @@ describe('Stars Module', () => {
 
         fetchMock.mock('https://api.github.com/repos/barbar/vortigern', {
           status: 400,
-          body: errResponse
+          body: errResponse,
         });
 
         const expectedActions = [
           { type: stars.STARS_REQUEST },
-          { type: stars.STARS_FAILURE, message: errResponse }
+          { type: stars.STARS_FAILURE, message: errResponse },
         ];
 
         const store = mockStore({});

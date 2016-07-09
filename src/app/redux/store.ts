@@ -9,7 +9,7 @@ export function configureStore(history, initialState?: any): Redux.Store {
 
   let middlewares: any[] = [
     routerMiddleware(history),
-    thunk
+    thunk,
   ];
 
   /** Add Only Dev. Middlewares */
