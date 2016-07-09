@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { renderComponent } from '../../helpers/TestHelper';
-import { Counter } from './Counter';
+import { Counter } from './index';
 
 /** Mock App. State */
 const state: Object = {
