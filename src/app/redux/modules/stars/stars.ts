@@ -60,7 +60,7 @@ export function getStars(): Redux.Dispatch {
 /** Action Creator */
 export function starsRequest(): IStarsAction {
   return {
-    type: STARS_REQUEST
+    type: STARS_REQUEST,
   };
 }
 
@@ -68,7 +68,7 @@ export function starsRequest(): IStarsAction {
 export function starsSuccess(count: number): IStarsAction {
   return {
     type: STARS_SUCCESS,
-    count
+    count,
   };
 }
 
@@ -76,6 +76,6 @@ export function starsSuccess(count: number): IStarsAction {
 export function starsFailure(message: any): IStarsAction {
   return {
     type: STARS_FAILURE,
-    message
+    message,
   };
 }

@@ -17,13 +17,13 @@ import routes from './app/routes';
 import { Html } from './app/containers';
 const manifest = require('../build/manifest.json');
 
-const Express = require('express');
+const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const Chalk = require('chalk');
 const favicon = require('serve-favicon');
 
-const app = Express();
+const app = express();
 
 app.use(compression());
 app.use(favicon(path.join(__dirname, '..', 'favicon.ico')));
@@ -49,7 +49,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(favicon(path.resolve('favicon.ico')));
 
-app.use('/public', Express['static'](path.join(__dirname, '../build/public')));
+app.use('/public', express.static(path.join(__dirname, '../build/public')));
 
 app.get('*', (req, res) => {
   const location = req.url;
