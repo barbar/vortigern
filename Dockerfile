@@ -1,16 +1,12 @@
-FROM alpine:edge
+FROM mhart/alpine-node:latest
 
 MAINTAINER Barbar Startup Factory hey@barbar.com.tr
 
-RUN apk add --no-cache nodejs
-
-RUN mkdir -p /app
-ADD . /app
-
 WORKDIR /app
+ADD . .
 
-RUN npm run setup && rm -rf node_modules
+RUN npm install
 
-EXPOSE 80
+EXPOSE 8889
 
-CMD ["npm run start"]
+CMD ["npm", "run", "start:prod"]
