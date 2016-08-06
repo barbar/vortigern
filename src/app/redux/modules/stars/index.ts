@@ -1,9 +1,9 @@
-import { IStars, IStarsAction } from './stars.model';
+import { IStars, IStarsAction } from '../../../models/stars';
 
 /** Action Types */
-export const STARS_REQUEST: string = 'STARS_REQUEST';
-export const STARS_SUCCESS: string = 'STARS_SUCCESS';
-export const STARS_FAILURE: string = 'STARS_FAILURE';
+export const GET_REQUEST: string = 'stars/GET_REQUEST';
+export const GET_SUCCESS: string = 'stars/GET_SUCCESS';
+export const GET_FAILURE: string = 'stars/GET_FAILURE';
 
 /** Initial State */
 const initialState: IStars = {
@@ -12,30 +12,28 @@ const initialState: IStars = {
 
 /** Reducer */
 export function starsReducer(state = initialState, action: IStarsAction) {
-
   switch (action.type) {
-    case STARS_REQUEST:
+    case GET_REQUEST:
       return Object.assign({}, state, {
         isFetching: true,
       });
 
-    case STARS_SUCCESS:
+    case GET_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
-        count: action.count,
+        count: action.payload.count,
       });
 
-    case STARS_FAILURE:
+    case GET_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,
+        message: action.payload.message,
         error: true,
-        message: action.message,
       });
 
     default:
       return state;
   }
-
 }
 
 /** Async Action Creator */
@@ -60,22 +58,26 @@ export function getStars(): Redux.Dispatch {
 /** Action Creator */
 export function starsRequest(): IStarsAction {
   return {
-    type: STARS_REQUEST,
+    type: GET_REQUEST,
   };
 }
 
 /** Action Creator */
 export function starsSuccess(count: number): IStarsAction {
   return {
-    type: STARS_SUCCESS,
-    count,
+    type: GET_SUCCESS,
+    payload: {
+      count,
+    },
   };
 }
 
 /** Action Creator */
 export function starsFailure(message: any): IStarsAction {
   return {
-    type: STARS_FAILURE,
-    message,
+    type: GET_FAILURE,
+    payload: {
+      message,
+    },
   };
 }

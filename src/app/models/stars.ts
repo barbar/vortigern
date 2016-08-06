@@ -1,5 +1,4 @@
 /** Type Definitions */
-
 export interface IStars {
   isFetching?: boolean;
   count?: number;
@@ -9,6 +8,8 @@ export interface IStars {
 
 export interface IStarsAction {
   type: string;
-  count?: number;
-  message?: any;
+  payload?: {
+    count?: number;
+    message?: any;
+  };
 }
