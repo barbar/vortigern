@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { Link } from 'react-router';
+import * as React from 'react'
+import { Link } from 'react-router'
+export interface IHeaderProps {
 
-class Header extends React.Component<any, any> {
-  public render() {
-    const s = require('./style.css');
-
-    return (
+}
+export default function Header (props: IHeaderProps) {
+  const s = require('./style.css')
+  return (
       <nav className={s.nav}>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -14,8 +14,7 @@ class Header extends React.Component<any, any> {
           <li><Link to="stars">Stars</Link></li>
         </ul>
       </nav>
-    );
-  }
+    )
 }
 
 export { Header }

@@ -97,9 +97,9 @@ var config = {
     ];
   },
 
-  tslint: {
-    failOnHint: true
-  },
+  // tslint: {
+  //   failOnHint: true
+  // },
 
   plugins: [
     new ManifestPlugin({

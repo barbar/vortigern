@@ -14,6 +14,10 @@
     "start": "node build/server.js",
     "start:prod": "cross-env NODE_ENV=production npm start",
     "test": "node_modules/.bin/karma start config/test/karma.conf.js",
+    "test:browers": "export NODE_ENV='multibrowser' && node_modules/.bin/karma start config/test/karma.conf.js",
+    "test:chrome": "export NODE_ENV='chrome' && node_modules/.bin/karma start config/test/karma.conf.js",
+    "test:firefox": "export NODE_ENV='firefox' && node_modules/.bin/karma start config/test/karma.conf.js",
+    "test:safari": "export NODE_ENV='safari' && node_modules/.bin/karma start config/test/karma.conf.js",
     "lint": "node_modules/.bin/tslint \"src/**/**.ts*\""
   },
   "author": "Barbar Startup Factory <hey@barbar.com.tr>",
@@ -85,6 +89,7 @@
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
@@ -125,6 +130,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.5",
+    "recompose": "^0.20.2",
     "redux": "^3.5.2",
     "redux-connect": "^2.4.0",
     "redux-thunk": "^2.0.1"

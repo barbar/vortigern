@@ -87,6 +87,7 @@ Vortigern uses the following libraries and tools:
 ## Directory Structure
 ```bash
 .
+├── blueprints                  # redux-cli file generation templates
 ├── build                       # Built, ready to serve app.
 ├── config                      # Root folder for configurations.
 │   ├── test                    # Test configurations.
@@ -96,14 +97,17 @@ Vortigern uses the following libraries and tools:
 ├── node_modules                # Node Packages.
 ├── src                         # Source code.
 │   ├── app                     # App folder.
-│   │ ├── components            # React Components.
+│   │ ├── components            # React dumb, pure components.
 │   │ ├── containers            # React/Redux Containers.
 │   │ ├── helpers               # Helper Functions & Components.
+│   │ ├── mocks                 # Mock Data for testing
+│   │ ├── models                # Classes and interfaces to model your data.
 │   │ ├── redux                 # Redux related code aka data layer of the app.
 │   │ │   ├── modules           # Redux modules.   
 │   │ │   ├── reducers.ts       # Main reducers file to combine them.  
 │   │ │   └── store.ts          # Redux store, contains global app state.    
-│   │ └── routes.tsx            # Routes.
+│   │ ├── routes                # Routes.
+│   │ └── views                 # Components that are loaded to by a route. 
 │   ├── client.tsx              # Entry point for client side rendering.
 │   └── server.tsx              # Entry point for server side rendering.
 ├── typings                     # Type definitions installed with typings.              
@@ -128,6 +132,20 @@ $ git clone https://github.com/barbar/vortigern
 $ cd vortigern
 $ npm install
 ```
+## Generating files from the blueprints
+
+You can generate components, containers, redux modules (reducer), and views automatically using the [https://github.com/SpencerCDixon/redux-cli](redux-cli). 
+
+Example:
+```bash
+$ npm install -g redux-cli@1.8.0 # released (and tested on) version as of this writing
+$ redux g reducer example
+```
+Will generate a reducer file named example, and the necessary tests boilerplate. 
+
+##
+Reducers have been setup to automatically dispatch the action with the type. This removes the need for any const strings.
+See the current reducers for an example, or use the reducer blueprint.
 
 ## Usage
 
