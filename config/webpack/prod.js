@@ -5,7 +5,7 @@ var postcssNext = require('postcss-cssnext');
 var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var WebpackOnBuildPlugin = require('on-build-webpack');
 var config = {
   bail: true,
 

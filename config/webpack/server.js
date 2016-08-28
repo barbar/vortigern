@@ -1,6 +1,6 @@
 var path = require('path');
 var fs = require('fs');
-
+console.log('Running webpack server build')
 var nodeModules = {};
 fs.readdirSync('node_modules')
   .filter(function (x) {
