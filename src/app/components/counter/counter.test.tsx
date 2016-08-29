@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { renderComponent } from '../../helpers/TestHelper'
-import { Counter } from './counterComponent'
+import Counter from './counterComponent'
 import * as Enzyme from 'enzyme'
 
 /** Mock App. State */

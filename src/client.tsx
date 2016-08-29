@@ -16,6 +16,11 @@ const store: Redux.Store = configureStore(
   browserHistory,
   window.__INITIAL_STATE__
 )
+export function getStore () {
+  if (store) {
+    return store
+  }
+}
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(

@@ -7,6 +7,7 @@ interface Window {
   devToolsExtension?: () => any;
   __INITIAL_STATE__?: any;
   __karma__?: any;
+  reduxAppReady?: boolean
 }
 
 interface ObjectConstructor {

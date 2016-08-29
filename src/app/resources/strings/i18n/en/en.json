@@ -1,0 +1,28 @@
+{
+  "components": {
+    "header": {
+      "links": {
+        "Home": "Home",
+        "About": "About",
+        "Counter": "Counter",
+        "Stars": "Stars "
+      }
+    },
+    "Counter": {
+      "counterHeader": "Counter Example",
+      "increment": "INCREMENT",
+      "decrement": "DECREMENT"
+    }
+  },
+  "views": {
+    "home": {
+      "hello": " Hello!"
+    },
+    "about": {
+      "about": "About"
+    },
+    "stars": {
+      "alternateTitle": "This is set by the view, not the component"
+    }
+  }
+}

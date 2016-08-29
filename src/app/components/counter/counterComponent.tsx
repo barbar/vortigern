@@ -1,7 +1,6 @@
 import * as React from 'react'
-
-// This is often useful, delete if you don't need it
-// import { Link } from 'react-router'
+import i18nProvider from '../../helpers/I18nProvider'
+import {Ii18nState} from '../../redux/modules/i18n/i18nReducer.generated.ts'
 
 export interface ICounterProps {
   count: number
@@ -13,26 +12,26 @@ export interface ICounterCallbacks {
 }
 
 export type ICounterPropTypes = ICounterProps & ICounterCallbacks
-export default function Counter (props: ICounterPropTypes) {
+export function Counter (props: ICounterPropTypes & Ii18nState) {
   const {count} = props
   const s = require('./counterComponent.css')
   return (
     <div className={s.counter}>
-      <h4>Counter Example</h4>
+      <h4>{props.strings.components.Counter.counterHeader}</h4>
       <button
         name="incBtn"
         onClick={props.increment}>
-        INCREMENT
+        {props.strings.components.Counter.increment}
       </button>
       <button
         name="decBtn"
         onClick={props.decrement}
         disabled={count <= 0}>
-        DECREMENT
+        {props.strings.components.Counter.decrement}
       </button>
       <p>{count}</p>
     </div>
   )
 }
 
-export {Counter }
+export default i18nProvider(Counter)

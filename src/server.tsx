@@ -38,7 +38,6 @@ app.use(favicon(path.join(__dirname, '../src/favicon.ico')))
 app.use('/public', express.static(path.join(__dirname, '../build/public')))
 
 app.get('*', (req: any, res: any) => {
-  console.log('generating page based off of', req.url, req.originalUrl)
   renderPage(req.url, req.originalUrl)
   .then((markup) => {
     res.status(200).send(markup)
