@@ -9,6 +9,10 @@
     "member-ordering": [false],
     "object-literal-sort-keys": false,
     "no-shadowed-variable": false,
-    "no-console": [false]
-  }
+    "no-console": [true],
+    "semicolon": [true, "never"],
+    "trailing-comma": ["never", {"multiline": "false", "singleline": "never"}],
+    "only-arrow-functions": false
+  },
+  "exclude": "blueprints/**/*"
 }

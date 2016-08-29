@@ -1,0 +1,28 @@
+{
+  "components": {
+    "header": {
+      "links": {
+        "Home": "Casa",
+        "About": "Acerca de",
+        "Counter": "Mostrador",
+        "Stars": "Estrellas"
+      }
+    },
+    "Counter": {
+      "counterHeader": "Ejemplo de contador",
+      "increment": "INCREMENTO",
+      "decrement": "DECREMENTO"
+    }
+  },
+  "views": {
+    "home": {
+      "hello": "Hola!"
+    },
+    "about": {
+      "about": "Acerca de"
+    },
+    "stars": {
+      "alternateTitle": "Esto es establecido por la vista , no el componente"
+    }
+  }
+}

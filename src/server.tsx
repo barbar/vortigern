@@ -1,36 +1,23 @@
-const appConfig = require('../config/main');
+const appConfig = require('../config/main')
 
-import * as e6p from 'es6-promise';
-(e6p as any).polyfill();
-import 'isomorphic-fetch';
+import * as e6p from 'es6-promise'
+(e6p as any).polyfill()
+import 'isomorphic-fetch'
+import {renderPage} from './renderPage'
+const express = require('express')
+const path = require('path')
+const compression = require('compression')
+const Chalk = require('chalk')
+const favicon = require('serve-favicon')
 
-import * as React from 'react';
-import * as ReactDOMServer from 'react-dom/server';
+const app = express()
 
-import { Provider } from 'react-redux';
-import { createMemoryHistory, match } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-const { ReduxAsyncConnect, loadOnServer } = require('redux-connect');
-import { configureStore } from './app/redux/store';
-import routes from './app/routes';
-
-import { Html } from './app/containers';
-const manifest = require('../build/manifest.json');
-
-const express = require('express');
-const path = require('path');
-const compression = require('compression');
-const Chalk = require('chalk');
-const favicon = require('serve-favicon');
-
-const app = express();
-
-app.use(compression());
+app.use(compression())
 
 if (process.env.NODE_ENV !== 'production') {
-  const webpack = require('webpack');
-  const webpackConfig = require('../config/webpack/dev');
-  const webpackCompiler = webpack(webpackConfig);
+  const webpack = require('webpack')
+  const webpackConfig = require('../config/webpack/dev')
+  const webpackCompiler = webpack(webpackConfig)
 
   app.use(require('webpack-dev-middleware')(webpackCompiler, {
     publicPath: webpackConfig.output.publicPath,
@@ -41,58 +28,35 @@ if (process.env.NODE_ENV !== 'production') {
     lazy: false,
     historyApiFallback: true,
     quiet: true,
-  }));
+  }))
 
-  app.use(require('webpack-hot-middleware')(webpackCompiler));
+  app.use(require('webpack-hot-middleware')(webpackCompiler))
 }
 
-app.use(favicon(path.join(__dirname, '../src/favicon.ico')));
+app.use(favicon(path.join(__dirname, '../src/favicon.ico')))
 
-app.use('/public', express.static(path.join(__dirname, '../build/public')));
+app.use('/public', express.static(path.join(__dirname, '../build/public')))
 
-app.get('*', (req, res) => {
-  const location = req.url;
-  const memoryHistory = createMemoryHistory(req.originalUrl);
-  const store = configureStore(memoryHistory);
-  const history = syncHistoryWithStore(memoryHistory, store);
+app.get('*', (req: any, res: any) => {
+  renderPage(req.url, req.originalUrl)
+  .then((markup) => {
+    res.status(200).send(markup)
+  })
+  .catch(({type, payload}) => {
+    if (type === 'error') {
+      res.status(500).send(payload.message)
+    } else if (type === 'redirect') {
+      res.redirect(302, payload.pathname + payload.search)
+    }
+  })
+})
 
-  match({ history, routes, location },
-    (error, redirectLocation, renderProps) => {
-      if (error) {
-        res.status(500).send(error.message);
-      } else if (redirectLocation) {
-        res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-      } else if (renderProps) {
-        const asyncRenderData = Object.assign({}, renderProps, { store });
-
-        loadOnServer(asyncRenderData).then(() => {
-          const markup = ReactDOMServer.renderToString(
-            <Provider store={store} key="provider">
-              <ReduxAsyncConnect {...renderProps} />
-            </Provider>
-          );
-          res.status(200).send(renderHTML(markup));
-        });
-
-        function renderHTML(markup) {
-          const html = ReactDOMServer.renderToString(
-            <Html markup={markup} manifest={manifest} store={store} />
-          );
-
-          return `<!doctype html> ${html}`;
-        }
-      } else {
-        res.status(404).send('Not Found?');
-      }
-    });
-});
-
-app.listen(appConfig.port, appConfig.host, err => {
+app.listen(appConfig.port, appConfig.host, (err: string) => {
   if (err) {
-    console.error(Chalk.bgRed(err));
+    console.error(Chalk.bgRed(err))
   } else {
     console.info(Chalk.black.bgGreen(
       `\n\n💂  Listening at http://${appConfig.host}:${appConfig.port}\n`
-    ));
+    ))
   }
-});
+})

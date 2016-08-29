@@ -105,7 +105,7 @@ module.exports = function (config) {
       },
 
       tslint: {
-        failOnHint: true
+        failOnHint: false
       },
 
       externals: {
@@ -120,7 +120,7 @@ module.exports = function (config) {
         new webpack.DefinePlugin({
           'process.env': {
             BROWSER: JSON.stringify(true),
-            NODE_ENV: JSON.stringify('development')
+            NODE_ENV: JSON.stringify('test')
           }
         })
       ]
@@ -136,9 +136,17 @@ module.exports = function (config) {
     conf.singleRun = true;
     conf.browsers.push('Firefox');
     conf.coverageReporter.reporters.push({ type: 'lcov', subdir: '.' });
-  } else {
+  } else if (process.env.NODE_ENV === 'multibrowser') {
     conf.coverageReporter.reporters.push({ type: 'html', subdir: 'html' });
     conf.browsers.push('Chrome');
+    conf.browsers.push('Firefox');
+    conf.browsers.push('Safari');
+  } else if (process.env.NODE_ENV === 'chrome') {
+    conf.browsers = ['Chrome'];
+  } else if (process.env.NODE_ENV === 'firefox') {
+    conf.browsers = ['Firefox'];
+  } else if (process.env.NODE_ENV === 'safari') {
+    conf.browsers = ['Safari'];
   }
 
   config.set(conf);
