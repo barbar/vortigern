@@ -147,6 +147,17 @@ Will generate a reducer file named example, and the necessary tests boilerplate.
 Reducers have been setup to automatically dispatch the action with the type. This removes the need for any const strings.
 See the current reducers for an example, or use the reducer blueprint.
 
+## I18n (Internationalization)
+This starter kit is setup to handle language changes automatically.
+
+To make the best use of i18n, keep all your strings in src/app/resources/strings/i18n/(language)/(language.json)
+
+Code generation will occur while you are developing and generate types for you. You can access all strings from the 
+rootstore.i18n.strings, which should be setup by the blueprints automatically.
+
+Adding language auto detection is on the roadmap. 
+
+
 ## Usage
 
 All commands defaults to development environment. You can set `NODE_ENV` to `production` or use the shortcuts below.
