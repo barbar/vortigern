@@ -21,7 +21,7 @@ const l = {
   },
   "views": {
     "home": {
-      "hello": " Hello!"
+      "hello": "Hello!"
     },
     "about": {
       "about": "About"
