@@ -4,7 +4,7 @@
   "description": "A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.",
   "main": "build/server.js",
   "scripts": {
-    "postinstall": "typings install",
+    "postinstall": "if [ -z \"$npm_config_production\" ]; then typings install; fi",
     "clean": "rimraf build",
     "prebuild": "npm run clean",
     "build": "webpack --config config/webpack/index.js",
