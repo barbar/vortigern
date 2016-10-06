@@ -20,6 +20,7 @@
     "redux-devtools": "registry:dt/redux-devtools#3.0.0+20151215130854",
     "redux-devtools-dock-monitor": "registry:dt/redux-devtools-dock-monitor#1.0.1+20151216103641",
     "redux-devtools-log-monitor": "registry:dt/redux-devtools-log-monitor#1.0.1+20151216103641",
+    "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160907111255",
     "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654",
     "sinon": "registry:dt/sinon#1.16.0+20160317120654",
     "source-map": "registry:dt/source-map#0.0.0+20160317120654",
