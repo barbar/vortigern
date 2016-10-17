@@ -100,7 +100,7 @@
     "serve-favicon": "^2.3.0",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
-    "stylelint": "^6.2.2",
+    "stylelint": "7.4.2",
     "ts-loader": "^0.8.2",
     "tslint": "^3.13.0",
     "tslint-loader": "^2.1.5",
