@@ -71,7 +71,7 @@
     "css-loader": "0.25.0",
     "enzyme": "^2.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "fetch-mock": "^4.5.4",
+    "fetch-mock": "5.5.0",
     "file-loader": "^0.8.5",
     "isomorphic-style-loader": "^1.0.0",
     "istanbul-instrumenter-loader": "^0.2.0",
