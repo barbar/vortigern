@@ -25,10 +25,10 @@
     "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654",
     "sinon": "registry:dt/sinon#1.16.0+20160317120654",
     "source-map": "registry:dt/source-map#0.0.0+20160317120654",
-    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
-    "webpack": "registry:dt/webpack#1.12.9+20160321060707"
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526"
   },
   "dependencies": {
-    "enzyme": "registry:npm/enzyme#2.2.0+20160322031343"
+    "enzyme": "registry:npm/enzyme#2.2.0+20160322031343",
+    "webpack": "registry:npm/webpack#1.12.9+20160418172948"
   }
 }
