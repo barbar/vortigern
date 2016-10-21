@@ -7,7 +7,7 @@
     "history": "registry:dt/history#1.8.0+20160316155526",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160316155526",
     "jquery": "registry:dt/jquery#1.10.0+20160417213236",
-    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:dt/node#6.0.0+20161019125345",
     "react": "registry:dt/react#0.14.0+20160423065914",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
