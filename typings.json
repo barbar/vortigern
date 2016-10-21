@@ -11,7 +11,7 @@
     "node": "registry:dt/node#4.0.0+20160423143914",
     "react": "registry:dt/react#0.14.0+20160423065914",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160417144949",
-    "react-helmet": "registry:dt/react-helmet#0.0.0+20160423063849",
+    "react-helmet": "registry:dt/react-helmet#0.0.0+20160816111147",
     "react-redux": "registry:dt/react-redux#4.4.0+20160406115600",
     "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#b56b92096d905075413bf0b42f1618ece50770b6",
     "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160316155526",
