@@ -1,4 +1,5 @@
 {
+  "name": "vortigern",
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160317120654",
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
