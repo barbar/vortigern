@@ -22,11 +22,11 @@
     "redux-devtools-dock-monitor": "registry:dt/redux-devtools-dock-monitor#1.0.1+20151216103641",
     "redux-devtools-log-monitor": "registry:dt/redux-devtools-log-monitor#1.0.1+20151216103641",
     "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160907111255",
-    "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654",
     "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526"
   },
   "dependencies": {
     "enzyme": "registry:npm/enzyme#2.2.0+20160322031343",
+    "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520",
     "sinon": "registry:npm/sinon#1.16.0+20160723033700",
     "source-map": "registry:npm/source-map#0.4.0+20160723033700",
     "webpack": "registry:npm/webpack#1.12.9+20160418172948"
