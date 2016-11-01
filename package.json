@@ -129,7 +129,7 @@
     "ts-loader": "^0.9.3",
     "tslint": "^3.15.1",
     "tslint-loader": "^2.1.5",
-    "tslint-react": "^0.4.0",
+    "tslint-react": "^1.1.0",
     "typescript": "^2.0.6",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
@@ -151,6 +151,7 @@
     "react-router-redux": "^4.0.6",
     "redux": "^3.6.0",
     "redux-connect": "^3.0.0",
+    "redux-devtools-extension": "^1.0.0",
     "redux-thunk": "^2.1.0"
   }
 }
