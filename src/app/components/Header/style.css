@@ -6,4 +6,9 @@
 .nav ul li {
 	display: inline;
 	padding: 5px;
+	color: blue;
+}
+
+a {
+	color: pink;
 }
