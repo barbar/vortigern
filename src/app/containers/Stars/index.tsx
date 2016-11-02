@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {  getStars } from '../../redux/modules/stars';
-import {  IStars, IStarsAction } from '../../models/stars/';
-const { connect } = require('react-redux');
+import { getStars } from '../../redux/modules/stars';
+import { IStars, IStarsAction } from '../../models/stars/';
+const { connect } = require('react-redux');
 const { asyncConnect } = require('redux-connect');
 
 interface IProps {

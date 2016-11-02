@@ -24,7 +24,7 @@ ReactDOM.render(
     <Router
       history={history}
       render={connectedCmp}
-      >
+    >
       {routes}
     </Router>
   </Provider>,
