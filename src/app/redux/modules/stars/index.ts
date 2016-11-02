@@ -1,4 +1,4 @@
-import { IStars, IStarsAction } from '../../../models/stars';
+import { IStars, IStarsAction } from '../../../models/stars';
 
 /** Action Types */
 export const GET_REQUEST: string = 'stars/GET_REQUEST';
@@ -37,7 +37,7 @@ export function starsReducer(state = initialState, action: IStarsAction) {
 }
 
 /** Async Action Creator */
-export function getStars(): Redux.Dispatch {
+export function getStars() {
   return dispatch => {
     dispatch(starsRequest());
 

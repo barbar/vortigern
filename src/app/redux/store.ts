@@ -1,12 +1,12 @@
 const appConfig = require('../../../config/main');
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import rootReducer from './reducers';
+import { IStore } from './IStore';
 const createLogger = require('redux-logger');
 
-export function configureStore(history, initialState?: any): Redux.Store<any> {
+export function configureStore(history, initialState?: IStore): Redux.Store<IStore> {
 
     let middlewares: Redux.Middleware[] = [
         routerMiddleware(history),
@@ -19,24 +19,13 @@ export function configureStore(history, initialState?: any): Redux.Store<any> {
         middlewares.push(logger);
     }
 
-    // const devTools = appConfig.env === 'development' &&
-    //   typeof window === 'object' &&
-    //   typeof window.devToolsExtension !== 'undefined'
-    //   ? window.devToolsExtension() : f => f;
+    const composeEnhancers = (appConfig.env !== 'production' &&
+        typeof window === 'object' &&
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-    // const finalCreateStore = compose(
-    //     applyMiddleware(...middlewares)
-    // )(createStore);
-
-    // const store: Redux.Store<any> = finalCreateStore(rootReducer, initialState);
-
-    const composeEnhancers = composeWithDevTools({
-        // Specify here name, actionsBlacklist, actionsCreators and other options
-    });
-    const store = createStore(rootReducer, composeEnhancers(
-        applyMiddleware(...middlewares),
-        // other store enhancers if any
-    ), initialState);
+    const store = createStore(rootReducer, initialState, composeEnhancers(
+        applyMiddleware(...middlewares)
+    ));
 
     if (appConfig.env === 'development' && (module as any).hot) {
         (module as any).hot.accept('./reducers', () => {

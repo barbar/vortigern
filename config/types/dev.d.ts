@@ -1,17 +1,15 @@
+
+
 /**
  * Type declerations for global development variables
  */
 
-// A hack for the Redux DevTools Chrome extension.
-// interface Window {
-//   devToolsExtension?: () => any;
-//   __INITIAL_STATE__?: any;
-// }
-
-interface ObjectConstructor {
-  assign(target: any, ...sources: any[]): any;
+interface Window {
+    // A hack for the Redux DevTools Chrome extension.
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: <F extends Function>(f: F) => F;
+    __INITIAL_STATE__?: any;
 }
 
-declare module 'redux-devtools-extension/developmentOnly' {
-  export function composeWithDevTools(value: string): string;
+interface ObjectConstructor {
+    assign(target: any, ...sources: any[]): any;
 }
