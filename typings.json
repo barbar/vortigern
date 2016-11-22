@@ -13,7 +13,7 @@
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-helmet": "registry:dt/react-helmet#0.0.0+20160423063849",
     "react-redux": "registry:dt/react-redux#4.4.0+20160406115600",
-    "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#b56b92096d905075413bf0b42f1618ece50770b6",
+    "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#df9065dc6e93d23a0d284c57c30570eefb81d35d",
     "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160316155526",
     "react-router/history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#b56b92096d905075413bf0b42f1618ece50770b6",
     "redux": "registry:dt/redux#3.3.1+20160326112656",
