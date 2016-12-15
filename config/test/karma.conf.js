@@ -48,6 +48,7 @@ module.exports = function (config) {
         root: path.resolve(__dirname),
         modulesDirectories: [
           '../../src',
+          '../../src/app',
           'node_modules'
         ],
         extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']

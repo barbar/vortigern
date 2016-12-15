@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { increment, decrement }  from '../../redux/modules/counter/';
-import { ICounter }  from '../../models/counter';
-import { ICounterAction } from '../../models/counter';
+import { increment, decrement }  from 'redux/modules/counter/';
+import { ICounter }  from 'models/counter';
+import { ICounterAction } from 'models/counter';
 const { connect } = require('react-redux');
 const s = require('./style.css');
 

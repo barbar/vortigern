@@ -15,7 +15,8 @@ var config = {
   target: 'node',
 
   resolve: {
-    extensions: ['', '.ts', '.tsx', '.js', '.jsx']
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
+    modulesDirectories: ['node_modules', 'app'],
   },
 
   entry: './src/server.tsx',
