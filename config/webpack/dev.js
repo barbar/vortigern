@@ -14,7 +14,7 @@ var config = {
   resolve: {
     root: path.resolve(__dirname),
     extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'app'],
+    modulesDirectories: ['node_modules', 'app', 'app/redux'],
   },
 
   entry: {

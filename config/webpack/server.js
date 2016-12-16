@@ -16,7 +16,7 @@ var config = {
 
   resolve: {
     extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'app'],
+    modulesDirectories: ['node_modules', 'app', 'app/redux'],
   },
 
   entry: './src/server.tsx',

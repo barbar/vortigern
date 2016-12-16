@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { increment, decrement }  from 'redux/modules/counter/';
+import { increment, decrement }  from 'modules/counter/';
 import { ICounter }  from 'models/counter';
 import { ICounterAction } from 'models/counter';
 const { connect } = require('react-redux');

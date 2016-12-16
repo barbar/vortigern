@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/app",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/app/*",
+        "src/app/redux/*"
+      ]
+    },
     "outDir": "build",
     "module": "commonjs",
     "target": "es5",
