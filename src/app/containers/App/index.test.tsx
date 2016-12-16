@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { renderComponent } from '../../helpers/TestHelper';
+import { renderComponent } from 'helpers/TestHelper';
 import { App } from './index';
 
 describe('<App />', () => {

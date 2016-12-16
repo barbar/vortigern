@@ -48,6 +48,8 @@ module.exports = function (config) {
         root: path.resolve(__dirname),
         modulesDirectories: [
           '../../src',
+          '../../src/app',
+          '../../src/app/redux',
           'node_modules'
         ],
         extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
