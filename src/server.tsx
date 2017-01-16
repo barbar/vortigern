@@ -46,9 +46,9 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(require('webpack-hot-middleware')(webpackCompiler));
 }
 
-app.use(favicon(path.join(__dirname, '../src/favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 
-app.use('/public', express.static(path.join(__dirname, '../build/public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
   const location = req.url;
