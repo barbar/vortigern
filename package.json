@@ -1,6 +1,6 @@
 {
   "name": "vortigern",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.",
   "main": "build/server.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "Barbar Startup Factory <hey@barbar.com.tr>",
   "contributors": [{
       "name": "Altay Aydemir",
-      "email": "altay@peergust.com",
+      "email": "altay.aydemir@gmail.com",
       "url": "http://altayaydemir.com/"
     },
     {
@@ -30,6 +30,11 @@
       "name": "Omer Ufuk Efendioglu",
       "email": "ufukomer@gmail.com",
       "url": "http://ufukomer.com/"
+    },
+    {
+      "name": "Patrick Roza",
+      "email": "contact@patrickroza.com",
+      "url": "http://patrickroza.com/"
     }
   ],
   "homepage": "https://github.com/barbar/vortigern.git",

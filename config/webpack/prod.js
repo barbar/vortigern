@@ -23,7 +23,6 @@ var config = {
       'react-dom',
       'react-router',
       'react-helmet',
-      'react-markdown',
       'react-redux',
       'react-router-redux',
       'redux',
@@ -121,7 +120,6 @@ var config = {
       }
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'js/[name].[chunkhash].js',
