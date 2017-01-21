@@ -36,7 +36,7 @@ Vortigern uses the following libraries and tools:
 
 #### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
-  - [TypeScript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
+  - [Awesome TypeScript Loader](https://github.com/s-panferov/awesome-typescript-loader) as ts loader.
   - [Babel Loader](https://github.com/babel/babel-loader) as js loader.
   - [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
   - [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
