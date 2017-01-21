@@ -56,14 +56,11 @@ module.exports = function (config) {
       },
 
       module: {
-        preLoaders: [
-          {
-            test: /\.tsx?$/,
-            loader: 'tslint'
-          }
-        ],
-        loaders: [
-          {
+        preLoaders: [{
+          test: /\.tsx?$/,
+          loader: 'tslint'
+        }],
+        loaders: [{
             test: /\.tsx?$/,
             loader: 'ts'
           },
@@ -80,7 +77,7 @@ module.exports = function (config) {
             include: path.resolve('./src/app'),
             loaders: [
               'style',
-              'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
+              'css?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
               'postcss'
             ]
           },
@@ -90,19 +87,19 @@ module.exports = function (config) {
             loader: 'style!css'
           }
         ],
-        postLoaders: [
-          {
-            test: /\.tsx?$/,
-            loader: 'istanbul-instrumenter-loader',
-            include: path.resolve('./src/app')
-          }
-        ]
+        postLoaders: [{
+          test: /\.tsx?$/,
+          loader: 'istanbul-instrumenter-loader',
+          include: path.resolve('./src/app')
+        }]
       },
 
       postcss: function () {
         return [
           postcssNext(),
-          postcssAssets({ relative: true })
+          postcssAssets({
+            relative: true
+          }),
         ];
       },
 
@@ -118,7 +115,7 @@ module.exports = function (config) {
       plugins: [
         new webpack.IgnorePlugin(/^fs$/),
         new webpack.IgnorePlugin(/^react\/addons$/),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env': {
             BROWSER: JSON.stringify(true),
@@ -137,9 +134,15 @@ module.exports = function (config) {
     conf.autoWatch = false;
     conf.singleRun = true;
     conf.browsers.push('Firefox');
-    conf.coverageReporter.reporters.push({ type: 'lcov', subdir: '.' });
+    conf.coverageReporter.reporters.push({
+      type: 'lcov',
+      subdir: '.'
+    });
   } else {
-    conf.coverageReporter.reporters.push({ type: 'html', subdir: 'html' });
+    conf.coverageReporter.reporters.push({
+      type: 'html',
+      subdir: 'html'
+    });
     conf.browsers.push('Chrome');
   }
 

@@ -14,7 +14,7 @@ import routes from './app/routes';
 
 const store = configureStore(
   browserHistory,
-  window.__INITIAL_STATE__
+  window.__INITIAL_STATE__,
 );
 const history = syncHistoryWithStore(browserHistory, store);
 const connectedCmp = (props) => <ReduxAsyncConnect {...props} />;
@@ -28,5 +28,5 @@ ReactDOM.render(
       {routes}
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

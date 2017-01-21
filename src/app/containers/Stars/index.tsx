@@ -15,7 +15,7 @@ interface IProps {
   },
 }])
 @connect(
-  state => ({ stars: state.stars })
+  (state) => ({ stars: state.stars }),
 )
 class Stars extends React.Component<IProps, {}> {
 
