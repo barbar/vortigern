@@ -8,7 +8,7 @@ const createLogger = require('redux-logger');
 
 export function configureStore(history, initialState?: IStore): Redux.Store<IStore> {
 
-  let middlewares: Redux.Middleware[] = [
+  const middlewares: Redux.Middleware[] = [
     routerMiddleware(history),
     thunk,
   ];
@@ -24,7 +24,7 @@ export function configureStore(history, initialState?: IStore): Redux.Store<ISto
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
   const store = createStore(rootReducer, initialState, composeEnhancers(
-    applyMiddleware(...middlewares)
+    applyMiddleware(...middlewares),
   ));
 
   if (appConfig.env === 'development' && (module as any).hot) {

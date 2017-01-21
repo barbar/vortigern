@@ -22,12 +22,12 @@ class Html extends React.Component<IHtmlProps, {}> {
 
     const styles = this.resolve(['vendor.css', 'app.css']);
     const renderStyles = styles.map((src, i) =>
-      <link key={i} rel="stylesheet" type="text/css" href={src} />
+      <link key={i} rel="stylesheet" type="text/css" href={src} />,
     );
 
     const scripts = this.resolve(['vendor.js', 'app.js']);
     const renderScripts = scripts.map((src, i) =>
-      <script src={src} key={i} />
+      <script src={src} key={i} />,
     );
 
     // tslint:disable-next-line:max-line-length

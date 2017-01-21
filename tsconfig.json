@@ -9,11 +9,13 @@
     },
     "outDir": "build",
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "sourceMap": true,
     "inlineSourceMap": false,
     "inlineSources": false,
     "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
     "jsx": "react",
     "moduleResolution": "node"
   },
@@ -22,5 +24,9 @@
     "build",
     "typings/main",
     "typings/main.d.ts"
-  ]
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "useBabel": true
+  }
 }

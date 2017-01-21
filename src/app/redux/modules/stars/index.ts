@@ -38,20 +38,20 @@ export function starsReducer(state = initialState, action: IStarsAction) {
 
 /** Async Action Creator */
 export function getStars() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(starsRequest());
 
     return fetch('https://api.github.com/repos/barbar/vortigern')
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
           return res.json()
-            .then(res => dispatch(starsSuccess(res.stargazers_count)));
+            .then((res) => dispatch(starsSuccess(res.stargazers_count)));
         } else {
           return res.json()
-            .then(res => dispatch(starsFailure(res)));
+            .then((res) => dispatch(starsFailure(res)));
         }
       })
-      .catch(err => dispatch(starsFailure(err)));
+      .catch((err) => dispatch(starsFailure(err)));
   };
 }
 
