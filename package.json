@@ -96,7 +96,7 @@
     "fetch-mock": "^5.8.1",
     "file-loader": "^0.9.0",
     "isomorphic-style-loader": "^1.1.0",
-    "istanbul-instrumenter-loader": "^1.2.0",
+    "istanbul-instrumenter-loader": "^0.2.0",
     "json-loader": "^0.5.4",
     "karma": "^1.4.0",
     "karma-chai": "^0.1.0",

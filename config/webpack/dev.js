@@ -5,10 +5,7 @@ var postcssAssets = require('postcss-assets');
 var postcssNext = require('postcss-cssnext');
 var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
-
-const {
-  CheckerPlugin
-} = require('awesome-typescript-loader')
+var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
 var config = {
   // Enable sourcemaps for debugging webpack's output.

@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { expect } from 'chai';
 import * as counter from './';
-import { ICounter, ICounterAction } from 'models/counter';
+import { ICounter, ICounterAction } from 'models/counter';
 
 /** Module */
 describe('Counter Module', () => {
@@ -25,7 +25,7 @@ describe('Counter Module', () => {
   /** Reducer */
   describe('Reducer', () => {
 
-    let state: ICounter = { count: 10 };
+    const state: ICounter = { count: 10 };
 
     it('handles action of type INCREMENT', () => {
       const action: ICounterAction = { type: counter.INCREMENT };

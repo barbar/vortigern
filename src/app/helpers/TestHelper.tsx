@@ -21,7 +21,7 @@ function renderComponent(ComponentClass, state?, props?) {
   return mount(
     <Provider store={store}>
       <ComponentClass {...props} />
-    </Provider>
+    </Provider>,
   );
 }
 
