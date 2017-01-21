@@ -2,9 +2,9 @@
  * Type declerations for global development variables
  */
 
-// A hack for the Redux DevTools Chrome extension.
 interface Window {
-  devToolsExtension?: () => any;
+  // A hack for the Redux DevTools Chrome extension.
+  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: <F extends Function>(f: F) => F;
   __INITIAL_STATE__?: any;
 }
 

@@ -12,22 +12,21 @@ import { configureStore } from './app/redux/store';
 import 'isomorphic-fetch';
 import routes from './app/routes';
 
-const store: Redux.Store = configureStore(
+const store = configureStore(
   browserHistory,
-  window.__INITIAL_STATE__
+  window.__INITIAL_STATE__,
 );
 const history = syncHistoryWithStore(browserHistory, store);
+const connectedCmp = (props) => <ReduxAsyncConnect {...props} />;
 
 ReactDOM.render(
   <Provider store={store} key="provider">
     <Router
       history={history}
-      render={(props) =>
-        <ReduxAsyncConnect {...props} />
-      }
+      render={connectedCmp}
     >
       {routes}
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

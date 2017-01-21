@@ -40,3 +40,4 @@ typings
 
 # JetBrains
 .idea
+.awcache

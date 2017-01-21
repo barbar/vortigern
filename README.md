@@ -36,7 +36,7 @@ Vortigern uses the following libraries and tools:
 
 #### Build System
 - [Webpack](https://github.com/webpack/webpack) for bundling.
-  - [TypeScript Loader](https://github.com/andreypopp/typescript-loader) as ts loader.
+  - [Awesome TypeScript Loader](https://github.com/s-panferov/awesome-typescript-loader) as ts loader.
   - [Babel Loader](https://github.com/babel/babel-loader) as js loader.
   - [React Hot Loader](https://github.com/gaearon/react-hot-loader) for providing hot reload capability to our development server
   - [Isomorphic Style Loader](https://github.com/kriasoft/isomorphic-style-loader) for loading styles on server-side.
@@ -174,10 +174,10 @@ ___
 
 ## [Barbar Startup Factory](https://www.barbar.com.tr/?ref=vortigern)
 
-<a target="_blank" href="https://www.barbar.com.tr/?ref=vortigern-barbar-logo"><img src="https://barbaruploads.s3.amazonaws.com/bicoz/logo2x.png" height="55px" /></a>
+<a target="_blank" href="https://barbar.digital/?ref=vortigern-barbar-logo"><img src="https://barbaruploads.s3.amazonaws.com/bicoz/logo2x.png" height="55px" /></a>
 
 We help startups start and stay started by helping them plan, strategize, fund and execute their vision. 
 
-You can contact us at [hey@barbar.com.tr](mailto:hey@barbar.com.tr)
+You can contact us at [hey@barbar.digital](mailto:hey@barbar.digital)
 
 Be sure to check out available [jobs at Barbar](https://github.com/barbar/hr).

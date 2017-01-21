@@ -45,29 +45,29 @@ module.exports = function (config) {
       devtool: 'inline-source-map',
 
       resolve: {
-        root: path.resolve(__dirname),
-        modulesDirectories: [
+        modules: [
+          path.resolve(__dirname),
           '../../src',
+          '../../src/app',
+          '../../src/app/redux',
           'node_modules'
         ],
-        extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
+        extensions: ['.json', '.js', '.ts', '.tsx', '.jsx']
       },
 
       module: {
-        preLoaders: [
+        rules: [{
+            enforce: 'pre',
+            test: /\.tsx?$/,
+            loader: 'tslint-loader'
+          },
           {
             test: /\.tsx?$/,
-            loader: 'tslint'
-          }
-        ],
-        loaders: [
-          {
-            test: /\.tsx?$/,
-            loader: 'ts'
+            loader: 'awesome-typescript-loader?useCache=false'
           },
           {
             test: /\.(jpe?g|png|gif)$/i,
-            loader: 'url?limit=1000&name=images/[hash].[ext]'
+            loader: 'url-loader?limit=1000&name=images/[hash].[ext]'
           },
           {
             test: /\.json$/,
@@ -77,35 +77,23 @@ module.exports = function (config) {
             test: /\.css$/,
             include: path.resolve('./src/app'),
             loaders: [
-              'style',
-              'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-              'postcss'
+              'style-loader',
+              'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
+              'postcss-loader'
             ]
           },
           {
             test: /\.css$/,
             exclude: path.resolve('./src/app'),
-            loader: 'style!css'
-          }
-        ],
-        postLoaders: [
+            loader: 'style-loader!css-loader'
+          },
           {
+            enforce: 'post',
             test: /\.tsx?$/,
             loader: 'istanbul-instrumenter-loader',
             include: path.resolve('./src/app')
           }
-        ]
-      },
-
-      postcss: function () {
-        return [
-          postcssNext(),
-          postcssAssets({ relative: true })
-        ];
-      },
-
-      tslint: {
-        failOnHint: true
+        ],
       },
 
       externals: {
@@ -114,9 +102,24 @@ module.exports = function (config) {
       },
 
       plugins: [
+        new webpack.LoaderOptionsPlugin({
+          options: {
+            tslint: {
+              failOnHint: true
+            },
+            postcss: function () {
+              return [
+                postcssNext(),
+                postcssAssets({
+                  relative: true
+                }),
+              ];
+            },
+          }
+        }),
         new webpack.IgnorePlugin(/^fs$/),
         new webpack.IgnorePlugin(/^react\/addons$/),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env': {
             BROWSER: JSON.stringify(true),
@@ -135,9 +138,15 @@ module.exports = function (config) {
     conf.autoWatch = false;
     conf.singleRun = true;
     conf.browsers.push('Firefox');
-    conf.coverageReporter.reporters.push({ type: 'lcov', subdir: '.' });
+    conf.coverageReporter.reporters.push({
+      type: 'lcov',
+      subdir: '.'
+    });
   } else {
-    conf.coverageReporter.reporters.push({ type: 'html', subdir: 'html' });
+    conf.coverageReporter.reporters.push({
+      type: 'html',
+      subdir: 'html'
+    });
     conf.browsers.push('Chrome');
   }
 

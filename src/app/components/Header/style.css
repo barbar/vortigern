@@ -1,9 +1,14 @@
 .nav ul {
-	list-style-type: none;
-	padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .nav ul li {
-	display: inline;
-	padding: 5px;
+  display: inline;
+  padding: 5px;
+  color: blue;
+}
+
+a {
+  color: pink;
 }

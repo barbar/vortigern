@@ -1,4 +1,3 @@
-/** Type Definitions */
 export interface IStars {
   isFetching?: boolean;
   count?: number;
