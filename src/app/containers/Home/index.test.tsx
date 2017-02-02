@@ -7,8 +7,8 @@ describe('<Home />', () => {
   const component = renderComponent(Home);
 
   it('Renders with correct style', () => {
-    const s = require('./style.css');
-    expect(component.find(s.home)).to.exist;
+    const style = require('./style.css');
+    expect(component.find(style.Home)).to.exist;
   });
 
   it('Renders Barbar Logo', () => {

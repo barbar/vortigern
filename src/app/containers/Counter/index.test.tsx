@@ -16,8 +16,8 @@ describe('<Counter />', () => {
   });
 
   it('Renders with correct style', () => {
-    const s = require('./style.css');
-    expect(component.find(s.counter)).to.exist;
+    const style = require('./style.css');
+    expect(component.find(style.Counter)).to.exist;
   });
 
   it('Renders header', () => {

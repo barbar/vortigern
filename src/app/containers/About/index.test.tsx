@@ -7,8 +7,8 @@ describe('<About />', () => {
   const component = renderComponent(About);
 
   it('Renders with correct style', () => {
-    const s = require('./style.css');
-    expect(component.find(s.about)).to.exist;
+    const style = require('./style.css');
+    expect(component.find(style.About)).to.exist;
   });
 
   it('Renders header with text', () => {

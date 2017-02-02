@@ -15,8 +15,8 @@ describe('<Counter />', () => {
   const component = renderComponent(Stars, state);
 
   it('Renders with correct style', () => {
-    const s = require('./style.css');
-    expect(component.find(s.stars)).to.exist;
+    const style = require('./style.css');
+    expect(component.find(style.Stars)).to.exist;
   });
 
   it('Renders header', () => {
