@@ -7,8 +7,8 @@ describe('<App />', () => {
   const component = renderComponent(App);
 
   it('Renders with correct style', () => {
-    const s = require('./style.css');
-    expect(component.find(s.appContainer)).to.exist;
+    const style = require('./style.css');
+    expect(component.find(style.AppContainer)).to.exist;
   });
 
 });

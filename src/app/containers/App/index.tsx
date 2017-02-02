@@ -4,12 +4,12 @@ import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import { Header } from 'components';
 
-const s = require('./style.css');
+const style = require('./style.css');
 
 class App extends React.Component<any, any> {
   public render() {
     return (
-      <section className={s.appContainer}>
+      <section className={style.AppContainer}>
         <Helmet {...appConfig.app} {...appConfig.app.head}/>
         <Header />
         {this.props.children}

@@ -1,14 +1,15 @@
-.nav ul {
-  list-style-type: none;
-  padding: 0;
-}
+.Nav {
+  & ul {
+    list-style-type: none;
+    padding: 0;
 
-.nav ul li {
-  display: inline;
-  padding: 5px;
-  color: blue;
-}
+    & li {
+      display: inline;
+      padding: 5px;
 
-a {
-  color: pink;
+      & a {
+        color: #212121;
+      }
+    }
+  }
 }
