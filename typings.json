@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "redux-form": "registry:npm/redux-form#4.0.3+20160310030142"
+  }
+}
