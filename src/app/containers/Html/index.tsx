@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as Helmet from 'react-helmet';
 
 interface IHtmlProps {
-  manifest?: Object;
+  manifest?: any;
   markup?: string;
   store?: Redux.Store<IStore>;
 }
