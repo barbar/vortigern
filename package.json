@@ -16,7 +16,8 @@
     "lint": "tslint \"src/**/**.ts*\""
   },
   "author": "Barbar Startup Factory <hey@barbar.com.tr>",
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Altay Aydemir",
       "email": "altay.aydemir@gmail.com",
       "url": "http://altayaydemir.com/"
@@ -68,13 +69,13 @@
     "@types/classnames": "0.0.32",
     "@types/enzyme": "^2.7.1",
     "@types/history": "^4.5.0",
-    "@types/isomorphic-fetch": "0.0.33",
+    "@types/isomorphic-fetch": "0.0.34",
     "@types/mocha": "^2.2.38",
     "@types/node": "^7.0.0",
     "@types/react": "^15.0.0",
     "@types/react-addons-test-utils": "^0.14.16",
     "@types/react-dom": "^0.14.20",
-    "@types/react-helmet": "0.0.27",
+    "@types/react-helmet": "^5.0.2",
     "@types/react-redux": "^4.4.35",
     "@types/react-router": "^3.0.2",
     "@types/react-router-redux": "^4.0.38",
@@ -134,7 +135,7 @@
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-dev-server": "^2.2.0",
-    "webpack-hot-middleware": "^2.15.0",
+    "webpack-hot-middleware": "^2.18.0",
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
@@ -147,7 +148,7 @@
     "react": "~15.4.2",
     "react-css-modules": "^4.1.0",
     "react-dom": "~15.4.2",
-    "react-helmet": "^4.0.0",
+    "react-helmet": "^5.0.3",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
