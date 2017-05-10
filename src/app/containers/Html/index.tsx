@@ -1,6 +1,6 @@
 import { IStore } from 'redux/IStore';
 import * as React from 'react';
-import * as Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 interface IHtmlProps {
   manifest?: any;
