@@ -3,7 +3,7 @@ import { renderComponent } from 'helpers/TestHelper';
 import { Stars } from './index';
 
 /** Mock App. State */
-const state: Object = {
+const state: object = {
   stars: {
     count: 61,
     isFetching: false,
