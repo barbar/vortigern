@@ -13,7 +13,8 @@
     "start": "node build/server.js",
     "start:prod": "cross-env NODE_ENV=production npm start",
     "test": "karma start config/test/karma.conf.js",
-    "lint": "tslint \"src/**/**.ts*\""
+    "lint": "tslint \"src/**/**.ts*\"",
+    "component": "generact"
   },
   "author": "Barbar Startup Factory <hey@barbar.com.tr>",
   "contributors": [
@@ -107,6 +108,7 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "fetch-mock": "^5.8.1",
     "file-loader": "^0.9.0",
+    "generact": "^0.1.0",
     "isomorphic-style-loader": "^1.1.0",
     "istanbul-instrumenter-loader": "^0.2.0",
     "json-loader": "^0.5.4",
