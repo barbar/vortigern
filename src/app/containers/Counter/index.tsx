@@ -19,7 +19,7 @@ interface IProps {
   }),
 )
 
-class Counter extends React.Component<IProps, void> {
+class Counter extends React.Component<IProps, {}> {
   public render() {
     const { increment, decrement, counter } = this.props;
 
