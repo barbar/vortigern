@@ -103,7 +103,7 @@
     "classnames": "^2.2.5",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
-    "enzyme": "^2.8.2",
+    "enzyme": "2.8.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "fetch-mock": "^5.8.1",
     "file-loader": "^0.9.0",
