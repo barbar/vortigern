@@ -70,7 +70,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/base16": "^1.0.1",
-    "@types/chai": "^3.4.34",
+    "@types/chai": "^4.0.4",
     "@types/classnames": "0.0.32",
     "@types/enzyme": "^2.8.0",
     "@types/history": "^4.5.0",
@@ -95,7 +95,7 @@
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "classnames": "^2.2.5",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
