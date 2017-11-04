@@ -39,7 +39,7 @@ var config = {
       },
       {
         test: /\.tsx?$/,
-        loader: 'react-hot-loader!awesome-typescript-loader'
+        loaders: ['react-hot-loader/webpack', 'awesome-typescript-loader']
       },
       {
         test: /\.jsx$/,

@@ -19,7 +19,7 @@ const store = configureStore(
 const history = syncHistoryWithStore(browserHistory, store);
 const connectedCmp = (props) => <ReduxAsyncConnect {...props} />;
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Provider store={store} key="provider">
     <Router
       history={history}
