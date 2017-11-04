@@ -59,8 +59,8 @@ var config = {
         test: /\.css$/,
         include: path.resolve('./src/app'),
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [
+          fallback: 'style-loader',
+          use: [
             'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
             'postcss-loader'
           ]
@@ -70,8 +70,8 @@ var config = {
         test: /\.css$/,
         exclude: path.resolve('./src/app'),
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [
+          fallback: 'style-loader',
+          use: [
             'css-loader',
           ]
         })
