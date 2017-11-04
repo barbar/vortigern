@@ -116,7 +116,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.1",
-    "mocha": "^3.2.0",
+    "mocha": "^4.0.1",
     "phantomjs-prebuilt": "^2.1.14",
     "postcss-assets": "^4.1.0",
     "postcss-cssnext": "^2.9.0",
