@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/base16@*", "@types/base16@^1.0.1":
+"@types/base16@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/base16/-/base16-1.0.1.tgz#76dc8630675e99d1d5be78dfef59307254831203"
 
@@ -87,26 +87,6 @@
 "@types/react@*", "@types/react@^15.0.0":
   version "15.0.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.14.tgz#07a739b20b0d4cf946f52444d3c40a94d4a234b1"
-
-"@types/redux-devtools-dock-monitor@^1.1.29":
-  version "1.1.30"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools-dock-monitor/-/redux-devtools-dock-monitor-1.1.30.tgz#dca490507b89f285a3d8aae54c0e921e3cc1a515"
-  dependencies:
-    "@types/react" "*"
-
-"@types/redux-devtools-log-monitor@^1.0.29":
-  version "1.0.30"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools-log-monitor/-/redux-devtools-log-monitor-1.0.30.tgz#5dc7e4f60eb870328df5b5cddb2556d57c88712b"
-  dependencies:
-    "@types/base16" "*"
-    "@types/react" "*"
-
-"@types/redux-devtools@^3.0.36":
-  version "3.0.37"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools/-/redux-devtools-3.0.37.tgz#4149492f1a63726e8e68f36619927a24d4d42f85"
-  dependencies:
-    "@types/react" "*"
-    redux "^3.6.0"
 
 "@types/redux-mock-store@0.0.7":
   version "0.0.7"
