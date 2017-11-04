@@ -127,7 +127,7 @@
     "redux-mock-store": "^1.2.1",
     "rimraf": "^2.5.4",
     "source-map-loader": "^0.2.3",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.19.0",
     "stylelint": "^7.7.1",
     "tslint": "^4.3.1",
     "tslint-loader": "^3.3.0",
