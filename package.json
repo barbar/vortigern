@@ -100,7 +100,7 @@
     "cross-env": "^5.1.1",
     "css-loader": "^0.26.1",
     "enzyme": "2.8.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "extract-text-webpack-plugin": "^3.0.2",
     "fetch-mock": "^5.8.1",
     "file-loader": "^0.9.0",
     "isomorphic-style-loader": "^1.1.0",
