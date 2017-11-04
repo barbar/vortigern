@@ -5338,8 +5338,8 @@ react-addons-test-utils@~15.4.2:
     object-assign "^4.1.0"
 
 react-css-modules@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-css-modules/-/react-css-modules-4.1.0.tgz#848e3d5089ec6596feabf6c0daaacc06866c58e7"
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/react-css-modules/-/react-css-modules-4.7.1.tgz#08fff65c034780b4352f0a1bb879cab0ee43d820"
   dependencies:
     hoist-non-react-statics "^1.2.0"
     lodash "^4.16.6"
