@@ -13,18 +13,38 @@ module.exports = function (config) {
     files: ['../webpack/test.js'],
 
     preprocessors: {
-      '../src/**/*.ts': ['coverage'],
-      '../src/**/*.tsx': ['coverage'],
+      '../src/**/*.ts': ['sourcemap'],
+      '../src/**/*.tsx': ['sourcemap'],
       '../webpack/test.js': ['webpack']
     },
 
     plugins: ['karma-*'],
 
-    reporters: ['mocha', 'coverage'],
+    reporters: ['mocha', 'coverage-istanbul'],
 
     coverageReporter: {
       dir: '../../coverage',
-      reporters: []
+      fixWebpackSourcePaths: true,
+      reporters: [],
+      instrumenterOptions: {
+        istanbul: {
+          noCompact: true
+        }
+      }
+    },
+
+    coverageIstanbulReporter: {
+      reports: ['text-summary'],
+      fixWebpackSourcePaths: true,
+      dir: 'coverage',
+      'report-config': {
+        html: {
+          subdir: 'html'
+        },
+        lcov: {
+          subdir: 'lcov'
+        }
+      },
     },
 
     hostname: appConfig.host,
@@ -56,7 +76,8 @@ module.exports = function (config) {
       },
 
       module: {
-        rules: [{
+        rules: [
+          {
             enforce: 'pre',
             test: /\.tsx?$/,
             loader: 'tslint-loader'
@@ -90,8 +111,12 @@ module.exports = function (config) {
           {
             enforce: 'post',
             test: /\.tsx?$/,
-            loader: 'istanbul-instrumenter-loader',
-            include: path.resolve('./src/app')
+            use: {
+              loader: 'istanbul-instrumenter-loader',
+              options: {esModules: true},
+            },
+            include: path.resolve('./src/app'),
+            exclude: /node_modules|\.test\.tsx?$/,
           }
         ],
       },
@@ -138,15 +163,9 @@ module.exports = function (config) {
     conf.autoWatch = false;
     conf.singleRun = true;
     conf.browsers.push('Firefox');
-    conf.coverageReporter.reporters.push({
-      type: 'lcov',
-      subdir: '.'
-    });
+    conf.coverageIstanbulReporter.reports.push('lcov');
   } else {
-    conf.coverageReporter.reporters.push({
-      type: 'html',
-      subdir: 'html'
-    });
+    conf.coverageIstanbulReporter.reports.push('html');
     conf.browsers.push('Chrome');
   }
 
