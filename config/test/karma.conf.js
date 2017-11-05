@@ -22,17 +22,6 @@ module.exports = function (config) {
 
     reporters: ['mocha', 'coverage-istanbul'],
 
-    coverageReporter: {
-      dir: '../../coverage',
-      fixWebpackSourcePaths: true,
-      reporters: [],
-      instrumenterOptions: {
-        istanbul: {
-          noCompact: true
-        }
-      }
-    },
-
     coverageIstanbulReporter: {
       reports: ['text-summary'],
       fixWebpackSourcePaths: true,
