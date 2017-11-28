@@ -1,37 +1,55 @@
 const appConfig = require('../../../config/main');
-import { createStore, applyMiddleware, compose } from 'redux';
+// import { loadingBarMiddleware } from 'react-redux-loading-bar';
 import { routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import {createLogger} from 'redux-logger';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
 import { IStore } from './IStore';
-import { createLogger } from 'redux-logger';
+import rootReducer from './reducers';
 
-export function configureStore(history, initialState?: IStore): Redux.Store<IStore> {
+export default class ConfigureStore {
+  public History?: any = null;
+  public routerMiddlewareH?: any = null;
+  public initialState?: any = null;
+  public Store: Redux.Store<any>;
+  constructor(History: any, initialState?: IStore) {
+    this.History = History;
+    this.routerMiddlewareH = routerMiddleware(this.History);
+    this.initialState = initialState;
+    const middlewares: Redux.Middleware[] = [
+      this.routerMiddlewareH,
+      thunk,
+      // loadingBarMiddleware(),
+    ];
 
-  const middlewares: Redux.Middleware[] = [
-    routerMiddleware(history),
-    thunk,
-  ];
+    /** Add Only Dev. Middlewares */
+    if (appConfig.env !== 'production' && process.env.BROWSER) {
+      const logger = createLogger({
+        level: 'info',
+      });
+      middlewares.push(logger);
+    }
 
-  /** Add Only Dev. Middlewares */
-  if (appConfig.env !== 'production' && process.env.BROWSER) {
-    const logger = createLogger();
-    middlewares.push(logger);
+    const composeEnhancers = (appConfig.env !== 'production' &&
+      typeof window === 'object' &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+    this.Store = createStore(rootReducer, this.initialState, composeEnhancers(
+      applyMiddleware(...middlewares),
+    ));
+
+    if (appConfig.env === 'development' && (module as any).hot) {
+      (module as any).hot.accept('./reducers', () => {
+        this.Store.replaceReducer((require('./reducers')));
+      });
+    }
   }
 
-  const composeEnhancers = (appConfig.env !== 'production' &&
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-
-  const store: Redux.Store<IStore> = createStore<IStore>(rootReducer, initialState, composeEnhancers(
-    applyMiddleware(...middlewares),
-  ));
-
-  if (appConfig.env === 'development' && (module as any).hot) {
-    (module as any).hot.accept('./reducers', () => {
-      store.replaceReducer((require('./reducers')));
-    });
+  public store(): Redux.Store<any> {
+    return this.Store;
   }
 
-  return store;
+  public history() {
+    return this.History;
+  }
 }

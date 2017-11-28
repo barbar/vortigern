@@ -12,4 +12,4 @@ class Home extends React.Component<any, any> {
   }
 }
 
-export { Home }
+export { Home };

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { getStars } from 'modules/stars';
 import { IStars, IStarsAction } from 'models/stars';
+import * as React from 'react';
+// import { getStars } from 'redux/modules/stars';
 const { connect } = require('react-redux');
-const { asyncConnect } = require('redux-connect');
+// const { asyncConnect } = require('redux-connect');
 const style = require('./style.css');
 
 interface IProps {
@@ -10,11 +10,11 @@ interface IProps {
   getStars: Redux.ActionCreator<IStarsAction>;
 }
 
-@asyncConnect([{
-  promise: ({ store: { dispatch } }) => {
-    return dispatch(getStars());
-  },
-}])
+// @asyncConnect([{
+//   promise: ({ store: { dispatch } }) => {
+//     return dispatch(getStars());
+//   },
+// }])
 @connect(
   (state) => ({ stars: state.stars }),
 )
@@ -30,4 +30,4 @@ class Stars extends React.Component<IProps, {}> {
   }
 }
 
-export { Stars }
+export { Stars };
