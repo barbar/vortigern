@@ -4,7 +4,7 @@ import { IStore } from './IStore';
 import { counterReducer } from './modules/counter';
 import { starsReducer } from './modules/stars';
 
-// const { reducer } = require('redux-connect');
+// import { reducer } from 'redux-connect';
 
 const rootReducer: Redux.Reducer<IStore> = combineReducers<IStore>({
   routing: routerReducer,

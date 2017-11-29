@@ -48,7 +48,8 @@
         "no-this-assignment": [true, {
             "allow-destructuring": true
         }],
-        // "no-unused-variable": [true],
+        "no-unused-variable": [true],
+        "no-unused-expression": [false],
         "object-literal-shorthand": false,
         "one-variable-per-declaration": [false],
         "only-arrow-functions": [true, "allow-declarations"],

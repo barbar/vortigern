@@ -13,9 +13,9 @@ class App extends React.Component<any, any> {
       <section className={style.AppContainer}>
         <Helmet {...appConfig.app} {...appConfig.app.head}/>
         <Header />
-        <Route path="/" component={Home} />
+        <Route exact={true} path="/" component={Home}/>
         <Route path="/about" component={About} />
-        <Route path="/star" component={Stars} />
+        <Route path="/stars" component={Stars} />
         <Route path="/counter" component={Counter} />
         {this.props.children}
       </section>
