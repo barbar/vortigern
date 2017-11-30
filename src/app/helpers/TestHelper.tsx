@@ -1,4 +1,5 @@
 /** React Specific */
+require('babel-core/register');
 import { mount } from 'enzyme';
 import createHistory from 'history/createBrowserHistory';
 import * as React from 'react';

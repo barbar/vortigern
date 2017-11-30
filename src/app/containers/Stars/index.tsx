@@ -26,8 +26,15 @@ interface IProps {
 //   }),
 // )
 class StarsComponent extends React.Component<IProps, {}> {
+  public state = {
+    isReady: false,
+  };
   public componentDidMount() {
-    this.props.getStars();
+    this.fetch();
+  }
+  public async fetch() {
+    await this.props.getStars();
+    this.setState({isReady: true});
   }
   public render() {
     const { stars } = this.props;

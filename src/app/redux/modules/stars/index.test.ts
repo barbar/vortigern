@@ -5,7 +5,7 @@ import * as stars from './';
 
 /** Mock Data */
 const githubResponse = {
-  stargazers_count: 511,
+  stargazers_count: 512,
 };
 
 const errResponse = {
