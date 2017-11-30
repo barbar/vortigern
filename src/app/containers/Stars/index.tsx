@@ -7,8 +7,6 @@ import { IStore } from 'redux/IStore';
 import { connect } from 'react-redux';
 import { getStars } from 'redux/modules/stars';
 
-import log from 'log';
-
 const style = require('./style.css');
 
 interface IProps {
@@ -33,7 +31,6 @@ class StarsComponent extends React.Component<IProps, {}> {
   }
   public render() {
     const { stars } = this.props;
-    log('STARS: ', stars);
     return (
       <div className={style.Stars}>
         {stars.isFetching ? 'Fetching Stars' : stars.count}

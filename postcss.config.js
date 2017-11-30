@@ -1,5 +1,4 @@
 module.exports = ({ file, options, env }) => {
-  console.log('OPTIONS: ', options);
   return {
     parser: file.extname === '.sss' ? 'sugarss' : false,
     plugins: {

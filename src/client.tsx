@@ -5,7 +5,7 @@ import 'isomorphic-fetch';
 // import routes from './app/routes';
 import {App} from 'containers';
 import createHistory from 'history/createBrowserHistory';
-import log from 'log';
+// import log from 'log';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -19,7 +19,7 @@ const store = new Store(
 // const connectedCmp = (props) => <ReduxAsyncConnect {...props} />;
 
 const s = store.store();
-log('SOTRE: ', ConnectedRouter);
+
 ReactDOM.render(
   <Provider store={s} key="provider">
     <ConnectedRouter

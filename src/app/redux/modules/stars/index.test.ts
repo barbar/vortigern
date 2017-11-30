@@ -5,7 +5,7 @@ import * as stars from './';
 
 /** Mock Data */
 const githubResponse = {
-  stargazers_count: 999,
+  stargazers_count: 511,
 };
 
 const errResponse = {
@@ -38,9 +38,9 @@ describe('Stars Module', () => {
         ];
 
         const store = mockStore({});
-
+        const actions = store.getActions();
         store.dispatch(stars.getStars())
-          .then(() => expect(store.getActions()).to.eql(expectedActions))
+          .then(() => expect(actions).to.eql(expectedActions))
           .then(() => done())
           .catch((err) => done(err));
       });

@@ -10,7 +10,7 @@ const state: object = {
   },
 };
 
-describe('<Counter />', () => {
+describe('<Stars />', () => {
 
   const component = renderComponent(Stars, state);
 
@@ -20,7 +20,15 @@ describe('<Counter />', () => {
   });
 
   it('Renders header', () => {
-    expect(component.find('div').text()).to.eql('61');
+    return new Promise((resolve) => {
+      component.update();
+      setTimeout(() => {
+        resolve();
+      }, 1900);
+    }).then(() => {
+      component.update();
+      expect(component.find('div').text()).to.eql('511');
+    });
   });
 
 });

@@ -45,7 +45,7 @@ export default class ConfigureStore {
     }
   }
 
-  public store(): Redux.Store<any> {
+  public store(): Redux.Store<IStore> {
     return this.Store;
   }
 
