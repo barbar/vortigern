@@ -1,32 +1,41 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "src/app/*",
-        "src/app/redux/*"
-      ]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "src/app/*"
+                // "src/app/redux/*"
+            ]
+        },
+        "outDir": "build",
+        "module": "commonjs",
+        "target": "es6",
+        "sourceMap": true,
+        "inlineSourceMap": false,
+        "inlineSources": false,
+        "experimentalDecorators": true,
+        // "allowSyntheticDefaultImports": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        // "lib": ["es6", "dom"],
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "forceConsistentCasingInFileNames": true
+            // "suppressImplicitAnyIndexErrors": true,
+            // "noEmit": true
     },
-    "outDir": "build",
-    "module": "commonjs",
-    "target": "es6",
-    "sourceMap": true,
-    "inlineSourceMap": false,
-    "inlineSources": false,
-    "experimentalDecorators": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "jsx": "react",
-    "moduleResolution": "node"
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "typings/main",
-    "typings/main.d.ts"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "useCache": true,
-    "useBabel": true
-  }
+    "exclude": [
+        // "node_modules/**/*.ts",
+        "build",
+        "typings/main",
+        "typings/main.d.ts",
+        "node_modules/@types/react-dom/node_modules/@types/react/*"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true,
+        "useBabel": true
+    }
+
 }

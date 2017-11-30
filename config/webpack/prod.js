@@ -19,6 +19,7 @@ var config = {
     app: './src/client.tsx',
     vendor: [
       './src/vendor/main.ts',
+      'history',
       'react',
       'react-dom',
       'react-router',
@@ -26,7 +27,7 @@ var config = {
       'react-redux',
       'react-router-redux',
       'redux',
-      'redux-connect',
+      // 'redux-connect',
       'redux-thunk'
     ]
   },
@@ -62,7 +63,17 @@ var config = {
           fallback: 'style-loader',
           use: [
             'css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]',
-            'postcss-loader'
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: (loader) => [
+                  require('postcss-import')({ root: loader.resourcePath }),
+                  require('postcss-cssnext')(),
+                  require('cssnano')()
+                ]
+              }
+            }
           ]
         })
       },

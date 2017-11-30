@@ -1,5 +1,5 @@
 'use strict';
-
+require('regenerator-runtime/runtime');
 if (process.env.NODE_ENV === 'production') {
   module.exports = require('./prod');
 } else {

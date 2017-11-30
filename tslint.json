@@ -1,30 +1,63 @@
 {
-  "extends": [
-    "tslint:latest",
-    "tslint-react"
-  ],
-  "rules": {
-    "indent": [
-      true,
-      "spaces"
+    "extends": [
+        "tslint:latest",
+        "tslint-react"
     ],
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double"
-    ],
-    "no-var-requires": false,
-    "ordered-imports": false,
-    "member-ordering": [
-      false
-    ],
-    "object-literal-sort-keys": false,
-    "no-shadowed-variable": false,
-    "no-console": [
-      false
-    ],
-    "jsx-alignment": [
-      false
-    ]
-  }
+    "rules": {
+        "jsx-no-multiline-js": [false],
+        "jsx-no-lambda": [false],
+        "indent": [true, "spaces", 2],
+        "quotemark": [
+            true,
+            "single",
+            "jsx-double"
+        ],
+        "no-var-requires": false,
+        "ordered-imports": true,
+        "no-submodule-imports": false,
+        "member-ordering": [
+            false
+        ],
+        "object-literal-sort-keys": false,
+        "no-shadowed-variable": false,
+        "jsx-alignment": [true, "always"],
+        // "jsx-indent": [true, "always"],
+        "no-implicit-dependencies": [false],
+        "align": [true],
+        "no-trailing-whitespace": [
+            true
+        ],
+        "whitespace": [
+            true
+        ],
+        "arrow-parens": false,
+        "arrow-return-shorthand": [false],
+        "comment-format": [true, "check-space"],
+        "import-blacklist": [true, "rxjs"],
+        "interface-over-type-literal": false,
+        "max-line-length": [true, 120],
+        "member-access": false,
+        "newline-before-return": false,
+        "no-any": false,
+        "no-empty-interface": false,
+        // "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
+        "no-invalid-this": [true, "check-function-in-method"],
+        "no-null-keyword": false,
+        "no-require-imports": false,
+        "no-switch-case-fall-through": true,
+        "no-this-assignment": [true, {
+            "allow-destructuring": true
+        }],
+        "no-unused-variable": [true],
+        "no-unused-expression": [false],
+        "object-literal-shorthand": false,
+        "one-variable-per-declaration": [false],
+        "only-arrow-functions": [true, "allow-declarations"],
+        "prefer-method-signature": false,
+        "prefer-template": [true, "allow-single-concat"],
+        "semicolon": [true, "always"],
+        "triple-equals": [true, "allow-null-check"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
+        "radix": [false]
+    }
 }

@@ -6,6 +6,13 @@ var appConfig = require('../main');
 
 module.exports = function (config) {
   const conf = {
+
+    client: {
+      mocha: {
+        timeout : 5000
+      }
+    },
+
     frameworks: ['mocha', 'chai', 'es6-shim'],
 
     browsers: ['PhantomJS'],
